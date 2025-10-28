@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+/* Paleta y tipografía (v4 se configura acá) */
+theme inline {
+  --color-background: #ffffff;
+  --color-foreground: #171717;
+
+  /* Fuente primaria definida por next/font (ver layout.tsx) */
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+  /* Si querés monospace: */
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* Modo oscuro opcional */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #0a0a0a;
+    --color-foreground: #e5e5e5;
+  }
+}
+
+/* Defaults suaves */
+html { scroll-behavior: smooth; }
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Una pizca de suavidad en hovers */
+* { transition: color 200ms, background-color 200ms, border-color 200ms, box-shadow 200ms, transform 200ms; }
+/* === Moksa accent & animations === */
+theme inline {
+  --color-accent: #4f46e5; /* Moksa Blue (podemos ajustar luego) */
+}
+
+/* Keyframes para animación de entrada */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Helper classes (Tailwind v4 permite utilidades simples) */
+.fade-up-1 { animation: fade-up .6s ease .05s both; }
+.fade-up-2 { animation: fade-up .6s ease .15s both; }
+.fade-up-3 { animation: fade-up .6s ease .25s both; }
+.fade-up-4 { animation: fade-up .6s ease .35s both; }
+
+:root {
+  --color-accent: #4f46e5;        /* violeta actual */
+  --nav-bg: #0f172a;              /* fondo navbar (slate-950) */
+  --nav-text: #e5e7eb;            /* texto navbar (gray-200) */
+  --nav-border: #1f2937;          /* borde (gray-800) */
+}
+
+/* ——— Legibilidad base ——— */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-kerning: normal;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1; /* kerning + ligaduras */
+  line-height: 1.55;     /* cuerpo cómodo */
+  letter-spacing: 0;
+}
+
+/* Párrafos más fluidos */
+p { text-wrap: pretty; max-width: 65ch; }
+
+/* Títulos y elementos comunes (clases utilitarias) */
+.typ-title-1 { letter-spacing: -0.02em; line-height: 1.08; }
+.typ-title-2 { letter-spacing: -0.015em; line-height: 1.15; }
+.typ-subtle  { letter-spacing: -0.005em; line-height: 1.35; }
+
+/* Cuerpo */
+.typ-body   { letter-spacing: 0.005em; line-height: 1.65; }
+
+/* Eyebrow / overline */
+.typ-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  font-size: 11px;
+}
+
+/* Navegación */
+.typ-nav { letter-spacing: 0.04em; }
+
+/* Botones */
+.typ-cta { letter-spacing: 0.02em; }
