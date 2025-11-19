@@ -403,10 +403,10 @@ function Home() {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "flex justify-center lg:justify-end",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                                    src: "/logo-moksa.png",
+                                    src: "/Moksa_vector.svg",
                                     alt: "Logo de Moksa IT",
-                                    width: 320,
-                                    height: 340,
+                                    width: 32,
+                                    height: 32,
                                     className: "object-contain max-w-[420px]"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/page.tsx",
@@ -1714,7 +1714,7 @@ function Home() {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                         href: "mailto:rrhh@moksait.com?subject=Postulación%20Laboral%20-%20Moksa%20IT",
-                                        className: " rounded-xl bg-[var(--color-accent)] px-7 py-3.5  text-base font-semibold text-white  hover:brightness-110 hover:shadow-md transition ",
+                                        className: "   rounded-xl bg-[var(--color-accent)] px-7 py-3.5    text-base font-semibold text-white    hover:brightness-110 hover:shadow-md transition   ",
                                         children: "Enviar CV"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/page.tsx",
@@ -1724,7 +1724,7 @@ function Home() {
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                         href: "https://wa.me/5491160462131?text=Hola%20Moksa%20IT%2C%20quiero%20postularme%20para%20trabajar%20con%20ustedes.",
                                         target: "_blank",
-                                        className: " rounded-xl border border-neutral-300 px-7 py-3.5  text-base font-semibold  hover:bg-neutral-50 hover:border-neutral-400 transition ",
+                                        className: "   rounded-xl border border-neutral-300 px-7 py-3.5    text-base font-semibold    hover:bg-neutral-50 hover:border-neutral-400 transition   ",
                                         children: "Contactar por WhatsApp"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/page.tsx",

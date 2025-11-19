@@ -191,10 +191,10 @@ export default function Home() {
       {/* Columna de imagen/logo */}
       <div className="flex justify-center lg:justify-end">
   <Image
-    src="/logo-moksa.png"
+    src="/Moksa_vector.svg"
     alt="Logo de Moksa IT"
-    width={320}     
-    height={340}    
+    width={32}     
+    height={32}    
     className="object-contain max-w-[420px]" 
   />
 </div>
