@@ -193,8 +193,8 @@ export default function Home() {
   <Image
     src="/Moksa_vector.svg"
     alt="Logo de Moksa IT"
-    width={32}     
-    height={32}    
+    width={320}     
+    height={340}    
     className="object-contain max-w-[420px]" 
   />
 </div>
