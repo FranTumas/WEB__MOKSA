@@ -86,64 +86,101 @@ export default function Home() {
   return (
     <main className="bg-white text-neutral-900">
       {/* Hero */}
-      <section className="relative">
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(65%_65%_at_50%_0%,rgba(99,102,241,0.12)_0%,transparent_60%)]" />
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-          {/* Grid: texto izquierda / imagen derecha */}
-          <div className="grid gap-10 items-center lg:grid-cols-[0.9fr_1.5fr]">
-            {/* Texto */}
-            <div className="max-w-2xl">
-              <span className="inline-flex items-center rounded-full border border-[var(--color-accent)]/40 bg-[var(--color-accent)]/10 px-3 py-1 text-[11px] font-semibold text-[var(--color-accent)]">
-                Moksa IT · SAP · ABAP · VIM
-              </span>
+      <section className="relative min-h-[80vh]">
+  {/* Imagen de fondo */}
+  <Image
+    src="/hero-sap.jpg" // <-- tu imagen de fondo
+    alt="Ciudad moderna, transformación digital"
+    fill
+    priority
+    sizes="100vw"
+    className="object-cover"
+  />
 
-              <h1 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.05]">
-                {claim}
-              </h1>
+  {/* Capa oscura encima de la imagen */}
+  <div className="absolute inset-0 bg-black/50" />
 
-              <p className="mt-6 max-w-xl text-lg text-neutral-600">
-                Experiencia en S/4HANA, ABAP y VIM. Entregables claros, riesgos
-                controlados y foco en valor para el negocio.
-              </p>
+  {/* Contenido centrado */}
+  <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-6xl flex-col items-center justify-center px-4 text-center text-white">
 
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Link
-                  href="/contacto"
-                  className="rounded-xl bg-[var(--color-accent)] px-6 py-3 text-sm font-semibold text-white transition-all duration-200 will-change-transform hover:brightness-110 hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30 active:translate-y-0"
-                >
-                  Hablar ahora
-                </Link>
-                <Link
-                  href="/servicios"
-                  className="rounded-xl border border-neutral-300 px-6 py-3 text-sm font-semibold transition-all duration-200 hover:bg-neutral-50 hover:border-neutral-400 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-neutral-200 active:translate-y-0"
-                >
-                  Ver servicios
-                </Link>
-              </div>
+    <h1 className="max-w-3xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+      INNOVACIÓN DIGITAL 
+    </h1>
 
-              <div className="mt-8 text-xs text-neutral-500 space-x-3">
-                <span>✓ Sin comisiones ocultas</span>
-                <span>✓ Listo en días</span>
-                <span>✓ Soporte post-lanzamiento</span>
-              </div>
-            </div>
+    <p className="mt-4 max-w-2xl text-sm sm:text-base md:text-lg text-neutral-100">
+     EL VALOR DE TRANSFORMAR
+    </p>
 
-            {/* Imagen */}
-            <div className="relative h-64 sm:h-[22rem] lg:h-[28rem] xl:h-[30rem]">
-              <Image
-                src="/hero-sap.jpg" // archivo en /public
-                alt="Tablero SAP/VIM con métricas"
-                fill
-                priority
-                sizes="(min-width:1280px) 55vw, (min-width:1024px) 58vw, 90vw"
-                className="object-cover rounded-2xl shadow-2xl ring-1 ring-black/5 bg-white"
-              />
-            </div>
-          </div>
+    <div className="mt-8 flex flex-wrap justify-center gap-3">
+      <Link
+        href="/contacto"
+        className="rounded-full border border-white bg-white/90 px-8 py-3 text-sm font-semibold text-neutral-900 transition hover:bg-white"
+      >
+        ¿Necesitás información?
+      </Link>
+      <Link
+        href="/servicios"
+        className="rounded-full border border-white/70 px-8 py-3 text-sm font-semibold text-white/90 transition hover:bg-white/10"
+      >
+        Ver servicios
+      </Link>
+    </div>
+  </div>
+</section>
+
+     {/* Nosotros */}
+<section id="nosotros" className="border-t border-neutral-200 py-24 bg-white">
+  <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr] items-center">
+      
+      {/* Columna de texto */}
+      <div>
+        <h2 className="text-4xl font-bold tracking-tight text-neutral-900">
+          Sobre <span className="text-[var(--color-accent)]">Moksa IT</span>
+        </h2>
+
+        <p className="mt-4 text-lg text-neutral-700 leading-relaxed">
+          Somos un equipo joven con más de 15 años de experiencia en consultoría de
+          implantación para soluciones SAP y OpenText en América y Europa, colaborando
+          con distintas unidades de negocio para mejorar la gestión y control del pago
+          a proveedores y los procesos de transformación digital.
+        </p>
+
+        <p className="mt-4 text-lg text-neutral-600 leading-relaxed">
+          Nuestro principal compromiso es acompañar la evolución del área de Cuentas a Pagar
+          y sus proveedores, acercando soluciones prácticas y dinámicas que faciliten la
+          gestión diaria, reduzcan riesgos y fortalezcan la relación cliente–proveedor.
+        </p>
+
+        {/* CTA tipo “¿Hablamos?” */}
+        <div className="mt-8">
+          <Link
+            href="/contacto"
+            className="inline-block rounded-xl bg-gradient-to-r from-[var(--color-accent)] to-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-lg hover:opacity-90 transition"
+          >
+            ¿Hablamos?
+          </Link>
         </div>
-      </section>
+      </div>
 
-      {/* Beneficios */}
+      {/* Columna de imagen/logo */}
+      <div className="flex justify-center lg:justify-end">
+        <div className="rounded-3xl border border-neutral-200/70 bg-white/70 shadow-sm px-6 py-6">
+          <Image
+            src="/Moksa_vector.svg"
+            alt="Logo de Moksa IT"
+            width={320}
+            height={340}
+            className="object-contain max-w-[360px]"
+          />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{/* Beneficios */}
       <section id="beneficios" className="border-t border-neutral-200 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold tracking-tight">Qué servicios ofrecemos</h2>
@@ -172,38 +209,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Nosotros */}
-      <section id="nosotros" className="border-t border-neutral-200 py-20">
-  <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-    <div className="grid gap-8 lg:grid-cols-2 items-center">
-      {/* Columna de texto */}
-      <div>
-        <h2 className="text-3xl font-bold tracking-tight">Quiénes somos</h2>
-        <p className="mt-3 text-neutral-600">
-          Somos un equipo joven con más de 15 años de experiencia en consultoría de implantación para soluciones SAP OpenText en América y Europa, colaborando con distintas unidades de negocio para mejorar la gestión y control del pago a proveedores y procesos de transformación digital.
-        </p>
-        <p className="mt-3 text-neutral-500">
-          Nuestro principal compromiso es brindar apoyo en la transformación e integración del área Cuentas a Pagar con proveedores, acercando soluciones prácticas y dinámicas que faciliten la gestión y mejoren la relación cliente–proveedor.
-        </p>
-      </div>
-
-      {/* Columna de imagen/logo */}
-      <div className="flex justify-center lg:justify-end">
-  <Image
-    src="/Moksa_vector.svg"
-    alt="Logo de Moksa IT"
-    width={320}     
-    height={340}    
-    className="object-contain max-w-[420px]" 
-  />
-</div>
-
-
-    </div>
-  </div>
-</section>
-
 
       {/* Cómo trabajamos */}
       <section id="como" className="border-t border-neutral-200 py-20">

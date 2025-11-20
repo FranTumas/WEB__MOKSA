@@ -20,19 +20,7 @@ const NAV_LINKS: NavLink[] = [
 export function Navbar() {
   return (
     <>
-      {/* Topbar (opcional) */}
-      <div className="bg-[var(--nav-bg)] border-b border-[var(--nav-border)] text-[13px]">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-9 flex items-center justify-center gap-2 text-white">
-          <span className="font-medium">Disponibles para nuevos proyectos SAP</span>
-          <Link
-            href="/contacto"
-            className="text-white/90 hover:text-white underline decoration-white/80 underline-offset-4"
-          >
-            Hablemos →
-          </Link>
-        </div>
-      </div>
-
+      
       {/* Navbar principal */}
       <header
         className="sticky top-0 z-40 border-b backdrop-blur"
@@ -49,12 +37,12 @@ export function Navbar() {
           <Link href="/" className="flex items-center gap-2" style={{ color: "var(--nav-text)" }}>
             <Image
               src="/Moksa_vector_blanco.svg" 
-              alt="Moksa IT"
+              alt=""
               width={64}
               height={64}
               className="h-16 w-16 object-contain"
             />
-            <span className="text-base font-semibold tracking-tight">Moksa IT</span>
+          
           </Link>
 
           {/* Navegación */}
@@ -80,7 +68,7 @@ export function Navbar() {
               boxShadow: "0 0 0 0 rgba(0,0,0,0)",
             }}
           >
-            Empezar
+            Bandera USA e Arg
           </Link>
         </div>
       </header>
