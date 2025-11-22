@@ -5,6 +5,7 @@
 import Link from "next/link";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import Image from "next/image";
+import { UploadCvSection } from "@/Component/UploadCvSection";
 
 type CaseItem = {
   tag: string;
@@ -183,7 +184,7 @@ export default function Home() {
 {/* Beneficios */}
       <section id="beneficios" className="border-t border-neutral-200 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold tracking-tight">Qué servicios ofrecemos</h2>
+          <h2 className="text-3xl font-bold tracking-tight">Que servicios ofrecemos</h2>
           <p className="mt-2 text-neutral-600">
             Acompañamos tu operación SAP con foco en eficiencia, automatización y escalabilidad.
           </p>
@@ -564,58 +565,32 @@ export default function Home() {
       </section>
 
       {/* Trabajar en Moksa IT */}
-<section className="mt-20">
-  <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-    <div className="rounded-2xl border border-neutral-200 bg-white p-10 shadow-sm text-center">
-
-      <h3 className="text-3xl font-extrabold tracking-tight">
-        ¿Querés trabajar en Moksa IT?
-      </h3>
-
-      <p className="mt-4 text-neutral-600 max-w-2xl mx-auto text-lg leading-relaxed">
-        Estamos sumando talento para proyectos SAP, ABAP y OpenText.  
-        Buscamos personas curiosas, responsables y con ganas de aprender  
-        y crecer en un equipo dinámico con foco en calidad, procesos claros  
-        y entregas medibles.
-      </p>
-
-      {/* LISTA: columna central */}
-      <ul className="mt-8 space-y-2 text-base text-neutral-700 max-w-md mx-auto text-left leading-relaxed">
-        <li>• Experiencia o interés en SAP (ABAP, VIM, Fiori, integraciones).</li>
-        <li>• Capacidad de análisis y resolución de problemas.</li>
-        <li>• Buena comunicación y trabajo en equipo.</li>
-        <li>• Inglés técnico (no excluyente).</li>
-      </ul>
-
-      {/* BOTONES: mismo ancho que la lista */}
-      <div className="mt-10 w-full max-w-md mx-auto flex flex-wrap justify-center gap-4">
-        <a
-          href="mailto:rrhh@moksait.com?subject=Postulación%20Laboral%20-%20Moksa%20IT"
-          className="
-            rounded-xl bg-[var(--color-accent)] px-7 py-3.5 
-            text-base font-semibold text-white 
-            hover:brightness-110 hover:shadow-md transition
-          "
-        >
-          Enviar CV
-        </a>
-
-        <a
-          href="https://wa.me/5491160462131?text=Hola%20Moksa%20IT%2C%20quiero%20postularme%20para%20trabajar%20con%20ustedes."
-          target="_blank"
-          className="
-            rounded-xl border border-neutral-300 px-7 py-3.5 
-            text-base font-semibold 
-            hover:bg-neutral-50 hover:border-neutral-400 transition
-          "
-        >
-          Contactar por WhatsApp
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
+            <section className="mt-20">
+              <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+                <div className="rounded-2xl border border-neutral-200 bg-white p-10 shadow-sm text-center">
+                  <h3 className="text-3xl font-extrabold tracking-tight">
+                    ¿Querés trabajar en Moksa IT?
+                  </h3>
+      
+                  <p className="mt-4 text-neutral-600 max-w-2xl mx-auto text-lg leading-relaxed">
+                    Estamos sumando talento para proyectos SAP, ABAP y OpenText. Buscamos
+                    personas curiosas, responsables y con ganas de aprender y crecer en un
+                    equipo dinámico con foco en calidad, procesos claros y entregas
+                    medibles.
+                  </p>
+      
+                  <ul className="mt-8 space-y-2 text-base text-neutral-700 max-w-md mx-auto text-left leading-relaxed">
+                    <li>• Experiencia o interés en SAP (ABAP, VIM, Fiori, integraciones).</li>
+                    <li>• Capacidad de análisis y resolución de problemas.</li>
+                    <li>• Buena comunicación y trabajo en equipo.</li>
+                    <li>• Inglés técnico (no excluyente).</li>
+                  </ul>
+      
+                  {/* Sección de carga de CV (client component) */}
+                  <UploadCvSection />
+                </div>
+              </div>
+            </section>
 
 
       {/* Footer */}
