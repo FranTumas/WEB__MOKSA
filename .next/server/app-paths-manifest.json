@@ -1,8 +1,7 @@
 {
+  "/EN/contact/page": "app/EN/contact/page.js",
+  "/EN/page": "app/EN/page.js",
   "/api/uploadthing/route": "app/api/uploadthing/route.js",
-  "/casos/page": "app/casos/page.js",
   "/contacto/page": "app/contacto/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/page": "app/page.js",
-  "/servicios/page": "app/servicios/page.js"
+  "/page": "app/page.js"
 }

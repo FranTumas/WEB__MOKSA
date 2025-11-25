@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 // src/app/page.tsx
-// Moksa IT — Home combinado (sin navbar interna; usa la Navbar global del layout)
 
 import Link from "next/link";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
@@ -41,7 +40,6 @@ export default function Home() {
 
   const WHATSAPP =
     "https://wa.me/5491160462131?text=Hola%20Moksa%20IT%2C%20me%20gustar%C3%ADa%20consultar%20sobre%20un%20proyecto%20SAP%20o%20VIM.";
-  const CALENDLY = "https://calendly.com/tuusuario/30min";
   const EMAIL =
     "mailto:srossi@moksait.com, gtejada@moksait.com?subject=Consulta%20Moksa%20IT&body=Hola%2C%20les%20escribo%20por%20...";
 
@@ -475,17 +473,7 @@ export default function Home() {
               className="inline-flex items-center justify-center rounded-xl bg-[var(--color-accent)] px-6 py-3 text-sm font-semibold text-white transition-all duration-200 will-change-transform hover:brightness-110 hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30 min-w-[220px] active:translate-y-0"
             >
               Escribir por WhatsApp
-            </a>
-
-            <a
-              href={CALENDLY}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-xl border border-neutral-300 px-6 py-3 text-sm font-semibold transition-all duration-200 hover:bg-neutral-50 hover:border-neutral-400 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-neutral-200 min-w-[220px] active:translate-y-0"
-            >
-              Agendar una llamada
-            </a>
-
+            </a> 
             <a
               href={EMAIL}
               className="inline-flex items-center justify-center rounded-xl border border-neutral-300 px-6 py-3 text-sm font-semibold transition-all duration-200 hover:bg-neutral-50 hover:border-neutral-400 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-neutral-200 min-w-[220px] active:translate-y-0"

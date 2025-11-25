@@ -36,7 +36,7 @@ export function UploadCvSection() {
         rel="noreferrer"
         className="rounded-xl border border-neutral-300 px-6 py-3 text-sm font-semibold hover:bg-neutral-50 transition"
       >
-        Contactar por WhatsApp
+        Chat on WhatsApp
       </a>
     </div>
   );

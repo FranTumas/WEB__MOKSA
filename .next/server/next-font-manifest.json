@@ -1,15 +1,15 @@
 {
   "app": {
-    "[project]/src/app/casos/page": [
+    "[project]/src/app/EN/contact/page": [
+      "static/media/fba5a26ea33df6a3-s.p.1bbdebe6.woff2"
+    ],
+    "[project]/src/app/EN/page": [
       "static/media/fba5a26ea33df6a3-s.p.1bbdebe6.woff2"
     ],
     "[project]/src/app/contacto/page": [
       "static/media/fba5a26ea33df6a3-s.p.1bbdebe6.woff2"
     ],
     "[project]/src/app/page": [
-      "static/media/fba5a26ea33df6a3-s.p.1bbdebe6.woff2"
-    ],
-    "[project]/src/app/servicios/page": [
       "static/media/fba5a26ea33df6a3-s.p.1bbdebe6.woff2"
     ]
   },
