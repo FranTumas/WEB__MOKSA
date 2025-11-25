@@ -606,6 +606,10 @@
     top: calc(var(--spacing) * 0);
   }
 
+  .right-0 {
+    right: calc(var(--spacing) * 0);
+  }
+
   .right-5 {
     right: calc(var(--spacing) * 5);
   }
@@ -705,6 +709,10 @@
     margin-top: calc(var(--spacing) * 20);
   }
 
+  .block {
+    display: block;
+  }
+
   .flex {
     display: flex;
   }
@@ -751,6 +759,10 @@
 
   .w-16 {
     width: calc(var(--spacing) * 16);
+  }
+
+  .w-32 {
+    width: calc(var(--spacing) * 32);
   }
 
   .w-full {
@@ -903,6 +915,10 @@
 
   .self-end {
     align-self: flex-end;
+  }
+
+  .overflow-hidden {
+    overflow: hidden;
   }
 
   .overflow-x-auto {
@@ -1109,16 +1125,16 @@
     padding-inline: calc(var(--spacing) * 6);
   }
 
-  .px-7 {
-    padding-inline: calc(var(--spacing) * 7);
-  }
-
   .px-8 {
     padding-inline: calc(var(--spacing) * 8);
   }
 
   .py-1 {
     padding-block: calc(var(--spacing) * 1);
+  }
+
+  .py-1\.5 {
+    padding-block: calc(var(--spacing) * 1.5);
   }
 
   .py-2 {
@@ -1131,10 +1147,6 @@
 
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
-  }
-
-  .py-3\.5 {
-    padding-block: calc(var(--spacing) * 3.5);
   }
 
   .py-6 {
@@ -1498,6 +1510,12 @@
   @media (hover: hover) {
     .hover\:bg-neutral-50:hover {
       background-color: var(--color-neutral-50);
+    }
+  }
+
+  @media (hover: hover) {
+    .hover\:bg-neutral-100:hover {
+      background-color: var(--color-neutral-100);
     }
   }
 
