@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-// src/app/en/page.tsx
-// Moksa IT — Home (English version, uses global Navbar)
+// src/app/page.tsx
 
 import Link from "next/link";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
@@ -29,7 +28,9 @@ function Card({
     ? "border border-neutral-900 bg-neutral-900 text-white"
     : "border border-neutral-200 bg-white";
   return (
-    <div className={`${base} ${skin} ${className} hover:border-[var(--color-accent)]/30 group`}>
+    <div
+      className={`${base} ${skin} ${className} hover:border-[var(--color-accent)]/30 group`}
+    >
       {children}
     </div>
   );
@@ -40,22 +41,22 @@ export default function Home() {
   const claim = "IT consulting and SAP services focused on results";
 
   const WHATSAPP =
-    "https://wa.me/5491160462131?text=Hi%20Moksa%20IT%2C%20I%27d%20like%20to%20ask%20about%20an%20SAP%20or%20VIM%20project.";
+    "https://wa.me/5491160462131?text=Hello%20Moksa%20IT%2C%20I%27d%20like%20to%20ask%20about%20a%20SAP%20or%20VIM%20project.";
   const EMAIL =
-    "mailto:srossi@moksait.com, gtejada@moksait.com?subject=Moksa%20IT%20inquiry&body=Hello%2C%20I%27m%20writing%20regarding%20...";
+    "mailto:srossi@moksait.com, gtejada@moksait.com?subject=Inquiry%20Moksa%20IT&body=Hi%2C%20I%27m%20writing%20about%20...";
 
   const features = [
     {
       title: "SAP Implementations",
-      desc: "S/4HANA, ECC and key modules with a strong process and business focus.",
+      desc: "S/4HANA, ECC and key modules with a focus on processes, operations and adoption.",
     },
     {
       title: "ABAP & Extensions",
-      desc: "Clean development, enhancements, BAPIs, RFC, OData and APIs.",
+      desc: "Clean development, evolutionary enhancements, BAPIs, RFC, OData and APIs to integrate your ecosystem.",
     },
     {
       title: "VIM / OpenText",
-      desc: "Approval flows, KPIs and invoice automation.",
+      desc: "Approval workflows, KPIs and automation of the document and invoice lifecycle.",
     },
   ];
 
@@ -63,20 +64,20 @@ export default function Home() {
     {
       tag: "VIM / OpenText",
       title: "Invoice lifecycle automation",
-      desc: "Redesign of flows, validation rules and metrics. OCR integration and workitem improvements.",
+      desc: "Redesign of workflows, validation rules and metrics. OCR integration and workitem improvements.",
       kpis: [
         { label: "-35% cycle time", note: "from reception to posting" },
-        { label: "+18% touchless", note: "more invoices without intervention" },
+        { label: "+18% touchless", note: "more invoices without manual intervention" },
         { label: "98% OCR accuracy", note: "on stable batches" },
       ],
     },
     {
       tag: "ABAP / Extensions",
       title: "Eliminating repetitive manual tasks",
-      desc: "BAPIs and scheduled jobs + OData to expose data to internal apps.",
+      desc: "BAPIs and background jobs, plus OData to expose data to internal apps and reports.",
       kpis: [
-        { label: "-60% operating time", note: "in monthly closes" },
-        { label: "-40% errors", note: "from manual data entry" },
+        { label: "-60% operating time", note: "in month-end closings" },
+        { label: "-40% errors", note: "caused by manual entry" },
         { label: "SLA < 4h", note: "for P3 incidents" },
       ],
     },
@@ -99,7 +100,7 @@ export default function Home() {
         {/* Background image */}
         <Image
           src="/hero-sap.jpg"
-          alt="Modern city, digital transformation"
+          alt="Modern city and digital transformation"
           fill
           priority
           sizes="100vw"
@@ -111,12 +112,12 @@ export default function Home() {
 
         {/* Centered content */}
         <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-6xl flex-col items-center justify-center px-4 text-center text-white">
-          <h1 className="max-w-3xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+          <h1 className="max-w-3xl text-3xl font-extrabold leading-tight sm:text-4xl md:text-5xl lg:text-6xl">
             DIGITAL INNOVATION
           </h1>
 
-          <p className="mt-4 max-w-2xl text-sm sm:text-base md:text-lg text-neutral-100">
-            THE VALUE OF TRANSFORMATION
+          <p className="mt-4 max-w-2xl text-sm text-neutral-100 sm:text-base md:text-lg">
+            SAP consulting focused on operational efficiency and digital transformation.
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -137,33 +138,37 @@ export default function Home() {
       </section>
 
       {/* About us */}
-      <section id="nosotros" className="border-t border-neutral-200 py-24 bg-white">
+      <section
+        id="nosotros"
+        className="border-t border-neutral-200 bg-white py-24"
+      >
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr] items-center">
+          <div className="grid items-center gap-10 lg:grid-cols-[1.4fr_1fr]">
             {/* Text column */}
             <div>
               <h2 className="text-4xl font-bold tracking-tight text-neutral-900">
                 About <span className="text-[var(--color-accent)]">Moksa IT</span>
               </h2>
 
-              <p className="mt-4 text-lg text-neutral-700 leading-relaxed">
-                We are a young team with more than 15 years of experience in SAP and OpenText
-                implementation consulting across the Americas and Europe, working with different
-                business units to improve control and management of payments to vendors and
-                digital transformation processes.
+              <p className="mt-4 text-lg leading-relaxed text-neutral-700">
+                We are a young team with over 15 years of experience in SAP and
+                OpenText implementation consulting across the Americas and Europe,
+                helping organizations improve the way they manage, control and trace
+                key information.
               </p>
 
-              <p className="mt-4 text-lg text-neutral-600 leading-relaxed">
-                Our main commitment is to support the evolution of the Accounts Payable area and
-                its vendors by bringing practical and dynamic solutions that make day-to-day
-                operations easier, reduce risks and strengthen the customer–vendor relationship.
+              <p className="mt-4 text-lg leading-relaxed text-neutral-600">
+                Our commitment is to support the evolution of processes related to
+                payments, documents and approvals, bringing practical and dynamic
+                solutions that simplify day-to-day operations, reduce risk and
+                strengthen relationships with partners and suppliers.
               </p>
 
               {/* CTA */}
               <div className="mt-8">
                 <Link
                   href="/EN/contact"
-                  className="inline-block rounded-xl bg-gradient-to-r from-[var(--color-accent)] to-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-lg hover:opacity-90 transition"
+                  className="inline-block rounded-xl bg-gradient-to-r from-[var(--color-accent)] to-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:opacity-90"
                 >
                   Let&apos;s talk
                 </Link>
@@ -172,13 +177,13 @@ export default function Home() {
 
             {/* Logo column */}
             <div className="flex justify-center lg:justify-end">
-              <div className="rounded-3xl border border-neutral-200/70 bg-white/70 shadow-sm px-6 py-6">
+              <div className="rounded-3xl border border-neutral-200/70 bg-white/70 px-6 py-6 shadow-sm">
                 <Image
                   src="/Moksa_vector.svg"
                   alt="Moksa IT logo"
                   width={320}
                   height={340}
-                  className="object-contain max-w-[360px]"
+                  className="max-w-[360px] object-contain"
                 />
               </div>
             </div>
@@ -186,101 +191,222 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Benefits */}
-      <section id="beneficios" className="border-t border-neutral-200 py-20">
+      {/* Our capabilities (slider) */}
+      <section
+        id="capacidades"
+        className="border-t border-neutral-200 py-20 bg-neutral-50/70"
+      >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold tracking-tight">What services we offer</h2>
-          <p className="mt-2 text-neutral-600">
-            We support your SAP operation with a focus on efficiency, automation and scalability.
-          </p>
-
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((f) => (
-              <Card key={f.title}>
-                <div className="h-10 w-10 rounded-xl bg-neutral-100 flex items-center justify-center">
-                  ✓
-                </div>
-                <div className="mt-4 font-semibold">{f.title}</div>
-                <p className="mt-2 text-sm text-neutral-600">{f.desc}</p>
-              </Card>
-            ))}
+          <div className="max-w-2xl">
+            <h2 className="text-3xl font-bold tracking-tight">Our capabilities</h2>
+            <p className="mt-2 text-neutral-600">
+              An agile, dynamic team aligned with best practices and continuous
+              improvement.
+            </p>
           </div>
 
-          <div className="mt-8">
-            <Link
-              href="/EN/services"
-              className="group inline-flex items-center rounded-xl border border-neutral-300 px-4 py-2 text-sm font-semibold transition-all duration-200 hover:bg-neutral-50 hover:border-neutral-400 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-neutral-200"
-            >
-              See all services
-              <span className="inline-block pl-1 transition-transform duration-200 group-hover:translate-x-1">
-                →
-              </span>
-            </Link>
+          {/* Slider-like banners */}
+          <div className="mt-10">
+            <div className="flex snap-x snap-mandatory overflow-x-auto gap-6 pb-4">
+              {[
+                {
+                  id: "cap-1",
+                  title: "DEVELOPMENT TEAM",
+                  desc: "Agile development focused on quality, speed and maintainable code to support the evolution of your SAP solution.",
+                  image: "/EquipoDesarrollo.jpg",
+                },
+                {
+                  id: "cap-2",
+                  title: "FUNCTIONAL EXPERTISE",
+                  desc: "Over 15 years of implementations across the Americas and Europe, understanding processes, daily operations and follow-up needs.",
+                  image: "/Conicu.jpg",
+                },
+                {
+                  id: "cap-3",
+                  title: "RESPONSE",
+                  desc: "Ideas applied to continuous improvement, reducing deviations and improving interaction between internal and external teams.",
+                  image: "/cap-respuesta.jpg",
+                },
+                {
+                  id: "cap-4",
+                  title: "COLLABORATION",
+                  desc: "We align the business model with best practices and an end-to-end optimization approach.",
+                  image: "/Colaboración.jpg",
+                },
+              ].map((slide) => (
+                <article
+                  key={slide.id}
+                  id={slide.id}
+                  className="relative h-[260px] sm:h-[320px] w-full shrink-0 snap-center overflow-hidden rounded-3xl bg-neutral-900 text-white"
+                >
+                  {/* background image */}
+                  <Image
+                    src={slide.image}
+                    alt={slide.title}
+                    fill
+                    className="object-cover opacity-70"
+                  />
+
+                  {/* dark overlay */}
+                  <div className="absolute inset-0 bg-black/40" />
+
+                  {/* content */}
+                  <div className="relative z-10 flex h-full flex-col justify-center px-8 sm:px-12">
+                    <h3 className="text-2xl font-extrabold tracking-tight sm:text-3xl">
+                      {slide.title}
+                    </h3>
+                    <p className="mt-3 max-w-2xl text-sm leading-relaxed sm:text-base">
+                      {slide.desc}
+                    </p>
+
+                    <div className="mt-6">
+                      <button
+                        type="button"
+                        className="rounded-lg border border-white/70 px-5 py-2 text-xs font-semibold tracking-wide uppercase transition hover:bg-white hover:text-neutral-900"
+                      >
+                        + Info
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            {/* navigation dots */}
+            <div className="mt-4 flex justify-center gap-2">
+              {["cap-1", "cap-2", "cap-3", "cap-4"].map((id, index) => (
+                <a
+                  key={id}
+                  href={`#${id}`}
+                  aria-label={`Go to slide ${index + 1}`}
+                  className="h-2 w-2 rounded-full bg-neutral-300 hover:bg-[var(--color-accent)] transition"
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* How we work */}
-      <section id="como" className="border-t border-neutral-200 py-20">
+      {/* How we work (slider) */}
+      <section
+        id="como"
+        className="border-t border-neutral-200 py-20 bg-neutral-50/70"
+      >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <h2 className="text-3xl font-bold tracking-tight">How we work</h2>
             <p className="mt-2 text-neutral-600">
-              A clear and measurable process to ensure safe deliveries aligned with the business.
+              A clear and measurable process to ensure safe, traceable deliveries
+              aligned with your organization&apos;s goals.
             </p>
           </div>
 
-          <ol className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                paso: "01",
-                titulo: "Assessment & objectives",
-                desc: "We identify processes, pain points and key metrics.",
-              },
-              {
-                paso: "02",
-                titulo: "Solution design",
-                desc: "We define architecture, effort and risks.",
-              },
-              {
-                paso: "03",
-                titulo: "Build & testing",
-                desc: "We develop, test and validate with the business.",
-              },
-              {
-                paso: "04",
-                titulo: "Go-live & support",
-                desc: "We support the go-live and monitor results.",
-              },
-            ].map((step) => (
-              <Card key={step.paso}>
-                <div className="text-xs text-neutral-500">Step {step.paso}</div>
-                <div className="mt-1 font-semibold">{step.titulo}</div>
-                <p className="mt-2 text-sm text-neutral-600">{step.desc}</p>
-              </Card>
-            ))}
-          </ol>
+          <div className="mt-10">
+            <div className="flex snap-x snap-mandatory overflow-x-auto gap-6 pb-4">
+              {[
+                {
+                  id: "step-1",
+                  step: "STEP 01",
+                  title: "Discovery & objectives",
+                  desc: "Interviews, analysis of current processes and definition of pain points and key metrics.",
+                  bullets: [
+                    "Workshops with business stakeholders",
+                    "Process mapping and priorities",
+                  ],
+                  image: "/step-relevamiento.jpg",
+                },
+                {
+                  id: "step-2",
+                  step: "STEP 02",
+                  title: "Solution design",
+                  desc: "We define architecture, effort, risks and the implementation roadmap.",
+                  bullets: [
+                    "Functional/technical architecture",
+                    "Backlog and release plan",
+                  ],
+                  image: "/step-diseno.jpg",
+                },
+                {
+                  id: "step-3",
+                  step: "STEP 03",
+                  title: "Build & testing",
+                  desc: "We configure, develop and test together with key users.",
+                  bullets: [
+                    "Configuration & ABAP",
+                    "User Acceptance Testing (UAT)",
+                  ],
+                  image: "/step-build.jpg",
+                },
+                {
+                  id: "step-4",
+                  step: "STEP 04",
+                  title: "Go-live & support",
+                  desc: "We support go-live and monitor results and improvements.",
+                  bullets: ["Go-live plan", "Post-implementation support"],
+                  image: "/step-golive.jpg",
+                },
+              ].map((slide) => (
+                <article
+                  key={slide.id}
+                  id={slide.id}
+                  className="relative h-[260px] sm:h-[320px] w-full shrink-0 snap-center overflow-hidden rounded-3xl bg-neutral-900 text-white"
+                >
+                  {/* Background image */}
+                  <Image
+                    src={slide.image}
+                    alt={slide.title}
+                    fill
+                    className="object-cover opacity-70"
+                  />
 
-          {/* Steps infographic */}
-          <div className="mt-12">
-            <div className="mt-12">
-              <div className="mx-auto max-w-4xl">
-                <figure className="rounded-2xl border border-neutral-200 bg-white shadow-sm">
-                  <div className="mt-10 flex justify-center">
-                    <Image
-                      src="/pasos.png"
-                      alt="SAP project workflow in 4 stages"
-                      width={1400}
-                      height={360}
-                      quality={100}
-                      priority
-                    />
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-black/40" />
+
+                  {/* Content */}
+                  <div className="relative z-10 flex h-full flex-col justify-center px-8 sm:px-12">
+                    <span className="text-xs font-semibold tracking-[0.12em] uppercase text-neutral-200">
+                      {slide.step}
+                    </span>
+                    <h3 className="mt-1 text-2xl font-extrabold tracking-tight sm:text-3xl">
+                      {slide.title}
+                    </h3>
+                    <p className="mt-3 max-w-2xl text-sm leading-relaxed sm:text-base">
+                      {slide.desc}
+                    </p>
+
+                    <ul className="mt-3 flex flex-wrap gap-2 text-xs sm:text-sm">
+                      {slide.bullets.map((b) => (
+                        <li
+                          key={b}
+                          className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 backdrop-blur-sm"
+                        >
+                          ✓&nbsp;{b}
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="mt-6">
+                      <button
+                        type="button"
+                        className="rounded-lg border border-white/70 px-5 py-2 text-xs font-semibold tracking-wide uppercase transition hover:bg-white hover:text-neutral-900"
+                      >
+                        + Info
+                      </button>
+                    </div>
                   </div>
-                  <figcaption className="px-3 pb-3 sm:px-4 sm:pb-4 text-center text-xs text-neutral-500">
-                    Our four-stage flow: analysis, design, build and go-live with support.
-                  </figcaption>
-                </figure>
-              </div>
+                </article>
+              ))}
+            </div>
+
+            {/* Navigation dots */}
+            <div className="mt-4 flex justify-center gap-2">
+              {["step-1", "step-2", "step-3", "step-4"].map((id) => (
+                <a
+                  key={id}
+                  href={`#${id}`}
+                  className="h-2 w-2 rounded-full bg-neutral-300 hover:bg-[var(--color-accent)] transition"
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -292,20 +418,24 @@ export default function Home() {
           <div className="max-w-2xl">
             <h2 className="text-3xl font-bold tracking-tight">Services</h2>
             <p className="mt-2 text-neutral-600">
-              Specialists in Vendor Invoice Management (VIM) by OpenText for SAP, flow optimization and
-              paperless digital transformation.
+              Specialists in Vendor Invoice Management (VIM) by OpenText for SAP,
+              workflow optimization and paperless digital transformation.
             </p>
           </div>
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <Card>
-              <div className="text-xs font-semibold text-[var(--color-accent)]">SAP · OpenText</div>
-              <h3 className="mt-1 text-lg font-semibold">Vendor Invoice Management (VIM)</h3>
+              <div className="text-xs font-semibold text-[var(--color-accent)]">
+                SAP · OpenText
+              </div>
+              <h3 className="mt-1 text-lg font-semibold">
+                Vendor Invoice Management (VIM)
+              </h3>
               <p className="mt-2 text-sm text-neutral-600">
-                End-to-end automation of the invoice cycle: reception, validation, approval and posting,
-                with KPI analytics.
+                End-to-end automation of the invoice lifecycle: reception,
+                validation, approval and posting, with KPI analytics.
               </p>
-              <ul className="mt-4 text-sm space-y-1">
+              <ul className="mt-4 space-y-1 text-sm">
                 <li>• Preconfigured rules, functions and actions</li>
                 <li>• Full integration with SAP</li>
                 <li>• Metrics and KPIs for operations</li>
@@ -313,27 +443,31 @@ export default function Home() {
             </Card>
 
             <Card>
-              <div className="text-xs font-semibold text-[var(--color-accent)]">Process</div>
-              <h3 className="mt-1 text-lg font-semibold">Flow optimization</h3>
+              <div className="text-xs font-semibold text-[var(--color-accent)]">
+                Process
+              </div>
+              <h3 className="mt-1 text-lg font-semibold">Workflow optimization</h3>
               <p className="mt-2 text-sm text-neutral-600">
-                We organize scattered processes and unify the company&apos;s framework, centering operations
-                on Accounts Payable.
+                We structure disjointed processes and align the company&apos;s operating
+                model around a clear document and approval flow.
               </p>
-              <ul className="mt-4 text-sm space-y-1">
-                <li>• Integration of satellite areas into the invoice flow</li>
-                <li>• Reduced time and reprocessing</li>
-                <li>• Improved traceability</li>
+              <ul className="mt-4 space-y-1 text-sm">
+                <li>• Integration of all areas involved in the invoice cycle</li>
+                <li>• Reduced lead times and reprocessing</li>
+                <li>• End-to-end traceability</li>
               </ul>
             </Card>
 
             <Card>
-              <div className="text-xs font-semibold text-[var(--color-accent)]">Paperless culture</div>
+              <div className="text-xs font-semibold text-[var(--color-accent)]">
+                Paperless culture
+              </div>
               <h3 className="mt-1 text-lg font-semibold">Digital transformation</h3>
               <p className="mt-2 text-sm text-neutral-600">
-                Transition to paperless flows, with content protection and data governance for sensitive
-                information.
+                Moving to paperless workflows, with secure content storage, protection of
+                sensitive information and data governance.
               </p>
-              <ul className="mt-4 text-sm space-y-1">
+              <ul className="mt-4 space-y-1 text-sm">
                 <li>• Centralized content</li>
                 <li>• Compliance and auditability</li>
                 <li>• Operational KPIs</li>
@@ -343,19 +477,16 @@ export default function Home() {
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
             <Card>
-              <div className="text-xs font-semibold text-[var(--color-accent)]">Outside SAP</div>
-              <h3 className="mt-1 text-lg font-semibold">Non-SAP developments</h3>
+              <div className="text-xs font-semibold text-[var(--color-accent)]">
+                Complementary solutions
+              </div>
+              <h3 className="mt-1 text-lg font-semibold">
+                Evolution and integrations
+              </h3>
               <p className="mt-2 text-sm text-neutral-600">
-                Web and mobile applications, document management and integrations. Innovative and scalable
-                solutions to optimize processes and drive growth.
-              </p>
-            </Card>
-            <Card>
-              <div className="text-xs font-semibold text-[var(--color-accent)]">Own product</div>
-              <h3 className="mt-1 text-lg font-semibold">Supplier Portal</h3>
-              <p className="mt-2 text-sm text-neutral-600">
-                In-house development (.NET + Angular): invoice submission, payment data publishing,
-                self-registration and automatic internal approval workflows.
+                Developments, extensions and integrations that complement the SAP
+                ecosystem, improve the experience of your teams and enable new ways of
+                entering, viewing and tracking information.
               </p>
             </Card>
           </div>
@@ -365,7 +496,7 @@ export default function Home() {
               href="/EN/services"
               className="group inline-flex items-center rounded-xl border border-neutral-300 px-4 py-2 text-sm font-semibold transition-all duration-200 hover:bg-neutral-50 hover:border-neutral-400 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-neutral-200"
             >
-              See all services
+              View all services
               <span className="inline-block pl-1 transition-transform duration-200 group-hover:translate-x-1">
                 →
               </span>
@@ -374,60 +505,81 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Capabilities */}
-      <section id="capacidades" className="border-t border-neutral-200 py-20">
+      {/* Support & SLA */}
+      <section id="sla" className="border-t border-neutral-200 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
-            <h2 className="text-3xl font-bold tracking-tight">Our capabilities</h2>
+            <h2 className="text-3xl font-bold tracking-tight">
+              Support and Service Level Agreements (SLA)
+            </h2>
             <p className="mt-2 text-neutral-600">
-              An agile and dynamic team, aligned to best practices and continuous improvement.
+              We define clear response times and support models for each type of request,
+              aligning expectations and making day-to-day management easier.
             </p>
           </div>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <Card>
-              <h3 className="text-lg font-semibold">Development team</h3>
+              <h3 className="text-lg font-semibold">Support model</h3>
               <p className="mt-2 text-sm text-neutral-600">
-                Agile development with a strong focus on quality and speed.
+                We combine functional and technical support with a scalable model that
+                covers questions, incidents and evolutionary enhancements.
               </p>
+              <ul className="mt-4 space-y-1 text-sm text-neutral-600">
+                <li>• Defined contact channels</li>
+                <li>• Prioritization based on impact</li>
+                <li>• Follow-up until closure</li>
+              </ul>
             </Card>
+
             <Card>
-              <h3 className="text-lg font-semibold">Functional knowledge</h3>
+              <h3 className="text-lg font-semibold">Priority levels</h3>
               <p className="mt-2 text-sm text-neutral-600">
-                15+ years of implementations in the Americas and Europe, understanding processes and
-                business.
+                We classify incidents by criticality to ensure a response aligned with
+                their impact on operations.
               </p>
+              <ul className="mt-4 space-y-1 text-sm text-neutral-600">
+                <li>• Critical: immediate attention and full focus</li>
+                <li>• High: relevant impact, resolution in tight windows</li>
+                <li>• Medium and Low: planned and controlled follow-up</li>
+              </ul>
             </Card>
+
             <Card>
-              <h3 className="text-lg font-semibold">Response</h3>
+              <h3 className="text-lg font-semibold">Support lifecycle</h3>
               <p className="mt-2 text-sm text-neutral-600">
-                Ideas applied to continuous improvement in the customer–vendor and AP relationship.
+                From reception to closure, every ticket follows a defined workflow that
+                leaves traceability and clear agreements.
               </p>
-            </Card>
-            <Card>
-              <h3 className="text-lg font-semibold">Collaboration</h3>
-              <p className="mt-2 text-sm text-neutral-600">
-                We align the business model with best practices and end-to-end optimization.
-              </p>
+              <ul className="mt-4 space-y-1 text-sm text-neutral-600">
+                <li>• Logging and categorization</li>
+                <li>• Assignment and analysis</li>
+                <li>• Solution proposal and validation</li>
+                <li>• Documented closure and lessons learned</li>
+              </ul>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Cases */}
+      {/* Case studies */}
       <section id="casos" className="border-t border-neutral-200 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
-            <h2 className="text-3xl font-bold tracking-tight">Success stories and results</h2>
+            <h2 className="text-3xl font-bold tracking-tight">
+              Success stories and results
+            </h2>
             <p className="mt-2 text-neutral-600">
-              Measurable impact in time, quality and costs. A few recent examples:
+              Measurable impact on time, quality and costs. A few recent examples:
             </p>
           </div>
 
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
             {cases.map((c) => (
               <Card key={c.title}>
-                <div className="text-xs font-medium text-neutral-500">{c.tag}</div>
+                <div className="text-xs font-medium text-neutral-500">
+                  {c.tag}
+                </div>
                 <h3 className="mt-1 text-lg font-semibold transition-colors group-hover:text-[var(--color-accent)]">
                   {c.title}
                 </h3>
@@ -438,24 +590,56 @@ export default function Home() {
                       <span className="inline-flex shrink-0 items-center rounded-lg border border-neutral-200 px-2 py-1 text-xs font-semibold">
                         {k.label}
                       </span>
-                      <span className="text-xs text-neutral-500">{k.note}</span>
+                      <span className="text-xs text-neutral-500">
+                        {k.note}
+                      </span>
                     </li>
                   ))}
                 </ul>
               </Card>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="mt-8">
-            <Link
-              href="/EN/cases"
-              className="group inline-flex items-center rounded-xl border border-neutral-300 px-4 py-2 text-sm font-semibold transition-all duration-200 hover:bg-neutral-50 hover:border-neutral-400 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-neutral-200"
-            >
-              See more cases
-              <span className="inline-block pl-1 transition-transform duration-200 group-hover:translate-x-1">
-                →
-              </span>
-            </Link>
+      {/* Client experience */}
+      <section id="clientes" className="border-t border-neutral-200 py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <h2 className="text-3xl font-bold tracking-tight">
+              Client experience
+            </h2>
+            <p className="mt-2 text-neutral-600">
+              We&apos;ve participated in projects of different sizes, from initial
+              implementations to optimization of productive solutions, across multiple
+              industries.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Card>
+              <h3 className="text-lg font-semibold">
+                Implementations and improvements
+              </h3>
+              <p className="mt-2 text-sm text-neutral-600">
+                Implementation, evolution and stabilization projects for SAP and OpenText
+                solutions, with a strong focus on adoption and measurable results.
+              </p>
+            </Card>
+            <Card>
+              <h3 className="text-lg font-semibold">Distributed teams</h3>
+              <p className="mt-2 text-sm text-neutral-600">
+                Working with local and regional teams, aligning the needs of different
+                areas into shared ways of working.
+              </p>
+            </Card>
+            <Card>
+              <h3 className="text-lg font-semibold">Critical processes</h3>
+              <p className="mt-2 text-sm text-neutral-600">
+                Experience in processes where traceability and information control are key
+                for operations and decision-making.
+              </p>
+            </Card>
           </div>
         </div>
       </section>
@@ -463,15 +647,17 @@ export default function Home() {
       {/* Contact form */}
       <section id="form" className="border-t border-neutral-200 py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold tracking-tight text-center">Contact us</h2>
-          <p className="mt-2 max-w-prose mx-auto text-center text-neutral-600 leading-relaxed">
-            We reply within the same business day.
+          <h2 className="text-center text-3xl font-bold tracking-tight">
+            Contact us
+          </h2>
+          <p className="mx-auto mt-2 max-w-prose text-center leading-relaxed tracking-[0.01em] text-neutral-600">
+            We usually respond within the same business day.
           </p>
 
           <form
             action="https://formspree.io/f/xxxxxxxx"
             method="POST"
-            className="mt-8 mx-auto max-w-3xl rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"
+            className="mx-auto mt-8 max-w-3xl rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"
           >
             {/* Fields */}
             <div className="grid gap-4 sm:grid-cols-2">
@@ -505,14 +691,18 @@ export default function Home() {
             </div>
 
             {/* Checkbox + button */}
-            <div className="mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-              <label className="text-xs text-neutral-600 inline-flex items-center gap-2">
-                <input type="checkbox" required className="rounded border-neutral-300" />
+            <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <label className="inline-flex items-center gap-2 text-xs text-neutral-600">
+                <input
+                  type="checkbox"
+                  required
+                  className="rounded border-neutral-300"
+                />
                 I agree to be contacted regarding my inquiry.
               </label>
 
               <button
-                className="self-end sm:self-auto rounded-xl bg-[var(--color-accent)] px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 will-change-transform hover:brightness-110 hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30 active:translate-y-0"
+                className="self-end rounded-xl bg-[var(--color-accent)] px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:brightness-110 hover:shadow-md focus:outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30 active:translate-y-0 sm:self-auto"
               >
                 Send
               </button>
@@ -524,11 +714,13 @@ export default function Home() {
       {/* Final CTA */}
       <section id="contacto" className="border-t border-neutral-200 py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold tracking-tight">Shall we talk about your project?</h2>
+          <h2 className="text-3xl font-bold tracking-tight">
+            Shall we talk about your project?
+          </h2>
 
-          <p className="mt-3 mx-auto max-w-[60ch] text-neutral-600 leading-relaxed tracking-[0.01em]">
-            Tell us briefly about your challenge and we&apos;ll give you a clear proposal with scope
-            and estimated timelines.
+          <p className="mx-auto mt-3 max-w-[60ch] leading-relaxed tracking-[0.01em] text-neutral-600">
+            Tell us briefly about your challenge and we&apos;ll get back to you with a
+            clear proposal including scope and estimated timelines.
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -536,14 +728,13 @@ export default function Home() {
               href={WHATSAPP}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-xl bg-[var(--color-accent)] px-6 py-3 text-sm font-semibold text-white transition-all duration-200 will-change-transform hover:brightness-110 hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30 min-w-[220px] active:translate-y-0"
+              className="min-w-[220px] inline-flex items-center justify-center rounded-xl bg-[var(--color-accent)] px-6 py-3 text-sm font-semibold text-white transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:brightness-110 hover:shadow-md focus:outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30 active:translate-y-0"
             >
-              Chat on WhatsApp
+              Write on WhatsApp
             </a>
-
             <a
               href={EMAIL}
-              className="inline-flex items-center justify-center rounded-xl border border-neutral-300 px-6 py-3 text-sm font-semibold transition-all duration-200 hover:bg-neutral-50 hover:border-neutral-400 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-neutral-200 min-w-[220px] active:translate-y-0"
+              className="min-w-[220px] inline-flex items-center justify-center rounded-xl border border-neutral-300 px-6 py-3 text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5 hover:bg-neutral-50 hover:border-neutral-400 focus:outline-none focus:ring-4 focus:ring-neutral-200 active:translate-y-0"
             >
               Send an email
             </a>
@@ -564,52 +755,54 @@ export default function Home() {
             </li>
           </ul>
 
-          <ul className="mt-6 space-y-1 text-sm text-neutral-600 flex flex-col items-center">
-            <p className="mt-5 text-xs text-neutral-500 flex justify-center w-full">
-              Estimated response time: within the same business day.
-            </p>
-          </ul>
+          <p className="mt-5 flex w-full justify-center text-xs text-neutral-500">
+            Estimated response time: within the same business day.
+          </p>
         </div>
       </section>
 
       {/* FAQ */}
       <section id="faq" className="border-t border-neutral-200 py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold tracking-tight">Frequently asked questions</h2>
-          <p className="mt-2 mx-auto max-w-[65ch] text-neutral-600 leading-relaxed tracking-[0.01em]">
+          <h2 className="text-3xl font-bold tracking-tight">
+            Frequently asked questions
+          </h2>
+          <p className="mx-auto mt-2 max-w-[65ch] leading-relaxed tracking-[0.01em] text-neutral-600">
             Quick answers before taking the next step.
           </p>
         </div>
 
-        <div className="mt-10 mx-auto max-w-3xl divide-y divide-neutral-200 rounded-2xl border border-neutral-200 bg-white">
+        <div className="mx-auto mt-10 max-w-3xl divide-y divide-neutral-200 rounded-2xl border border-neutral-200 bg-white">
           {[
             {
               q: "How long does a typical project take?",
-              a: "It depends on the scope. A one-off support request can be resolved in days; an end-to-end project can take between 4 and 12 weeks depending on the module and integrations.",
+              a: "It depends on the scope. A small support request can be resolved in days, while an end-to-end project may take between 4 and 12 weeks depending on modules, integrations and available dedication.",
             },
             {
               q: "Do you only work with SAP or also with other solutions?",
-              a: "Our core is SAP (S/4HANA, ECC, ABAP, VIM), but we can integrate OCR, workflow apps, BI and external APIs.",
+              a: "Our core is SAP (S/4HANA, ECC, ABAP, VIM) and OpenText, integrating additional solutions when needed.",
             },
             {
-              q: "Can you work by hours, by project or with an SLA?",
-              a: "Yes. Support by blocks of hours, fixed-scope projects or continuous evolution with monitored SLAs.",
+              q: "Can you work by hours, by project or with SLAs?",
+              a: "Yes. We can work with hourly packs, fixed-price projects or continuous evolution with monitored Service Level Agreements (SLAs).",
             },
             {
               q: "Do you provide post go-live support?",
-              a: "Yes. We support stabilization, refine KPIs and provide functional/technical support as needed.",
+              a: "Yes. We support stabilization, refine indicators and provide functional/technical support according to each team’s needs.",
             },
             {
-              q: "How do we move forward if I want to start?",
-              a: "You share your challenge, we estimate the scope, propose a working model and start with a kickoff to define priorities and deliverables.",
+              q: "How do we get started?",
+              a: "You share your challenge, we estimate scope, propose a work model and start with a kickoff to define priorities and deliverables.",
             },
           ].map((f) => (
             <details key={f.q} className="group p-6">
               <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
                 {f.q}
-                <span className="text-neutral-400 group-open:rotate-180 transition">⌄</span>
+                <span className="transition text-neutral-400 group-open:rotate-180">
+                  ⌄
+                </span>
               </summary>
-              <p className="mt-2 text-sm text-neutral-600 text-left leading-relaxed tracking-[0.005em]">
+              <p className="mt-2 text-left text-sm leading-relaxed tracking-[0.005em] text-neutral-600">
                 {f.a}
               </p>
             </details>
@@ -617,28 +810,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Work at Moksa IT */}
+      {/* Work with us */}
       <section className="mt-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-2xl border border-neutral-200 bg-white p-10 shadow-sm text-center">
+          <div className="rounded-2xl border border-neutral-200 bg-white p-10 text-center shadow-sm">
             <h3 className="text-3xl font-extrabold tracking-tight">
               Want to work at Moksa IT?
             </h3>
 
-            <p className="mt-4 text-neutral-600 max-w-2xl mx-auto text-lg leading-relaxed">
-              We are adding talent for SAP, ABAP and OpenText projects. We look for curious,
-              responsible people who want to learn and grow in a dynamic team focused on quality,
-              clear processes and measurable deliveries.
+            <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-neutral-600">
+              We are adding talent for SAP, ABAP and OpenText projects. We look for
+              people who are curious, responsible and eager to learn and grow in a
+              dynamic team focused on quality, clear processes and measurable deliveries.
             </p>
 
-            <ul className="mt-8 space-y-2 text-base text-neutral-700 max-w-md mx-auto text-left leading-relaxed">
+            <ul className="mx-auto mt-8 max-w-md list-none text-left text-base leading-relaxed text-neutral-700">
               <li>• Experience or interest in SAP (ABAP, VIM, Fiori, integrations).</li>
               <li>• Strong analytical and problem-solving skills.</li>
               <li>• Good communication and teamwork.</li>
-              <li>• Technical English (not mandatory).</li>
+              <li>• Technical English (nice to have, not mandatory).</li>
             </ul>
 
-            {/* CV upload section */}
+            {/* CV upload (client component) */}
             <UploadCvSection />
           </div>
         </div>
@@ -646,14 +839,14 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="border-t border-neutral-200 py-10">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-neutral-500">
-          <div>©️ {new Date().getFullYear()} Moksa IT. All rights reserved.</div>
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 text-sm text-neutral-500 sm:flex-row sm:px-6 lg:px-8">
+          <div>© {new Date().getFullYear()} Moksa IT. All rights reserved.</div>
           <div className="flex items-center gap-5">
             <a
               href="https://www.linkedin.com/company/moksa-it/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-[var(--color-accent)] transition"
+              className="flex items-center gap-2 transition hover:text-[var(--color-accent)]"
             >
               <FaLinkedin className="text-lg" /> LinkedIn
             </a>
@@ -661,7 +854,7 @@ export default function Home() {
               href="https://github.com/moksa-it"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-[var(--color-accent)] transition"
+              className="flex items-center gap-2 transition hover:text-[var(--color-accent)]"
             >
               <FaGithub className="text-lg" /> GitHub
             </a>
@@ -674,7 +867,7 @@ export default function Home() {
         href={WHATSAPP}
         target="_blank"
         rel="noreferrer"
-        aria-label="Chat on WhatsApp"
+        aria-label="Write on WhatsApp"
         className="fixed bottom-5 right-5 z-50 rounded-full bg-[var(--color-accent)] px-4 py-3 text-white shadow-lg transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
       >
         WhatsApp

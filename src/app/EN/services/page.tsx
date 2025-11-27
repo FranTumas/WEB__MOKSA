@@ -213,14 +213,19 @@ export default function ServiciosPage() {
               </Card>
             ))}
           </div>
-
-          {/* CTA */}
-          <div className="mt-10 flex flex-wrap gap-3">
-            <PrimaryButton href={WHATSAPP}>Ask on WhatsApp</PrimaryButton>
-            <SecondaryButton href="/EN/contact">Other contact options</SecondaryButton>
-          </div>
         </div>
       </section>
+
+      {/* WhatsApp bubble */}
+      <a
+        href={WHATSAPP}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Escribir por WhatsApp"
+        className="fixed bottom-5 right-5 z-50 rounded-full bg-[var(--color-accent)] px-4 py-3 text-white shadow-lg transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
+      >
+        WhatsApp
+      </a>
     </main>
   );
 }

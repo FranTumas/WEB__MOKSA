@@ -28,7 +28,9 @@ function Card({
     ? "border border-neutral-900 bg-neutral-900 text-white"
     : "border border-neutral-200 bg-white";
   return (
-    <div className={`${base} ${skin} ${className} hover:border-[var(--color-accent)]/30 group`}>
+    <div
+      className={`${base} ${skin} ${className} hover:border-[var(--color-accent)]/30 group`}
+    >
       {children}
     </div>
   );
@@ -44,9 +46,18 @@ export default function Home() {
     "mailto:srossi@moksait.com, gtejada@moksait.com?subject=Consulta%20Moksa%20IT&body=Hola%2C%20les%20escribo%20por%20...";
 
   const features = [
-    { title: "Implementaciones SAP", desc: "S/4HANA, ECC y módulos clave con enfoque en procesos y negocio." },
-    { title: "ABAP & Extensiones", desc: "Desarrollo limpio, mejoras, BAPIs, RFC, OData y APIs." },
-    { title: "VIM / OpenText", desc: "Flujos de aprobación, KPIs y automatización de facturas." },
+    {
+      title: "Implementaciones SAP",
+      desc: "S/4HANA, ECC y módulos clave con enfoque en procesos, operación y adopción.",
+    },
+    {
+      title: "ABAP & Extensiones",
+      desc: "Desarrollo limpio, mejoras evolutivas, BAPIs, RFC, OData y APIs para integrar tu ecosistema.",
+    },
+    {
+      title: "VIM / OpenText",
+      desc: "Flujos de aprobación, KPIs y automatización del ciclo de documentos y comprobantes.",
+    },
   ];
 
   const cases: CaseItem[] = [
@@ -63,21 +74,21 @@ export default function Home() {
     {
       tag: "ABAP / Extensiones",
       title: "Eliminación de tareas manuales repetitivas",
-      desc: "BAPIs y jobs programados + OData para exponer datos a apps internas.",
+      desc: "BAPIs y jobs programados, más OData para exponer datos a apps internas y reportes.",
       kpis: [
         { label: "-60% tiempo operativo", note: "en cierres mensuales" },
         { label: "-40% errores", note: "por ingreso manual" },
-        { label: "SLA < 4h", note: "incidencias P3" },
+        { label: "SLA < 4h", note: "en incidencias P3" },
       ],
     },
     {
       tag: "S/4HANA",
       title: "Optimización post-migración",
-      desc: "Ajuste de performance, notas SAP críticas y capacitación focalizada para key users.",
+      desc: "Ajuste de performance, notas SAP críticas y capacitación focalizada para usuarios clave.",
       kpis: [
         { label: "+30% performance", note: "en reportes clave" },
         { label: "0 incidentes P1", note: "en go-live y primer mes" },
-        { label: "NPS 9.1/10", note: "satisfacción de usuarios" },
+        { label: "NPS 9.1/10", note: "en satisfacción de usuarios" },
       ],
     },
   ];
@@ -86,178 +97,317 @@ export default function Home() {
     <main className="bg-white text-neutral-900">
       {/* Hero */}
       <section className="relative min-h-[80vh]">
-  {/* Imagen de fondo */}
-  <Image
-    src="/hero-sap.jpg" // <-- tu imagen de fondo
-    alt="Ciudad moderna, transformación digital"
-    fill
-    priority
-    sizes="100vw"
-    className="object-cover"
-  />
+        {/* Imagen de fondo */}
+        <Image
+          src="/hero-sap.jpg"
+          alt="Ciudad moderna y transformación digital"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
 
-  {/* Capa oscura encima de la imagen */}
-  <div className="absolute inset-0 bg-black/50" />
+        {/* Capa oscura encima de la imagen */}
+        <div className="absolute inset-0 bg-black/50" />
 
-  {/* Contenido centrado */}
-  <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-6xl flex-col items-center justify-center px-4 text-center text-white">
+        {/* Contenido centrado */}
+        <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-6xl flex-col items-center justify-center px-4 text-center text-white">
+          <h1 className="max-w-3xl text-3xl font-extrabold leading-tight sm:text-4xl md:text-5xl lg:text-6xl">
+            INNOVACIÓN DIGITAL
+          </h1>
 
-    <h1 className="max-w-3xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
-      INNOVACIÓN DIGITAL 
-    </h1>
-
-    <p className="mt-4 max-w-2xl text-sm sm:text-base md:text-lg text-neutral-100">
-     EL VALOR DE TRANSFORMAR
-    </p>
-
-    <div className="mt-8 flex flex-wrap justify-center gap-3">
-      <Link
-        href="/contacto"
-        className="rounded-full border border-white bg-white/90 px-8 py-3 text-sm font-semibold text-neutral-900 transition hover:bg-white"
-      >
-        ¿Necesitás información?
-      </Link>
-      <Link
-        href="/servicios"
-        className="rounded-full border border-white/70 px-8 py-3 text-sm font-semibold text-white/90 transition hover:bg-white/10"
-      >
-        Ver servicios
-      </Link>
-    </div>
-  </div>
-</section>
-
-     {/* Nosotros */}
-<section id="nosotros" className="border-t border-neutral-200 py-24 bg-white">
-  <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-    <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr] items-center">
-      
-      {/* Columna de texto */}
-      <div>
-        <h2 className="text-4xl font-bold tracking-tight text-neutral-900">
-          Sobre <span className="text-[var(--color-accent)]">Moksa IT</span>
-        </h2>
-
-        <p className="mt-4 text-lg text-neutral-700 leading-relaxed">
-          Somos un equipo joven con más de 15 años de experiencia en consultoría de
-          implantación para soluciones SAP y OpenText en América y Europa, colaborando
-          con distintas unidades de negocio para mejorar la gestión y control del pago
-          a proveedores y los procesos de transformación digital.
-        </p>
-
-        <p className="mt-4 text-lg text-neutral-600 leading-relaxed">
-          Nuestro principal compromiso es acompañar la evolución del área de Cuentas a Pagar
-          y sus proveedores, acercando soluciones prácticas y dinámicas que faciliten la
-          gestión diaria, reduzcan riesgos y fortalezcan la relación cliente–proveedor.
-        </p>
-
-        {/* CTA tipo “¿Hablamos?” */}
-        <div className="mt-8">
-          <Link
-            href="/contacto"
-            className="inline-block rounded-xl bg-gradient-to-r from-[var(--color-accent)] to-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-lg hover:opacity-90 transition"
-          >
-            ¿Hablamos?
-          </Link>
-        </div>
-      </div>
-
-      {/* Columna de imagen/logo */}
-      <div className="flex justify-center lg:justify-end">
-        <div className="rounded-3xl border border-neutral-200/70 bg-white/70 shadow-sm px-6 py-6">
-          <Image
-            src="/Moksa_vector.svg"
-            alt="Logo de Moksa IT"
-            width={320}
-            height={340}
-            className="object-contain max-w-[360px]"
-          />
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-{/* Beneficios */}
-      <section id="beneficios" className="border-t border-neutral-200 py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold tracking-tight">Que servicios ofrecemos</h2>
-          <p className="mt-2 text-neutral-600">
-            Acompañamos tu operación SAP con foco en eficiencia, automatización y escalabilidad.
+          <p className="mt-4 max-w-2xl text-sm text-neutral-100 sm:text-base md:text-lg">
+            Consultoría SAP con foco en eficiencia operativa y transformación digital.
           </p>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((f) => (
-              <Card key={f.title}>
-                <div className="h-10 w-10 rounded-xl bg-neutral-100 flex items-center justify-center">✓</div>
-                <div className="mt-4 font-semibold">{f.title}</div>
-                <p className="mt-2 text-sm text-neutral-600">{f.desc}</p>
-              </Card>
-            ))}
-          </div>
-
-          <div className="mt-8">
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Link
+              href="/contacto"
+              className="rounded-full border border-white bg-white/90 px-8 py-3 text-sm font-semibold text-neutral-900 transition hover:bg-white"
+            >
+              ¿Necesitás información?
+            </Link>
             <Link
               href="/servicios"
-              className="group inline-flex items-center rounded-xl border border-neutral-300 px-4 py-2 text-sm font-semibold transition-all duration-200 hover:bg-neutral-50 hover:border-neutral-400 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-neutral-200"
+              className="rounded-full border border-white/70 px-8 py-3 text-sm font-semibold text-white/90 transition hover:bg-white/10"
             >
-              Ver todos los servicios
-              <span className="inline-block pl-1 transition-transform duration-200 group-hover:translate-x-1">→</span>
+              Ver servicios
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Cómo trabajamos */}
-      <section id="como" className="border-t border-neutral-200 py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <h2 className="text-3xl font-bold tracking-tight">Cómo trabajamos</h2>
-            <p className="mt-2 text-neutral-600">Un proceso claro y medible para garantizar entregas seguras y alineadas al negocio.</p>
+      {/* Nosotros */}
+      <section
+        id="nosotros"
+        className="border-t border-neutral-200 bg-white py-24"
+      >
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="grid items-center gap-10 lg:grid-cols-[1.4fr_1fr]">
+            {/* Columna de texto */}
+            <div>
+              <h2 className="text-4xl font-bold tracking-tight text-neutral-900">
+                Sobre <span className="text-[var(--color-accent)]">Moksa IT</span>
+              </h2>
+
+              <p className="mt-4 text-lg leading-relaxed text-neutral-700">
+                Somos un equipo joven con más de 15 años de experiencia en
+                consultoría de implantación para soluciones SAP y OpenText en
+                América y Europa, acompañando a distintas organizaciones en la
+                mejora de su gestión, control y trazabilidad de información clave.
+              </p>
+
+              <p className="mt-4 text-lg leading-relaxed text-neutral-600">
+                Nuestro compromiso es acompañar la evolución de los procesos
+                relacionados con pagos, documentos y aprobaciones, acercando
+                soluciones prácticas y dinámicas que faciliten la gestión diaria,
+                reduzcan riesgos y fortalezcan la relación con socios y proveedores.
+              </p>
+
+              {/* CTA tipo “¿Hablamos?” */}
+              <div className="mt-8">
+                <Link
+                  href="/contacto"
+                  className="inline-block rounded-xl bg-gradient-to-r from-[var(--color-accent)] to-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:opacity-90"
+                >
+                  ¿Hablamos?
+                </Link>
+              </div>
+            </div>
+
+            {/* Columna de imagen/logo */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="rounded-3xl border border-neutral-200/70 bg-white/70 px-6 py-6 shadow-sm">
+                <Image
+                  src="/Moksa_vector.svg"
+                  alt="Logo de Moksa IT"
+                  width={320}
+                  height={340}
+                  className="max-w-[360px] object-contain"
+                />
+              </div>
+            </div>
           </div>
-
-          <ol className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              { paso: "01", titulo: "Relevamiento & objetivos", desc: "Identificamos procesos, dolores y métricas clave." },
-              { paso: "02", titulo: "Diseño de solución", desc: "Definimos arquitectura, esfuerzos y riesgos." },
-              { paso: "03", titulo: "Build & pruebas", desc: "Desarrollamos, testeamos y validamos con el negocio." },
-              { paso: "04", titulo: "Go-live & soporte", desc: "Acompañamos la salida y monitoreamos resultados." },
-            ].map((step) => (
-              <Card key={step.paso}>
-                <div className="text-xs text-neutral-500">Paso {step.paso}</div>
-                <div className="mt-1 font-semibold">{step.titulo}</div>
-                <p className="mt-2 text-sm text-neutral-600">{step.desc}</p>
-              </Card>
-            ))}
-          </ol>
-          {/* Infografía de pasos */}
-          <div className="mt-12">
-<div className="mt-12">
-  <div className="mx-auto max-w-4xl">
-    <figure className="rounded-2xl border border-neutral-200 bg-white shadow-sm">
-      <div className="mt-10 flex justify-center">
-  <Image
-    src="/pasos.png"
-    alt="Flujo de trabajo SAP"
-    width={1400}     // controla el tamaño visible (ajustá si querés)
-    height={360}     // proporcional al nuevo archivo
-    quality={100}    // sin compresió
-    priority
-  />
-</div>
-      {/* Caption opcional - si querés se puede eliminar */}
-      <figcaption className="px-3 pb-3 sm:px-4 sm:pb-4 text-center text-xs text-neutral-500">
-        Nuestro flujo en 4 etapas: análisis, diseño, desarrollo y go-live con soporte.
-      </figcaption>
-    </figure>
-  </div>
-</div>
-</div>
-
-
         </div>
       </section>
+      {/* Capacidades */}
+      <section id="capacidades" className="border-t border-neutral-200 py-20 bg-neutral-50/70">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <h2 className="text-3xl font-bold tracking-tight">Nuestras capacidades</h2>
+            <p className="mt-2 text-neutral-600">
+              Equipo ágil y dinámico, alineado a mejores prácticas y en mejora continua.
+            </p>
+          </div>
+
+          {/* Slider-like banners */}
+          <div className="mt-10">
+            {/* contenedor scrollable */}
+            <div className="flex snap-x snap-mandatory overflow-x-auto gap-6 pb-4">
+              {[
+                {
+                  id: "cap-1",
+                  title: "EQUIPO DE DESARROLLO",
+                  desc: "Desarrollo ágil con foco en calidad, velocidad y código mantenible para acompañar la evolución de tu solución SAP.",
+                  image: "/EquipoDesarrollo.jpg",
+                },
+                {
+                  id: "cap-2",
+                  title: "CONOCIMIENTO FUNCIONAL",
+                  desc: "Más de 15 años en implantaciones en América y Europa, entendiendo procesos, operación diaria y necesidades de seguimiento.",
+                  image: "/Conicu.jpg",
+                },
+                {
+                  id: "cap-3",
+                  title: "RESPUESTA",
+                  desc: "Ideas aplicadas a mejora continua, reduciendo desvíos y mejorando la interacción entre equipos internos y externos.",
+                  image: "/cap-respuesta.jpg",
+                },
+                {
+                  id: "cap-4",
+                  title: "COLABORACIÓN",
+                  desc: "Alineamos el modelo de negocio con mejores prácticas y una optimización integral de punta a punta.",
+                  image: "/Colaboración.jpg",
+                },
+              ].map((slide) => (
+                <article
+                  key={slide.id}
+                  id={slide.id}
+                  className="relative h-[260px] sm:h-[320px] w-full shrink-0 snap-center overflow-hidden rounded-3xl bg-neutral-900 text-white"
+                >
+                  {/* imagen de fondo */}
+                  <Image
+                    src={slide.image}
+                    alt={slide.title}
+                    fill
+                    className="object-cover opacity-70"
+                  />
+
+                  {/* overlay para oscurecer un poco */}
+                  <div className="absolute inset-0 bg-black/40" />
+
+                  {/* contenido */}
+                  <div className="relative z-10 flex h-full flex-col justify-center px-8 sm:px-12">
+                    <h3 className="text-2xl font-extrabold tracking-tight sm:text-3xl">
+                      {slide.title}
+                    </h3>
+                    <p className="mt-3 max-w-2xl text-sm leading-relaxed sm:text-base">
+                      {slide.desc}
+                    </p>
+
+                    <div className="mt-6">
+                      <button
+                        type="button"
+                        className="rounded-lg border border-white/70 px-5 py-2 text-xs font-semibold tracking-wide uppercase transition hover:bg-white hover:text-neutral-900"
+                      >
+                        + Info
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            {/* puntitos de navegación (anclas a cada slide) */}
+            <div className="mt-4 flex justify-center gap-2">
+              {["cap-1", "cap-2", "cap-3", "cap-4"].map((id) => (
+                <a
+                  key={id}
+                  href={`#${id}`}
+                  className="h-2 w-2 rounded-full bg-neutral-300 hover:bg-[var(--color-accent)] transition"
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      {/* Cómo trabajamos (versión slider) */}
+<section
+  id="como"
+  className="border-t border-neutral-200 py-20 bg-neutral-50/70"
+>
+  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div className="max-w-2xl">
+      <h2 className="text-3xl font-bold tracking-tight">
+        Cómo trabajamos
+      </h2>
+      <p className="mt-2 text-neutral-600">
+        Un proceso claro y medible para garantizar entregas seguras,
+        trazables y alineadas a los objetivos de la organización.
+      </p>
+    </div>
+
+    {/* Slider-like banners */}
+    <div className="mt-10">
+      <div className="flex snap-x snap-mandatory overflow-x-auto gap-6 pb-4">
+        {[
+          {
+            id: "step-1",
+            step: "PASO 01",
+            title: "Relevamiento & objetivos",
+            desc: "Entrevistas, análisis de procesos actuales y definición de dolores y métricas clave.",
+            bullets: [
+              "Workshops con referentes del negocio",
+              "Mapa de procesos y prioridades",
+            ],
+            image: "/step-relevamiento.jpg",
+          },
+          {
+            id: "step-2",
+            step: "PASO 02",
+            title: "Diseño de solución",
+            desc: "Definimos arquitectura, esfuerzos, riesgos y el roadmap de implementación.",
+            bullets: [
+              "Arquitectura funcional/técnica",
+              "Backlog y plan de releases",
+            ],
+            image: "/step-diseno.jpg",
+          },
+          {
+            id: "step-3",
+            step: "PASO 03",
+            title: "Build & pruebas",
+            desc: "Desarrollamos, configuramos y testeamos junto a usuarios clave.",
+            bullets: ["Configuración & ABAP", "Pruebas con usuarios (UAT)"],
+            image: "/step-build.jpg",
+          },
+          {
+            id: "step-4",
+            step: "PASO 04",
+            title: "Go-live & soporte",
+            desc: "Acompañamos la salida productiva y monitoreamos resultados y mejoras.",
+            bullets: ["Plan de go-live", "Soporte post-implementación"],
+            image: "/step-golive.jpg",
+          },
+        ].map((slide) => (
+          <article
+            key={slide.id}
+            id={slide.id}
+            className="relative h-[260px] sm:h-[320px] w-full shrink-0 snap-center overflow-hidden rounded-3xl bg-neutral-900 text-white"
+          >
+            {/* Imagen de fondo */}
+            <Image
+              src={slide.image}
+              alt={slide.title}
+              fill
+              className="object-cover opacity-70"
+            />
+
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-black/40" />
+
+            {/* Contenido */}
+            <div className="relative z-10 flex h-full flex-col justify-center px-8 sm:px-12">
+              <span className="text-xs font-semibold tracking-[0.12em] uppercase text-neutral-200">
+                {slide.step}
+              </span>
+              <h3 className="mt-1 text-2xl font-extrabold tracking-tight sm:text-3xl">
+                {slide.title}
+              </h3>
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed sm:text-base">
+                {slide.desc}
+              </p>
+
+              <ul className="mt-3 flex flex-wrap gap-2 text-xs sm:text-sm">
+                {slide.bullets.map((b) => (
+                  <li
+                    key={b}
+                    className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 backdrop-blur-sm"
+                  >
+                    ✓&nbsp;{b}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-6">
+                <button
+                  type="button"
+                  className="rounded-lg border border-white/70 px-5 py-2 text-xs font-semibold tracking-wide uppercase transition hover:bg-white hover:text-neutral-900"
+                >
+                  + Info
+                </button>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      {/* Puntitos de navegación */}
+      <div className="mt-4 flex justify-center gap-2">
+        {["step-1", "step-2", "step-3", "step-4"].map((id) => (
+          <a
+            key={id}
+            href={`#${id}`}
+            className="h-2 w-2 rounded-full bg-neutral-300 hover:bg-[var(--color-accent)] transition"
+          />
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Servicios */}
       <section id="servicios" className="border-t border-neutral-200 py-20">
@@ -265,44 +415,61 @@ export default function Home() {
           <div className="max-w-2xl">
             <h2 className="text-3xl font-bold tracking-tight">Servicios</h2>
             <p className="mt-2 text-neutral-600">
-              Especialistas en Vendor Invoice Management (VIM) by OpenText para SAP, optimización de flujos y transformación digital sin papel.
+              Especialistas en Vendor Invoice Management (VIM) by OpenText para
+              SAP, optimización de flujos y transformación digital sin papel.
             </p>
           </div>
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <Card>
-              <div className="text-xs font-semibold text-[var(--color-accent)]">SAP · OpenText</div>
-              <h3 className="mt-1 text-lg font-semibold">Vendor Invoice Management (VIM)</h3>
+              <div className="text-xs font-semibold text-[var(--color-accent)]">
+                SAP · OpenText
+              </div>
+              <h3 className="mt-1 text-lg font-semibold">
+                Vendor Invoice Management (VIM)
+              </h3>
               <p className="mt-2 text-sm text-neutral-600">
-                Automatización end-to-end del ciclo de facturas: recepción, validación, aprobación y contabilización, con analítica de KPI.
+                Automatización end-to-end del ciclo de facturas: recepción,
+                validación, aprobación y contabilización, con analítica de KPIs.
               </p>
-              <ul className="mt-4 text-sm space-y-1">
+              <ul className="mt-4 space-y-1 text-sm">
                 <li>• Reglas, funciones y acciones preconfiguradas</li>
                 <li>• Integración completa con SAP</li>
-                <li>• Métricas y KPIs para operación</li>
+                <li>• Métricas y KPIs para la operación</li>
               </ul>
             </Card>
 
             <Card>
-              <div className="text-xs font-semibold text-[var(--color-accent)]">Proceso</div>
-              <h3 className="mt-1 text-lg font-semibold">Optimización de flujos</h3>
+              <div className="text-xs font-semibold text-[var(--color-accent)]">
+                Proceso
+              </div>
+              <h3 className="mt-1 text-lg font-semibold">
+                Optimización de flujos
+              </h3>
               <p className="mt-2 text-sm text-neutral-600">
-                Ordenamos procesos inorgánicos y unificamos el marco de trabajo para la compañía, centrando la operación en CxP.
+                Ordenamos procesos inorgánicos y unificamos el marco de trabajo
+                para la compañía, estructurando la operación alrededor de un
+                flujo claro de documentos y aprobaciones.
               </p>
-              <ul className="mt-4 text-sm space-y-1">
-                <li>• Integración de áreas satélite al flujo de facturas</li>
+              <ul className="mt-4 space-y-1 text-sm">
+                <li>• Integración de áreas involucradas en el ciclo de facturas</li>
                 <li>• Reducción de tiempos y reprocesos</li>
-                <li>• Mejora de la trazabilidad</li>
+                <li>• Mejora de la trazabilidad de punta a punta</li>
               </ul>
             </Card>
 
             <Card>
-              <div className="text-xs font-semibold text-[var(--color-accent)]">Cultura sin papel</div>
-              <h3 className="mt-1 text-lg font-semibold">Transformación digital</h3>
+              <div className="text-xs font-semibold text-[var(--color-accent)]">
+                Cultura sin papel
+              </div>
+              <h3 className="mt-1 text-lg font-semibold">
+                Transformación digital
+              </h3>
               <p className="mt-2 text-sm text-neutral-600">
-                Pasaje a flujos sin papel, con resguardo de contenido e información sensible y gobierno del dato.
+                Pasaje a flujos sin papel, con resguardo de contenido e
+                información sensible y gobierno del dato.
               </p>
-              <ul className="mt-4 text-sm space-y-1">
+              <ul className="mt-4 space-y-1 text-sm">
                 <li>• Contenido centralizado</li>
                 <li>• Cumplimientos y auditoría</li>
                 <li>• KPIs operativos</li>
@@ -312,17 +479,16 @@ export default function Home() {
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
             <Card>
-              <div className="text-xs font-semibold text-[var(--color-accent)]">Fuera de SAP</div>
-              <h3 className="mt-1 text-lg font-semibold">Desarrollos no SAP</h3>
+              <div className="text-xs font-semibold text-[var(--color-accent)]">
+                Soluciones complementarias
+              </div>
+              <h3 className="mt-1 text-lg font-semibold">
+                Evolución e integraciones
+              </h3>
               <p className="mt-2 text-sm text-neutral-600">
-                Aplicaciones web y móviles, gestión documental e integraciones. Soluciones innovadoras y escalables para optimizar procesos e impulsar crecimiento.
-              </p>
-            </Card>
-            <Card>
-              <div className="text-xs font-semibold text-[var(--color-accent)]">Producto propio</div>
-              <h3 className="mt-1 text-lg font-semibold">Portal de Proveedores</h3>
-              <p className="mt-2 text-sm text-neutral-600">
-                Desarrollo propio (.NET + Angular): envío de facturas, publicación de datos de pago, autorregistro y workflows automáticos de aprobación interna.
+                Desarrollos, extensiones e integraciones que complementan el
+                ecosistema SAP, mejoran la experiencia de los equipos y habilitan
+                nuevos escenarios de consulta, carga y seguimiento de información.
               </p>
             </Card>
           </div>
@@ -330,66 +496,122 @@ export default function Home() {
           <div className="mt-8">
             <Link
               href="/servicios"
-              className="group inline-flex items-center rounded-xl border border-neutral-300 px-4 py-2 text-sm font-semibold transition-all duration-200 hover:bg-neutral-50 hover:border-neutral-400 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-neutral-200"
+              className="group inline-flex items-center rounded-xl border border-neutral-300 px-4 py-2 text-sm font-semibold transition-all duration-200 hover:bg-neutral-50 hover:border-neutral-400 hover:-translate-y-0.5_focus:outline-none focus:ring-4 focus:ring-neutral-200"
             >
               Ver todos los servicios
-              <span className="inline-block pl-1 transition-transform duration-200 group-hover:translate-x-1">→</span>
+              <span className="inline-block pl-1 transition-transform duration-200 group-hover:translate-x-1">
+                →
+              </span>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Capacidades */}
-      <section id="capacidades" className="border-t border-neutral-200 py-20">
+            
+
+
+      {/* Soporte & SLA */}
+      <section id="sla" className="border-t border-neutral-200 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
-            <h2 className="text-3xl font-bold tracking-tight">Nuestras capacidades</h2>
-            <p className="mt-2 text-neutral-600">Equipo ágil y dinámico, ajustado a mejores prácticas y en mejora continua.</p>
+            <h2 className="text-3xl font-bold tracking-tight">
+              Soporte y acuerdos de servicio (SLA)
+            </h2>
+            <p className="mt-2 text-neutral-600">
+              Definimos tiempos y modalidades de atención claros para cada tipo
+              de requerimiento, alineando expectativas y facilitando la gestión
+              del día a día.
+            </p>
           </div>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <Card><h3 className="text-lg font-semibold">Equipo de desarrollo</h3><p className="mt-2 text-sm text-neutral-600">Desarrollo ágil, foco en resolver con calidad y velocidad.</p></Card>
-            <Card><h3 className="text-lg font-semibold">Conocimiento funcional</h3><p className="mt-2 text-sm text-neutral-600">15+ años en implantaciones en América y Europa, entendiendo procesos y negocio.</p></Card>
-            <Card><h3 className="text-lg font-semibold">Respuesta</h3><p className="mt-2 text-sm text-neutral-600">Ideas aplicadas a mejora continua en la relación cliente–proveedor y CxP.</p></Card>
-            <Card><h3 className="text-lg font-semibold">Colaboración</h3><p className="mt-2 text-sm text-neutral-600">Alineamos el modelo de negocio con mejores prácticas y optimización integral.</p></Card>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Card>
+              <h3 className="text-lg font-semibold">Modelo de soporte</h3>
+              <p className="mt-2 text-sm text-neutral-600">
+                Combinamos soporte funcional y técnico, con un modelo escalable
+                que permite atender consultas, incidencias y mejoras evolutivas.
+              </p>
+              <ul className="mt-4 space-y-1 text-sm text-neutral-600">
+                <li>• Canales de contacto definidos</li>
+                <li>• Priorización según impacto</li>
+                <li>• Seguimiento hasta el cierre</li>
+              </ul>
+            </Card>
+
+            <Card>
+              <h3 className="text-lg font-semibold">Niveles de prioridad</h3>
+              <p className="mt-2 text-sm text-neutral-600">
+                Clasificamos los incidentes por criticidad para garantizar una
+                respuesta acorde al impacto en la operación.
+              </p>
+              <ul className="mt-4 space-y-1 text-sm text-neutral-600">
+                <li>• Crítico: atención inmediata y foco total</li>
+                <li>• Alto: impacto relevante, resolución en ventanas acotadas</li>
+                <li>• Medio y Bajo: seguimiento planificado y controlado</li>
+              </ul>
+            </Card>
+
+            <Card>
+              <h3 className="text-lg font-semibold">Ciclo de atención</h3>
+              <p className="mt-2 text-sm text-neutral-600">
+                Desde la recepción hasta el cierre, cada ticket sigue un flujo
+                definido que deja trazabilidad y acuerdos claros.
+              </p>
+              <ul className="mt-4 space-y-1 text-sm text-neutral-600">
+                <li>• Registro y categorización</li>
+                <li>• Asignación y análisis</li>
+                <li>• Propuesta de solución y validación</li>
+                <li>• Cierre documentado y lecciones aprendidas</li>
+              </ul>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* Casos */}
-      <section id="casos" className="border-t border-neutral-200 py-20">
+
+      {/* Experiencia en clientes */}
+      <section id="clientes" className="border-t border-neutral-200 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
-            <h2 className="text-3xl font-bold tracking-tight">Casos de éxito y resultados</h2>
-            <p className="mt-2 text-neutral-600">Impacto medible en tiempo, calidad y costos. Algunos ejemplos recientes:</p>
+            <h2 className="text-3xl font-bold tracking-tight">
+              Experiencia en clientes
+            </h2>
+            <p className="mt-2 text-neutral-600">
+              Participamos en proyectos de distinta escala, desde implementaciones
+              iniciales hasta optimizaciones sobre soluciones ya productivas, en
+              organizaciones de diversos rubros.
+            </p>
           </div>
 
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            {cases.map((c) => (
-              <Card key={c.title}>
-                <div className="text-xs font-medium text-neutral-500">{c.tag}</div>
-                <h3 className="mt-1 text-lg font-semibold transition-colors group-hover:text-[var(--color-accent)]">{c.title}</h3>
-                <p className="mt-2 text-sm text-neutral-600">{c.desc}</p>
-                <ul className="mt-4 grid gap-2">
-                  {c.kpis.map((k) => (
-                    <li key={k.label} className="flex items-start gap-2">
-                      <span className="inline-flex shrink-0 items-center rounded-lg border border-neutral-200 px-2 py-1 text-xs font-semibold">{k.label}</span>
-                      <span className="text-xs text-neutral-500">{k.note}</span>
-                    </li>
-                  ))}
-                </ul>
-              </Card>
-            ))}
-          </div>
-
-          <div className="mt-8">
-            <Link
-              href="/casos"
-              className="group inline-flex items-center rounded-xl border border-neutral-300 px-4 py-2 text-sm font-semibold transition-all duration-200 hover:bg-neutral-50 hover:border-neutral-400 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-neutral-200"
-            >
-              Ver más casos
-              <span className="inline-block pl-1 transition-transform duration-200 group-hover:translate-x-1">→</span>
-            </Link>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Card>
+              <h3 className="text-lg font-semibold">
+                Implementaciones y mejoras
+              </h3>
+              <p className="mt-2 text-sm text-neutral-600">
+                Proyectos de implantación, evolución y estabilización de
+                soluciones SAP y OpenText, con foco en adopción y resultados
+                medibles.
+              </p>
+            </Card>
+            <Card>
+              <h3 className="text-lg font-semibold">
+                Equipos distribuidos
+              </h3>
+              <p className="mt-2 text-sm text-neutral-600">
+                Trabajo con equipos locales y regionales, integrando
+                necesidades de diferentes áreas en modelos de trabajo comunes.
+              </p>
+            </Card>
+            <Card>
+              <h3 className="text-lg font-semibold">
+                Procesos críticos
+              </h3>
+              <p className="mt-2 text-sm text-neutral-600">
+                Experiencia en procesos donde la trazabilidad y el control de
+                información son clave para la operación y la toma de decisiones.
+              </p>
+            </Card>
           </div>
         </div>
       </section>
@@ -397,15 +619,17 @@ export default function Home() {
       {/* Formulario */}
       <section id="form" className="border-t border-neutral-200 py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold tracking-tight text-center">Escribinos</h2>
-          <p className="mt-2 max-w-prose mx-auto text-center text-neutral-600 leading-relaxed">
-            Te respondemos en el mismo día hábil.
+          <h2 className="text-center text-3xl font-bold tracking-tight">
+            Escribinos
+          </h2>
+          <p className="mx-auto mt-2 max-w-prose text-center leading-relaxed tracking-[0.01em] text-neutral-600">
+            Te respondemos dentro del mismo día hábil.
           </p>
 
           <form
             action="https://formspree.io/f/xxxxxxxx"
             method="POST"
-            className="mt-8 mx-auto max-w-3xl rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"
+            className="mx-auto mt-8 max-w-3xl rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"
           >
             {/* Campos */}
             <div className="grid gap-4 sm:grid-cols-2">
@@ -439,14 +663,18 @@ export default function Home() {
             </div>
 
             {/* Checkbox + botón */}
-            <div className="mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-              <label className="text-xs text-neutral-600 inline-flex items-center gap-2">
-                <input type="checkbox" required className="rounded border-neutral-300" />
+            <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <label className="inline-flex items-center gap-2 text-xs text-neutral-600">
+                <input
+                  type="checkbox"
+                  required
+                  className="rounded border-neutral-300"
+                />
                 Acepto ser contactado para mi consulta.
               </label>
 
               <button
-                className="self-end sm:self-auto rounded-xl bg-[var(--color-accent)] px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 will-change-transform hover:brightness-110 hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30 active:translate-y-0"
+                className="self-end rounded-xl bg-[var(--color-accent)] px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:brightness-110 hover:shadow-md focus:outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30 active:translate-y-0 sm:self-auto"
               >
                 Enviar
               </button>
@@ -458,11 +686,13 @@ export default function Home() {
       {/* CTA final */}
       <section id="contacto" className="border-t border-neutral-200 py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold tracking-tight">¿Hablamos de tu proyecto?</h2>
+          <h2 className="text-3xl font-bold tracking-tight">
+            ¿Hablamos de tu proyecto?
+          </h2>
 
-          <p className="mt-3 mx-auto max-w-[60ch] text-neutral-600 leading-relaxed tracking-[0.01em]">
-            Contanos brevemente tu desafío y te devolvemos una propuesta clara con
-            alcance y tiempos estimados.
+          <p className="mx-auto mt-3 max-w-[60ch] leading-relaxed tracking-[0.01em] text-neutral-600">
+            Contanos brevemente tu desafío y te devolvemos una propuesta clara
+            con alcance y tiempos estimados.
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -470,13 +700,13 @@ export default function Home() {
               href={WHATSAPP}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-xl bg-[var(--color-accent)] px-6 py-3 text-sm font-semibold text-white transition-all duration-200 will-change-transform hover:brightness-110 hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30 min-w-[220px] active:translate-y-0"
+              className="min-w-[220px] inline-flex items-center justify-center rounded-xl bg-[var(--color-accent)] px-6 py-3 text-sm font-semibold text-white transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:brightness-110 hover:shadow-md focus:outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30 active:translate-y-0"
             >
               Escribir por WhatsApp
-            </a> 
+            </a>
             <a
               href={EMAIL}
-              className="inline-flex items-center justify-center rounded-xl border border-neutral-300 px-6 py-3 text-sm font-semibold transition-all duration-200 hover:bg-neutral-50 hover:border-neutral-400 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-neutral-200 min-w-[220px] active:translate-y-0"
+              className="min-w-[220px] inline-flex items-center justify-center rounded-xl border border-neutral-300 px-6 py-3 text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5 hover:bg-neutral-50 hover:border-neutral-400 focus:outline-none focus:ring-4 focus:ring-neutral-200 active:translate-y-0"
             >
               Enviar un email
             </a>
@@ -493,58 +723,60 @@ export default function Home() {
             </li>
             <li className="flex items-center justify-center gap-2">
               <span>📍</span>
-              <span>Buenos Aires, Argentina · Proyectos en LATAM &amp; Europa</span>
+              <span>
+                Buenos Aires, Argentina · Proyectos en LATAM &amp; Europa
+              </span>
             </li>
           </ul>
 
-          <ul className="mt-6 space-y-1 text-sm text-neutral-600 flex flex-col items-center">
-            <p className="mt-5 text-xs text-neutral-500 flex justify-center w-full">
-              Tiempo estimado de respuesta: dentro del mismo día hábil.
-            </p>
-          </ul>
+          <p className="mt-5 flex w-full justify-center text-xs text-neutral-500">
+            Tiempo estimado de respuesta: dentro del mismo día hábil.
+          </p>
         </div>
       </section>
-
-      
 
       {/* FAQ */}
       <section id="faq" className="border-t border-neutral-200 py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold tracking-tight">Preguntas frecuentes</h2>
-          <p className="mt-2 mx-auto max-w-[65ch] text-neutral-600 leading-relaxed tracking-[0.01em]">
+          <h2 className="text-3xl font-bold tracking-tight">
+            Preguntas frecuentes
+          </h2>
+          <p className="mx-auto mt-2 max-w-[65ch] leading-relaxed tracking-[0.01em] text-neutral-600">
             Respuestas rápidas antes de dar el siguiente paso.
           </p>
         </div>
 
-        <div className="mt-10 mx-auto max-w-3xl divide-y divide-neutral-200 rounded-2xl border border-neutral-200 bg-white">
+        <div className="mx-auto mt-10 max-w-3xl divide-y divide-neutral-200 rounded-2xl border border-neutral-200 bg-white">
           {[
             {
               q: "¿Cuánto tarda un proyecto típico?",
-              a: "Depende del alcance. Un soporte puntual puede resolverse en días; un proyecto end-to-end puede llevar entre 4 y 12 semanas según módulo e integraciones.",
+              a: "Depende del alcance. Un soporte puntual puede resolverse en días; un proyecto end-to-end puede llevar entre 4 y 12 semanas según módulos, integraciones y dedicación disponible.",
             },
             {
               q: "¿Trabajan solo con SAP o también con otras soluciones?",
-              a: "Nuestro core es SAP (S/4HANA, ECC, ABAP, VIM), pero podemos integrar OCR, workflow apps, BI y APIs externas.",
+              a: "Nuestro foco es SAP (S/4HANA, ECC, ABAP, VIM) y OpenText, integrando soluciones complementarias cuando el caso lo requiere.",
             },
             {
               q: "¿Pueden trabajar por horas, por proyecto o con SLA?",
-              a: "Sí. Soporte por bloques de horas, proyectos cerrados o evolución continua con SLA monitoreado.",
+              a: "Sí. Podemos trabajar por bloques de horas, proyectos cerrados o evolución continua con acuerdos de servicio (SLA) monitoreados.",
             },
             {
               q: "¿Brindan acompañamiento post go-live?",
-              a: "Sí. Acompañamos estabilización, refinamos indicadores y brindamos soporte funcional/técnico según necesidad.",
+              a: "Sí. Acompañamos la estabilización, refinamos indicadores y brindamos soporte funcional/técnico según la necesidad de cada equipo.",
             },
             {
               q: "¿Cómo avanzamos si quiero comenzar?",
-              a: "Nos contás el desafío, estimamos alcance, proponemos modalidad y arrancamos con un kickoff para definir prioridades y entregables.",
+              a: "Nos contás el desafío, estimamos alcance, proponemos la modalidad y arrancamos con un kickoff para definir prioridades y entregables.",
             },
           ].map((f) => (
             <details key={f.q} className="group p-6">
               <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
                 {f.q}
-                <span className="text-neutral-400 group-open:rotate-180 transition">⌄</span>
+                <span className="transition text-neutral-400 group-open:rotate-180">
+                  ⌄
+                </span>
               </summary>
-              <p className="mt-2 text-sm text-neutral-600 text-left leading-relaxed tracking-[0.005em]">
+              <p className="mt-2 text-left text-sm leading-relaxed tracking-[0.005em] text-neutral-600">
                 {f.a}
               </p>
             </details>
@@ -553,44 +785,46 @@ export default function Home() {
       </section>
 
       {/* Trabajar en Moksa IT */}
-            <section className="mt-20">
-              <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-                <div className="rounded-2xl border border-neutral-200 bg-white p-10 shadow-sm text-center">
-                  <h3 className="text-3xl font-extrabold tracking-tight">
-                    ¿Querés trabajar en Moksa IT?
-                  </h3>
-      
-                  <p className="mt-4 text-neutral-600 max-w-2xl mx-auto text-lg leading-relaxed">
-                    Estamos sumando talento para proyectos SAP, ABAP y OpenText. Buscamos
-                    personas curiosas, responsables y con ganas de aprender y crecer en un
-                    equipo dinámico con foco en calidad, procesos claros y entregas
-                    medibles.
-                  </p>
-      
-                  <ul className="mt-8 space-y-2 text-base text-neutral-700 max-w-md mx-auto text-left leading-relaxed">
-                    <li>• Experiencia o interés en SAP (ABAP, VIM, Fiori, integraciones).</li>
-                    <li>• Capacidad de análisis y resolución de problemas.</li>
-                    <li>• Buena comunicación y trabajo en equipo.</li>
-                    <li>• Inglés técnico (no excluyente).</li>
-                  </ul>
-      
-                  {/* Sección de carga de CV (client component) */}
-                  <UploadCvSection />
-                </div>
-              </div>
-            </section>
+      <section className="mt-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-neutral-200 bg-white p-10 text-center shadow-sm">
+            <h3 className="text-3xl font-extrabold tracking-tight">
+              ¿Querés trabajar en Moksa IT?
+            </h3>
 
+            <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-neutral-600">
+              Estamos sumando talento para proyectos SAP, ABAP y OpenText.
+              Buscamos personas curiosas, responsables y con ganas de aprender y
+              crecer en un equipo dinámico, con foco en calidad, procesos claros
+              y entregas medibles.
+            </p>
+
+            <ul className="mx-auto mt-8 max-w-md list-none text-left text-base leading-relaxed text-neutral-700">
+              <li>• Experiencia o interés en SAP (ABAP, VIM, Fiori, integraciones).</li>
+              <li>• Capacidad de análisis y resolución de problemas.</li>
+              <li>• Buena comunicación y trabajo en equipo.</li>
+              <li>• Inglés técnico (no excluyente).</li>
+            </ul>
+
+            {/* Sección de carga de CV (client component) */}
+            <UploadCvSection />
+          </div>
+        </div>
+      </section>
 
       {/* Footer */}
       <footer className="border-t border-neutral-200 py-10">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-neutral-500">
-          <div>© {new Date().getFullYear()} Moksa IT. Todos los derechos reservados.</div>
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 text-sm text-neutral-500 sm:flex-row sm:px-6 lg:px-8">
+          <div>
+            © {new Date().getFullYear()} Moksa IT. Todos los derechos
+            reservados.
+          </div>
           <div className="flex items-center gap-5">
             <a
               href="https://www.linkedin.com/company/moksa-it/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-[var(--color-accent)] transition"
+              className="flex items-center gap-2 transition hover:text-[var(--color-accent)]"
             >
               <FaLinkedin className="text-lg" /> LinkedIn
             </a>
@@ -598,7 +832,7 @@ export default function Home() {
               href="https://github.com/moksa-it"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-[var(--color-accent)] transition"
+              className="flex items-center gap-2 transition hover:text-[var(--color-accent)]"
             >
               <FaGithub className="text-lg" /> GitHub
             </a>

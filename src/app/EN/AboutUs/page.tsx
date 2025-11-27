@@ -224,22 +224,16 @@ export default function NosotrosPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="border-t border-neutral-200 py-16">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-            Want to know how we would approach your case?
-          </h2>
-          <p className="mt-2 text-neutral-600">
-            We propose a simple approach with clear timelines and scope.
-          </p>
-
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <PrimaryButton href={WHATSAPP}>Message on WhatsApp</PrimaryButton>
-            <SecondaryButton href="/EN/contact">More contact options</SecondaryButton>
-          </div>
-        </div>
-      </section>
+      {/* WhatsApp bubble */}
+      <a
+        href={WHATSAPP}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Escribir por WhatsApp"
+        className="fixed bottom-5 right-5 z-50 rounded-full bg-[var(--color-accent)] px-4 py-3 text-white shadow-lg transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
+      >
+        WhatsApp
+      </a>
     </main>
   );
 }

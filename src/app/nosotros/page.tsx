@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Card } from "@/Component/card";
 import { PrimaryButton } from "@/Component/buttons/PrimaryButton";
 import { SecondaryButton } from "@/Component/buttons/SecondaryButton";
@@ -80,7 +81,7 @@ export default function NosotrosPage() {
 
   const WHATSAPP =
     "https://wa.me/5491160462131?text=Hola%20Moksa%20IT%2C%20quiero%20conversar%20sobre%20un%20proyecto%20SAP%20o%20VIM.";
-  const CALENDLY = "https://calendly.com/tuusuario/30min";
+    
 
   return (
     <main className="bg-white text-neutral-900">
@@ -227,23 +228,16 @@ export default function NosotrosPage() {
         </div>
       </section>
 
-      {/* CTA suave */}
-      <section className="border-t border-neutral-200 py-16">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-            ¿Querés conocer cómo encararíamos tu caso?
-          </h2>
-          <p className="mt-2 text-neutral-600">
-            Te proponemos un approach simple con tiempos y alcance claros.
-          </p>
-
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <PrimaryButton href={WHATSAPP}>Escribir por WhatsApp</PrimaryButton>
-            <SecondaryButton href={CALENDLY}>Agendar una llamada</SecondaryButton>
-            <SecondaryButton href="/contacto">Ver más opciones</SecondaryButton>
-          </div>
-        </div>
-      </section>
+      {/* WhatsApp bubble */}
+      <a
+        href={WHATSAPP}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Escribir por WhatsApp"
+        className="fixed bottom-5 right-5 z-50 rounded-full bg-[var(--color-accent)] px-4 py-3 text-white shadow-lg transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
+      >
+        WhatsApp
+      </a>
     </main>
   );
 }

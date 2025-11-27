@@ -1,6 +1,4 @@
 import { Card } from "@/Component/card";
-import { PrimaryButton } from "@/Component/buttons/PrimaryButton";
-import { SecondaryButton } from "@/Component/buttons/SecondaryButton";
 
 export const metadata = {
   title: "Servicios — Moksa IT",
@@ -27,7 +25,6 @@ export default function ServiciosPage() {
 
   const WHATSAPP =
     "https://wa.me/5491160462131?text=Hola%20Moksa%20IT%2C%20me%20gustar%C3%ADa%20consultar%20sobre%20un%20proyecto%20SAP%20o%20VIM.";
-  const CALENDLY = "https://calendly.com/tuusuario/30min"; // reemplazar
 
   return (
     <main className="bg-white text-neutral-900">
@@ -148,15 +145,18 @@ export default function ServiciosPage() {
               </Card>
             ))}
           </div>
-
-          {/* CTA */}
-          <div className="mt-10 flex flex-wrap gap-3">
-            <PrimaryButton href={WHATSAPP}>Consultar por WhatsApp</PrimaryButton>
-            <SecondaryButton href={CALENDLY}>Agendar una llamada</SecondaryButton>
-            <SecondaryButton href="/contacto">Otras formas de contacto</SecondaryButton>
-          </div>
         </div>
       </section>
+      {/* WhatsApp bubble */}
+      <a
+        href={WHATSAPP}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Escribir por WhatsApp"
+        className="fixed bottom-5 right-5 z-50 rounded-full bg-[var(--color-accent)] px-4 py-3 text-white shadow-lg transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
+      >
+        WhatsApp
+      </a>
     </main>
   );
 }

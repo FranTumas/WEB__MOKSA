@@ -197,51 +197,6 @@ export default function SLAPage() {
       <section className="border-t border-neutral-200 py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-2">
-            {/* RACI */}
-            <div>
-              <h2 className="text-3xl font-bold tracking-tight">RACI resumido</h2>
-              <p className="mt-2 text-neutral-600">
-                Quién es Responsable, Aprobador, Consultado e Informado.
-              </p>
-
-              <div className="mt-6 overflow-x-auto rounded-2xl border border-neutral-200 bg-white">
-                <table className="w-full text-sm">
-                  <thead className="text-left text-neutral-500">
-                    <tr>
-                      <th className="p-4">Actividad</th>
-                      <th className="p-4">R</th>
-                      <th className="p-4">A</th>
-                      <th className="p-4">C</th>
-                      <th className="p-4">I</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-neutral-100">
-                    <tr>
-                      <td className="p-4">Categorización y asignación</td>
-                      <td className="p-4">Moksa</td>
-                      <td className="p-4">Líder cliente</td>
-                      <td className="p-4">Key users</td>
-                      <td className="p-4">Stakeholders</td>
-                    </tr>
-                    <tr>
-                      <td className="p-4">Diagnóstico técnico</td>
-                      <td className="p-4">Moksa</td>
-                      <td className="p-4">Líder cliente</td>
-                      <td className="p-4">TI cliente</td>
-                      <td className="p-4">Operación</td>
-                    </tr>
-                    <tr>
-                      <td className="p-4">Workaround / Fix</td>
-                      <td className="p-4">Moksa</td>
-                      <td className="p-4">Líder cliente</td>
-                      <td className="p-4">Key users</td>
-                      <td className="p-4">Operación</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
             {/* Alcance */}
             <div>
               <h2 className="text-3xl font-bold tracking-tight">Alcance</h2>
@@ -275,30 +230,16 @@ export default function SLAPage() {
           </div>
         </div>
       </section>
-
-      {/* CTA final */}
-      <section className="border-t border-neutral-200 py-16">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-            ¿Querés un SLA a medida de tu operación?
-          </h2>
-          <p className="mt-2 text-neutral-600">
-            Ajustamos horarios, métricas, cobertura y tableros según tu realidad.
-          </p>
-
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <PrimaryButton href={WHATSAPP}>Consultar por WhatsApp</PrimaryButton>
-            <SecondaryButton href={CALENDLY}>Agendar una llamada</SecondaryButton>
-            <SecondaryButton href={EMAIL}>Enviar un email</SecondaryButton>
-            <SecondaryButton href="/contacto">Ver más opciones</SecondaryButton>
-          </div>
-          <ul className="mt-6 space-y-1 text-sm text-neutral-600 flex flex-col items-center">
-     <p className="mt-5 text-xs text-neutral-500 flex justify-center w-full">
-      *Todos los tiempos son objetivos de referencia y pueden ajustarse en el contrato/SOW.
-     </p>
-     </ul>
-        </div>
-      </section>
+      {/* WhatsApp bubble */}
+      <a
+        href={WHATSAPP}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Escribir por WhatsApp"
+        className="fixed bottom-5 right-5 z-50 rounded-full bg-[var(--color-accent)] px-4 py-3 text-white shadow-lg transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
+      >
+        WhatsApp
+      </a>
     </main>
   );
 }

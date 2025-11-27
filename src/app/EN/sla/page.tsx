@@ -315,28 +315,16 @@ export default function SLAPage() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="border-t border-neutral-200 py-16">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-            Would you like an SLA tailored to your operation?
-          </h2>
-          <p className="mt-2 text-neutral-600">
-            We adjust schedules, metrics, coverage and dashboards to fit your reality.
-          </p>
-
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <PrimaryButton href={WHATSAPP}>Ask on WhatsApp</PrimaryButton>
-            <SecondaryButton href={EMAIL}>Send an email</SecondaryButton>
-            <SecondaryButton href="/EN/contact">See more options</SecondaryButton>
-          </div>
-          <ul className="mt-6 space-y-1 text-sm text-neutral-600 flex flex-col items-center">
-            <p className="mt-5 text-xs text-neutral-500 flex justify-center w-full">
-              *All times are target objectives and can be adjusted in the contract/SOW.
-            </p>
-          </ul>
-        </div>
-      </section>
+      {/* WhatsApp bubble */}
+      <a
+        href={WHATSAPP}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Escribir por WhatsApp"
+        className="fixed bottom-5 right-5 z-50 rounded-full bg-[var(--color-accent)] px-4 py-3 text-white shadow-lg transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
+      >
+        WhatsApp
+      </a>
     </main>
   );
 }

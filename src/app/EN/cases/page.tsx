@@ -126,27 +126,16 @@ export default function CasosPage() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="border-t border-neutral-200 py-16">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-            Would these results help your operation?
-          </h2>
-          <p className="mt-2 text-neutral-600">
-            Tell us your context and we’ll propose a similar approach with clear scope and timelines.
-          </p>
-
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <PrimaryButton href={WHATSAPP} newTab className="min-w-[220px]">
-              WhatsApp enquiry
-            </PrimaryButton>
-
-            <SecondaryButton href="/EN/services" className="min-w-[220px]">
-              See services
-            </SecondaryButton>
-          </div>
-        </div>
-      </section>
+      {/* WhatsApp bubble */}
+      <a
+        href={WHATSAPP}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Escribir por WhatsApp"
+        className="fixed bottom-5 right-5 z-50 rounded-full bg-[var(--color-accent)] px-4 py-3 text-white shadow-lg transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
+      >
+        WhatsApp
+      </a>
     </main>
   );
 }
