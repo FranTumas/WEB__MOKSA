@@ -43,7 +43,7 @@ export default function Home() {
   const WHATSAPP =
     "https://wa.me/5491160462131?text=Hola%20Moksa%20IT%2C%20me%20gustar%C3%ADa%20consultar%20sobre%20un%20proyecto%20SAP%20o%20VIM.";
   const EMAIL =
-    "mailto:srossi@moksait.com, gtejada@moksait.com?subject=Consulta%20Moksa%20IT&body=Hola%2C%20les%20escribo%20por%20...";
+    "mailto:info@moksait.com, info@moksait.com?subject=Consulta%20Moksa%20IT&body=Hola%2C%20les%20escribo%20por%20...";
 
   const features = [
     {
@@ -215,13 +215,13 @@ export default function Home() {
                   id: "cap-2",
                   title: "CONOCIMIENTO FUNCIONAL",
                   desc: "Más de 15 años en implantaciones en América y Europa, entendiendo procesos, operación diaria y necesidades de seguimiento.",
-                  image: "/Conicu.jpg",
+                  image: "/ConocimientoFuncional.jpg",
                 },
                 {
                   id: "cap-3",
                   title: "RESPUESTA",
                   desc: "Ideas aplicadas a mejora continua, reduciendo desvíos y mejorando la interacción entre equipos internos y externos.",
-                  image: "/cap-respuesta.jpg",
+                  image: "/Respuesta.jpg",
                 },
                 {
                   id: "cap-4",
@@ -270,10 +270,11 @@ export default function Home() {
 
             {/* puntitos de navegación (anclas a cada slide) */}
             <div className="mt-4 flex justify-center gap-2">
-              {["cap-1", "cap-2", "cap-3", "cap-4"].map((id) => (
+              {["cap-1", "cap-2", "cap-3", "cap-4"].map((id, index) => (
                 <a
                   key={id}
                   href={`#${id}`}
+                  aria-label={`Ir a capacidad ${index + 1}`}
                   className="h-2 w-2 rounded-full bg-neutral-300 hover:bg-[var(--color-accent)] transition"
                 />
               ))}
@@ -284,130 +285,7 @@ export default function Home() {
 
 
 
-      {/* Cómo trabajamos (versión slider) */}
-<section
-  id="como"
-  className="border-t border-neutral-200 py-20 bg-neutral-50/70"
->
-  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div className="max-w-2xl">
-      <h2 className="text-3xl font-bold tracking-tight">
-        Cómo trabajamos
-      </h2>
-      <p className="mt-2 text-neutral-600">
-        Un proceso claro y medible para garantizar entregas seguras,
-        trazables y alineadas a los objetivos de la organización.
-      </p>
-    </div>
-
-    {/* Slider-like banners */}
-    <div className="mt-10">
-      <div className="flex snap-x snap-mandatory overflow-x-auto gap-6 pb-4">
-        {[
-          {
-            id: "step-1",
-            step: "PASO 01",
-            title: "Relevamiento & objetivos",
-            desc: "Entrevistas, análisis de procesos actuales y definición de dolores y métricas clave.",
-            bullets: [
-              "Workshops con referentes del negocio",
-              "Mapa de procesos y prioridades",
-            ],
-            image: "/step-relevamiento.jpg",
-          },
-          {
-            id: "step-2",
-            step: "PASO 02",
-            title: "Diseño de solución",
-            desc: "Definimos arquitectura, esfuerzos, riesgos y el roadmap de implementación.",
-            bullets: [
-              "Arquitectura funcional/técnica",
-              "Backlog y plan de releases",
-            ],
-            image: "/step-diseno.jpg",
-          },
-          {
-            id: "step-3",
-            step: "PASO 03",
-            title: "Build & pruebas",
-            desc: "Desarrollamos, configuramos y testeamos junto a usuarios clave.",
-            bullets: ["Configuración & ABAP", "Pruebas con usuarios (UAT)"],
-            image: "/step-build.jpg",
-          },
-          {
-            id: "step-4",
-            step: "PASO 04",
-            title: "Go-live & soporte",
-            desc: "Acompañamos la salida productiva y monitoreamos resultados y mejoras.",
-            bullets: ["Plan de go-live", "Soporte post-implementación"],
-            image: "/step-golive.jpg",
-          },
-        ].map((slide) => (
-          <article
-            key={slide.id}
-            id={slide.id}
-            className="relative h-[260px] sm:h-[320px] w-full shrink-0 snap-center overflow-hidden rounded-3xl bg-neutral-900 text-white"
-          >
-            {/* Imagen de fondo */}
-            <Image
-              src={slide.image}
-              alt={slide.title}
-              fill
-              className="object-cover opacity-70"
-            />
-
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black/40" />
-
-            {/* Contenido */}
-            <div className="relative z-10 flex h-full flex-col justify-center px-8 sm:px-12">
-              <span className="text-xs font-semibold tracking-[0.12em] uppercase text-neutral-200">
-                {slide.step}
-              </span>
-              <h3 className="mt-1 text-2xl font-extrabold tracking-tight sm:text-3xl">
-                {slide.title}
-              </h3>
-              <p className="mt-3 max-w-2xl text-sm leading-relaxed sm:text-base">
-                {slide.desc}
-              </p>
-
-              <ul className="mt-3 flex flex-wrap gap-2 text-xs sm:text-sm">
-                {slide.bullets.map((b) => (
-                  <li
-                    key={b}
-                    className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 backdrop-blur-sm"
-                  >
-                    ✓&nbsp;{b}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-6">
-                <button
-                  type="button"
-                  className="rounded-lg border border-white/70 px-5 py-2 text-xs font-semibold tracking-wide uppercase transition hover:bg-white hover:text-neutral-900"
-                >
-                  + Info
-                </button>
-              </div>
-            </div>
-          </article>
-        ))}
-      </div>
-
-      {/* Puntitos de navegación */}
-      <div className="mt-4 flex justify-center gap-2">
-        {["step-1", "step-2", "step-3", "step-4"].map((id) => (
-          <a
-            key={id}
-            href={`#${id}`}
-            className="h-2 w-2 rounded-full bg-neutral-300 hover:bg-[var(--color-accent)] transition"
-          />
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
+      
 
       {/* Servicios */}
       <section id="servicios" className="border-t border-neutral-200 py-20">
@@ -506,6 +384,131 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Cómo trabajamos (versión slider) */}
+<section
+  id="como"
+  className="border-t border-neutral-200 py-20 bg-neutral-50/70"
+>
+  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div className="max-w-2xl">
+      <h2 className="text-3xl font-bold tracking-tight">
+        Cómo trabajamos
+      </h2>
+      <p className="mt-2 text-neutral-600">
+        Un proceso claro y medible para garantizar entregas seguras,
+        trazables y alineadas a los objetivos de la organización.
+      </p>
+    </div>
+
+    {/* Slider-like banners */}
+    <div className="mt-10">
+      <div className="flex snap-x snap-mandatory overflow-x-auto gap-6 pb-4">
+        {[
+          {
+            id: "step-1",
+            step: "PASO 01",
+            title: "Relevamiento & objetivos",
+            desc: "Entrevistas, análisis de procesos actuales y definición de dolores y métricas clave.",
+            bullets: [
+              "Workshops con referentes del negocio",
+              "Mapa de procesos y prioridades",
+            ],
+            image: "/Relevamiento.jpg",
+          },
+          {
+            id: "step-2",
+            step: "PASO 02",
+            title: "Diseño de solución",
+            desc: "Definimos arquitectura, esfuerzos, riesgos y el roadmap de implementación.",
+            bullets: [
+              "Arquitectura funcional/técnica",
+              "Backlog y plan de releases",
+            ],
+            image: "/Diseño.jpg",
+          },
+          {
+            id: "step-3",
+            step: "PASO 03",
+            title: "Build & pruebas",
+            desc: "Desarrollamos, configuramos y testeamos junto a usuarios clave.",
+            bullets: ["Configuración & ABAP", "Pruebas con usuarios (UAT)"],
+            image: "/Build.jpg",
+          },
+          {
+            id: "step-4",
+            step: "PASO 04",
+            title: "Go-live & soporte",
+            desc: "Acompañamos la salida productiva y monitoreamos resultados y mejoras.",
+            bullets: ["Plan de go-live", "Soporte post-implementación"],
+            image: "/Golive.jpg",
+          },
+        ].map((slide) => (
+          <article
+            key={slide.id}
+            id={slide.id}
+            className="relative h-[260px] sm:h-[320px] w-full shrink-0 snap-center overflow-hidden rounded-3xl bg-neutral-900 text-white"
+          >
+            {/* Imagen de fondo */}
+            <Image
+              src={slide.image}
+              alt={slide.title}
+              fill
+              className="object-cover opacity-70"
+            />
+
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-black/40" />
+
+            {/* Contenido */}
+            <div className="relative z-10 flex h-full flex-col justify-center px-8 sm:px-12">
+              <span className="text-xs font-semibold tracking-[0.12em] uppercase text-neutral-200">
+                {slide.step}
+              </span>
+              <h3 className="mt-1 text-2xl font-extrabold tracking-tight sm:text-3xl">
+                {slide.title}
+              </h3>
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed sm:text-base">
+                {slide.desc}
+              </p>
+
+              <ul className="mt-3 flex flex-wrap gap-2 text-xs sm:text-sm">
+                {slide.bullets.map((b) => (
+                  <li
+                    key={b}
+                    className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 backdrop-blur-sm"
+                  >
+                    ✓&nbsp;{b}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-6">
+                <button
+                  type="button"
+                  className="rounded-lg border border-white/70 px-5 py-2 text-xs font-semibold tracking-wide uppercase transition hover:bg-white hover:text-neutral-900"
+                >
+                  + Info
+                </button>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+      {/* Puntitos de navegación */}
+      <div className="mt-4 flex justify-center gap-2">
+        {["step-1", "step-2", "step-3", "step-4"].map((id, index) => (
+          <a
+            key={id}
+            href={`#${id}`}
+            aria-label={`Ir a paso ${index + 1}`}
+            className="h-2 w-2 rounded-full bg-neutral-300 hover:bg-[var(--color-accent)] transition"
+          />
+        ))}
+      </div>
+      </div>
+    </div>
+</section>
 
             
 
@@ -719,7 +722,7 @@ export default function Home() {
             </li>
             <li className="flex items-center justify-center gap-2">
               <span>📧</span>
-              <span>srossi@moksait.com · gtejada@moksait.com</span>
+              <span>info@moksait.com</span>
             </li>
             <li className="flex items-center justify-center gap-2">
               <span>📍</span>
@@ -728,10 +731,6 @@ export default function Home() {
               </span>
             </li>
           </ul>
-
-          <p className="mt-5 flex w-full justify-center text-xs text-neutral-500">
-            Tiempo estimado de respuesta: dentro del mismo día hábil.
-          </p>
         </div>
       </section>
 

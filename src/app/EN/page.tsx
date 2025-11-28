@@ -43,7 +43,7 @@ export default function Home() {
   const WHATSAPP =
     "https://wa.me/5491160462131?text=Hello%20Moksa%20IT%2C%20I%27d%20like%20to%20ask%20about%20a%20SAP%20or%20VIM%20project.";
   const EMAIL =
-    "mailto:srossi@moksait.com, gtejada@moksait.com?subject=Inquiry%20Moksa%20IT&body=Hi%2C%20I%27m%20writing%20about%20...";
+    "mailto:info@moksait.com?subject=Inquiry%20Moksa%20IT&body=Hi%2C%20I%27m%20writing%20about%20...";
 
   const features = [
     {
@@ -219,13 +219,13 @@ export default function Home() {
                   id: "cap-2",
                   title: "FUNCTIONAL EXPERTISE",
                   desc: "Over 15 years of implementations across the Americas and Europe, understanding processes, daily operations and follow-up needs.",
-                  image: "/Conicu.jpg",
+                  image: "/ConocimientoFuncional.jpg",
                 },
                 {
                   id: "cap-3",
                   title: "RESPONSE",
                   desc: "Ideas applied to continuous improvement, reducing deviations and improving interaction between internal and external teams.",
-                  image: "/cap-respuesta.jpg",
+                  image: "/Respuesta.jpg",
                 },
                 {
                   id: "cap-4",
@@ -278,7 +278,7 @@ export default function Home() {
                 <a
                   key={id}
                   href={`#${id}`}
-                  aria-label={`Go to slide ${index + 1}`}
+                  aria-label={`Go to capability slide ${index + 1}`}
                   className="h-2 w-2 rounded-full bg-neutral-300 hover:bg-[var(--color-accent)] transition"
                 />
               ))}
@@ -287,130 +287,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* How we work (slider) */}
-      <section
-        id="como"
-        className="border-t border-neutral-200 py-20 bg-neutral-50/70"
-      >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <h2 className="text-3xl font-bold tracking-tight">How we work</h2>
-            <p className="mt-2 text-neutral-600">
-              A clear and measurable process to ensure safe, traceable deliveries
-              aligned with your organization&apos;s goals.
-            </p>
-          </div>
-
-          <div className="mt-10">
-            <div className="flex snap-x snap-mandatory overflow-x-auto gap-6 pb-4">
-              {[
-                {
-                  id: "step-1",
-                  step: "STEP 01",
-                  title: "Discovery & objectives",
-                  desc: "Interviews, analysis of current processes and definition of pain points and key metrics.",
-                  bullets: [
-                    "Workshops with business stakeholders",
-                    "Process mapping and priorities",
-                  ],
-                  image: "/step-relevamiento.jpg",
-                },
-                {
-                  id: "step-2",
-                  step: "STEP 02",
-                  title: "Solution design",
-                  desc: "We define architecture, effort, risks and the implementation roadmap.",
-                  bullets: [
-                    "Functional/technical architecture",
-                    "Backlog and release plan",
-                  ],
-                  image: "/step-diseno.jpg",
-                },
-                {
-                  id: "step-3",
-                  step: "STEP 03",
-                  title: "Build & testing",
-                  desc: "We configure, develop and test together with key users.",
-                  bullets: [
-                    "Configuration & ABAP",
-                    "User Acceptance Testing (UAT)",
-                  ],
-                  image: "/step-build.jpg",
-                },
-                {
-                  id: "step-4",
-                  step: "STEP 04",
-                  title: "Go-live & support",
-                  desc: "We support go-live and monitor results and improvements.",
-                  bullets: ["Go-live plan", "Post-implementation support"],
-                  image: "/step-golive.jpg",
-                },
-              ].map((slide) => (
-                <article
-                  key={slide.id}
-                  id={slide.id}
-                  className="relative h-[260px] sm:h-[320px] w-full shrink-0 snap-center overflow-hidden rounded-3xl bg-neutral-900 text-white"
-                >
-                  {/* Background image */}
-                  <Image
-                    src={slide.image}
-                    alt={slide.title}
-                    fill
-                    className="object-cover opacity-70"
-                  />
-
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-black/40" />
-
-                  {/* Content */}
-                  <div className="relative z-10 flex h-full flex-col justify-center px-8 sm:px-12">
-                    <span className="text-xs font-semibold tracking-[0.12em] uppercase text-neutral-200">
-                      {slide.step}
-                    </span>
-                    <h3 className="mt-1 text-2xl font-extrabold tracking-tight sm:text-3xl">
-                      {slide.title}
-                    </h3>
-                    <p className="mt-3 max-w-2xl text-sm leading-relaxed sm:text-base">
-                      {slide.desc}
-                    </p>
-
-                    <ul className="mt-3 flex flex-wrap gap-2 text-xs sm:text-sm">
-                      {slide.bullets.map((b) => (
-                        <li
-                          key={b}
-                          className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 backdrop-blur-sm"
-                        >
-                          ✓&nbsp;{b}
-                        </li>
-                      ))}
-                    </ul>
-
-                    <div className="mt-6">
-                      <button
-                        type="button"
-                        className="rounded-lg border border-white/70 px-5 py-2 text-xs font-semibold tracking-wide uppercase transition hover:bg-white hover:text-neutral-900"
-                      >
-                        + Info
-                      </button>
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-
-            {/* Navigation dots */}
-            <div className="mt-4 flex justify-center gap-2">
-              {["step-1", "step-2", "step-3", "step-4"].map((id) => (
-                <a
-                  key={id}
-                  href={`#${id}`}
-                  className="h-2 w-2 rounded-full bg-neutral-300 hover:bg-[var(--color-accent)] transition"
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Services */}
       <section id="servicios" className="border-t border-neutral-200 py-20">
@@ -501,6 +378,131 @@ export default function Home() {
                 →
               </span>
             </Link>
+          </div>
+        </div>
+      </section>
+      {/* How we work (slider) */}
+      <section
+        id="como"
+        className="border-t border-neutral-200 py-20 bg-neutral-50/70"
+      >
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <h2 className="text-3xl font-bold tracking-tight">How we work</h2>
+            <p className="mt-2 text-neutral-600">
+              A clear and measurable process to ensure safe, traceable deliveries
+              aligned with your organization&apos;s goals.
+            </p>
+          </div>
+
+          <div className="mt-10">
+            <div className="flex snap-x snap-mandatory overflow-x-auto gap-6 pb-4">
+              {[
+                {
+                  id: "step-1",
+                  step: "STEP 01",
+                  title: "Discovery & objectives",
+                  desc: "Interviews, analysis of current processes and definition of pain points and key metrics.",
+                  bullets: [
+                    "Workshops with business stakeholders",
+                    "Process mapping and priorities",
+                  ],
+                  image: "/Relevamiento.jpg",
+                },
+                {
+                  id: "step-2",
+                  step: "STEP 02",
+                  title: "Solution design",
+                  desc: "We define architecture, effort, risks and the implementation roadmap.",
+                  bullets: [
+                    "Functional/technical architecture",
+                    "Backlog and release plan",
+                  ],
+                  image: "/Diseño.jpg",
+                },
+                {
+                  id: "step-3",
+                  step: "STEP 03",
+                  title: "Build & testing",
+                  desc: "We configure, develop and test together with key users.",
+                  bullets: [
+                    "Configuration & ABAP",
+                    "User Acceptance Testing (UAT)",
+                  ],
+                  image: "/Build.jpg",
+                },
+                {
+                  id: "step-4",
+                  step: "STEP 04",
+                  title: "Go-live & support",
+                  desc: "We support go-live and monitor results and improvements.",
+                  bullets: ["Go-live plan", "Post-implementation support"],
+                  image: "/Golive.jpg",
+                },
+              ].map((slide) => (
+                <article
+                  key={slide.id}
+                  id={slide.id}
+                  className="relative h-[260px] sm:h-[320px] w-full shrink-0 snap-center overflow-hidden rounded-3xl bg-neutral-900 text-white"
+                >
+                  {/* Background image */}
+                  <Image
+                    src={slide.image}
+                    alt={slide.title}
+                    fill
+                    className="object-cover opacity-70"
+                  />
+
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-black/40" />
+
+                  {/* Content */}
+                  <div className="relative z-10 flex h-full flex-col justify-center px-8 sm:px-12">
+                    <span className="text-xs font-semibold tracking-[0.12em] uppercase text-neutral-200">
+                      {slide.step}
+                    </span>
+                    <h3 className="mt-1 text-2xl font-extrabold tracking-tight sm:text-3xl">
+                      {slide.title}
+                    </h3>
+                    <p className="mt-3 max-w-2xl text-sm leading-relaxed sm:text-base">
+                      {slide.desc}
+                    </p>
+
+                    <ul className="mt-3 flex flex-wrap gap-2 text-xs sm:text-sm">
+                      {slide.bullets.map((b) => (
+                        <li
+                          key={b}
+                          className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 backdrop-blur-sm"
+                        >
+                          ✓&nbsp;{b}
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="mt-6">
+                      <button
+                        type="button"
+                        className="rounded-lg border border-white/70 px-5 py-2 text-xs font-semibold tracking-wide uppercase transition hover:bg-white hover:text-neutral-900"
+                      >
+                        + Info
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            {/* Navigation dots */}
+            <div className="mt-4 flex justify-center gap-2">
+              {["step-1", "step-2", "step-3", "step-4"].map((id, index) => (
+                <a
+                  key={id}
+                  href={`#${id}`}
+                  aria-label={`Go to step ${index + 1}`}
+                  className="h-2 w-2 rounded-full bg-neutral-300 hover:bg-[var(--color-accent)] transition"
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -747,7 +749,7 @@ export default function Home() {
             </li>
             <li className="flex items-center justify-center gap-2">
               <span>📧</span>
-              <span>srossi@moksait.com · gtejada@moksait.com</span>
+              <span>info@moksait.com</span>
             </li>
             <li className="flex items-center justify-center gap-2">
               <span>📍</span>
@@ -755,9 +757,7 @@ export default function Home() {
             </li>
           </ul>
 
-          <p className="mt-5 flex w-full justify-center text-xs text-neutral-500">
-            Estimated response time: within the same business day.
-          </p>
+          
         </div>
       </section>
 
