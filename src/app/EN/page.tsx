@@ -170,7 +170,7 @@ export default function Home() {
                   href="/EN/contact"
                   className="inline-block rounded-xl bg-gradient-to-r from-[var(--color-accent)] to-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:opacity-90"
                 >
-                  Let&apos;s talk
+                  Contact us
                 </Link>
               </div>
             </div>
@@ -260,12 +260,12 @@ export default function Home() {
                     </p>
 
                     <div className="mt-6">
-                      <button
-                        type="button"
-                        className="rounded-lg border border-white/70 px-5 py-2 text-xs font-semibold tracking-wide uppercase transition hover:bg-white hover:text-neutral-900"
-                      >
-                        + Info
-                      </button>
+                      <Link
+                 href={"/EN/AboutUs"}
+                  className="rounded-lg border border-white/70 px-5 py-2 text-xs font-semibold tracking-wide uppercase transition hover:bg-white hover:text-neutral-900"
+                >
+                  + Info
+                </Link>
                     </div>
                   </div>
                 </article>
@@ -480,12 +480,12 @@ export default function Home() {
                     </ul>
 
                     <div className="mt-6">
-                      <button
-                        type="button"
-                        className="rounded-lg border border-white/70 px-5 py-2 text-xs font-semibold tracking-wide uppercase transition hover:bg-white hover:text-neutral-900"
-                      >
-                        + Info
-                      </button>
+                      <Link
+                 href={"/EN/AboutUs"}
+                  className="rounded-lg border border-white/70 px-5 py-2 text-xs font-semibold tracking-wide uppercase transition hover:bg-white hover:text-neutral-900"
+                >
+                  + Info
+                </Link>
                     </div>
                   </div>
                 </article>

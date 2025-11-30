@@ -170,7 +170,7 @@ export default function Home() {
                   href="/contacto"
                   className="inline-block rounded-xl bg-gradient-to-r from-[var(--color-accent)] to-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:opacity-90"
                 >
-                  ¿Hablamos?
+                  Contacto
                 </Link>
               </div>
             </div>
@@ -256,12 +256,12 @@ export default function Home() {
                     </p>
 
                     <div className="mt-6">
-                      <button
-                        type="button"
-                        className="rounded-lg border border-white/70 px-5 py-2 text-xs font-semibold tracking-wide uppercase transition hover:bg-white hover:text-neutral-900"
-                      >
-                        + Info
-                      </button>
+                      <Link
+                 href={"/nosotros"}
+                  className="rounded-lg border border-white/70 px-5 py-2 text-xs font-semibold tracking-wide uppercase transition hover:bg-white hover:text-neutral-900"
+                >
+                  + Info
+                </Link>
                     </div>
                   </div>
                 </article>
@@ -484,12 +484,12 @@ export default function Home() {
               </ul>
 
               <div className="mt-6">
-                <button
-                  type="button"
+                <Link
+                 href={"/nosotros"}
                   className="rounded-lg border border-white/70 px-5 py-2 text-xs font-semibold tracking-wide uppercase transition hover:bg-white hover:text-neutral-900"
                 >
                   + Info
-                </button>
+                </Link>
               </div>
             </div>
           </article>

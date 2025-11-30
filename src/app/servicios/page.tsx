@@ -1,4 +1,6 @@
 import { Card } from "@/Component/card";
+import Image from "next/image";
+import Link from "next/link";
 
 export const metadata = {
   title: "Servicios — Moksa IT",
@@ -14,13 +16,6 @@ export default function ServiciosPage() {
     { title: "Reducción de tiempos", desc: "-35% en ciclo de facturas con rediseño de flujo." },
     { title: "Calidad y control", desc: "Menos reprocesos, mayor trazabilidad y auditoría." },
     { title: "Time-to-value", desc: "Entregables iterativos, riesgos controlados." },
-  ];
-
-  const pasos = [
-    { paso: "01", titulo: "Relevamiento & objetivos", desc: "Procesos, dolores, stakeholders y KPIs." },
-    { paso: "02", titulo: "Diseño de solución", desc: "Arquitectura, integraciones, esfuerzo y riesgos." },
-    { paso: "03", titulo: "Build & pruebas", desc: "Desarrollo, QA/UAT y validaciones de negocio." },
-    { paso: "04", titulo: "Go-live & soporte", desc: "Acompañamiento, métricas y mejora continua." },
   ];
 
   const WHATSAPP =
@@ -104,28 +99,130 @@ export default function ServiciosPage() {
         </div>
       </section>
 
-      {/* Cómo trabajamos */}
-      <section id="como" className="border-t border-neutral-200 py-16">
+      {/* Cómo trabajamos (versión slider) */}
+      <section
+        id="como"
+        className="border-t border-neutral-200 py-20 bg-neutral-50/70"
+      >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
-            <h2 className="text-3xl font-bold tracking-tight">Cómo trabajamos</h2>
+            <h2 className="text-3xl font-bold tracking-tight">
+              Cómo trabajamos
+            </h2>
             <p className="mt-2 text-neutral-600">
-              Proceso iterativo, medible y con bajo riesgo para el negocio.
+              Un proceso claro y medible para garantizar entregas seguras,
+              trazables y alineadas a los objetivos de la organización.
             </p>
           </div>
-
-          <ol className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {pasos.map((s) => (
-              <Card key={s.paso}>
-                <div className="text-xs text-neutral-500">Paso {s.paso}</div>
-                <div className="mt-1 font-semibold">{s.titulo}</div>
-                <p className="mt-2 text-sm text-neutral-600">{s.desc}</p>
-              </Card>
-            ))}
-          </ol>
-        </div>
-      </section>
-
+      
+          {/* Slider-like banners */}
+          <div className="mt-10">
+            <div className="flex snap-x snap-mandatory overflow-x-auto gap-6 pb-4">
+              {[
+                {
+                  id: "step-1",
+                  step: "PASO 01",
+                  title: "Relevamiento & objetivos",
+                  desc: "Entrevistas, análisis de procesos actuales y definición de dolores y métricas clave.",
+                  bullets: [
+                    "Workshops con referentes del negocio",
+                    "Mapa de procesos y prioridades",
+                  ],
+                  image: "/Relevamiento.jpg",
+                },
+                {
+                  id: "step-2",
+                  step: "PASO 02",
+                  title: "Diseño de solución",
+                  desc: "Definimos arquitectura, esfuerzos, riesgos y el roadmap de implementación.",
+                  bullets: [
+                    "Arquitectura funcional/técnica",
+                    "Backlog y plan de releases",
+                  ],
+                  image: "/Diseño.jpg",
+                },
+                {
+                  id: "step-3",
+                  step: "PASO 03",
+                  title: "Build & pruebas",
+                  desc: "Desarrollamos, configuramos y testeamos junto a usuarios clave.",
+                  bullets: ["Configuración & ABAP", "Pruebas con usuarios (UAT)"],
+                  image: "/Build.jpg",
+                },
+                {
+                  id: "step-4",
+                  step: "PASO 04",
+                  title: "Go-live & soporte",
+                  desc: "Acompañamos la salida productiva y monitoreamos resultados y mejoras.",
+                  bullets: ["Plan de go-live", "Soporte post-implementación"],
+                  image: "/Golive.jpg",
+                },
+              ].map((slide) => (
+                <article
+                  key={slide.id}
+                  id={slide.id}
+                  className="relative h-[260px] sm:h-[320px] w-full shrink-0 snap-center overflow-hidden rounded-3xl bg-neutral-900 text-white"
+                >
+                  {/* Imagen de fondo */}
+                  <Image
+                    src={slide.image}
+                    alt={slide.title}
+                    fill
+                    className="object-cover opacity-70"
+                  />
+      
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-black/40" />
+      
+                  {/* Contenido */}
+                  <div className="relative z-10 flex h-full flex-col justify-center px-8 sm:px-12">
+                    <span className="text-xs font-semibold tracking-[0.12em] uppercase text-neutral-200">
+                      {slide.step}
+                    </span>
+                    <h3 className="mt-1 text-2xl font-extrabold tracking-tight sm:text-3xl">
+                      {slide.title}
+                    </h3>
+                    <p className="mt-3 max-w-2xl text-sm leading-relaxed sm:text-base">
+                      {slide.desc}
+                    </p>
+      
+                    <ul className="mt-3 flex flex-wrap gap-2 text-xs sm:text-sm">
+                      {slide.bullets.map((b) => (
+                        <li
+                          key={b}
+                          className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 backdrop-blur-sm"
+                        >
+                          ✓&nbsp;{b}
+                        </li>
+                      ))}
+                    </ul>
+      
+                    <div className="mt-6">
+                      <Link
+                 href={"/nosotros"}
+                  className="rounded-lg border border-white/70 px-5 py-2 text-xs font-semibold tracking-wide uppercase transition hover:bg-white hover:text-neutral-900"
+                >
+                  + Info
+                </Link>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+            {/* Puntitos de navegación */}
+            <div className="mt-4 flex justify-center gap-2">
+              {["step-1", "step-2", "step-3", "step-4"].map((id, index) => (
+                <a
+                  key={id}
+                  href={`#${id}`}
+                  aria-label={`Ir a paso ${index + 1}`}
+                  className="h-2 w-2 rounded-full bg-neutral-300 hover:bg-[var(--color-accent)] transition"
+                />
+              ))}
+            </div>
+            </div>
+          </div>
+      </section> 
       {/* Beneficios */}
       <section id="beneficios" className="border-t border-neutral-200 py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

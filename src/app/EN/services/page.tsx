@@ -1,6 +1,7 @@
 import { Card } from "@/Component/card";
-import { PrimaryButton } from "@/Component/buttons/PrimaryButton";
-import { SecondaryButton } from "@/Component/buttons/SecondaryButton";
+
+import Image from "next/image";
+import Link from "next/link";
 
 export const metadata = {
   title: "Services — Moksa IT",
@@ -33,29 +34,6 @@ export default function ServiciosPage() {
     {
       title: "Time-to-value",
       desc: "Iterative deliverables with controlled risks.",
-    },
-  ];
-
-  const pasos = [
-    {
-      paso: "01",
-      titulo: "Discovery & objectives",
-      desc: "Processes, pain points, stakeholders and KPIs.",
-    },
-    {
-      paso: "02",
-      titulo: "Solution design",
-      desc: "Architecture, integrations, effort and risks.",
-    },
-    {
-      paso: "03",
-      titulo: "Build & testing",
-      desc: "Development, QA/UAT and business validation.",
-    },
-    {
-      paso: "04",
-      titulo: "Go-live & support",
-      desc: "Hypercare, metrics and continuous improvement.",
     },
   ];
 
@@ -170,27 +148,131 @@ export default function ServiciosPage() {
         </div>
       </section>
 
-      {/* How we work */}
-      <section id="como" className="border-t border-neutral-200 py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <h2 className="text-3xl font-bold tracking-tight">How we work</h2>
-            <p className="mt-2 text-neutral-600">
-              Iterative and measurable process with low risk for the business.
-            </p>
-          </div>
-
-          <ol className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {pasos.map((s) => (
-              <Card key={s.paso}>
-                <div className="text-xs text-neutral-500">Step {s.paso}</div>
-                <div className="mt-1 font-semibold">{s.titulo}</div>
-                <p className="mt-2 text-sm text-neutral-600">{s.desc}</p>
-              </Card>
-            ))}
-          </ol>
-        </div>
-      </section>
+      {/* How we work (slider) */}
+            <section
+              id="como"
+              className="border-t border-neutral-200 py-20 bg-neutral-50/70"
+            >
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="max-w-2xl">
+                  <h2 className="text-3xl font-bold tracking-tight">How we work</h2>
+                  <p className="mt-2 text-neutral-600">
+                    A clear and measurable process to ensure safe, traceable deliveries
+                    aligned with your organization&apos;s goals.
+                  </p>
+                </div>
+      
+                <div className="mt-10">
+                  <div className="flex snap-x snap-mandatory overflow-x-auto gap-6 pb-4">
+                    {[
+                      {
+                        id: "step-1",
+                        step: "STEP 01",
+                        title: "Discovery & objectives",
+                        desc: "Interviews, analysis of current processes and definition of pain points and key metrics.",
+                        bullets: [
+                          "Workshops with business stakeholders",
+                          "Process mapping and priorities",
+                        ],
+                        image: "/Relevamiento.jpg",
+                      },
+                      {
+                        id: "step-2",
+                        step: "STEP 02",
+                        title: "Solution design",
+                        desc: "We define architecture, effort, risks and the implementation roadmap.",
+                        bullets: [
+                          "Functional/technical architecture",
+                          "Backlog and release plan",
+                        ],
+                        image: "/Diseño.jpg",
+                      },
+                      {
+                        id: "step-3",
+                        step: "STEP 03",
+                        title: "Build & testing",
+                        desc: "We configure, develop and test together with key users.",
+                        bullets: [
+                          "Configuration & ABAP",
+                          "User Acceptance Testing (UAT)",
+                        ],
+                        image: "/Build.jpg",
+                      },
+                      {
+                        id: "step-4",
+                        step: "STEP 04",
+                        title: "Go-live & support",
+                        desc: "We support go-live and monitor results and improvements.",
+                        bullets: ["Go-live plan", "Post-implementation support"],
+                        image: "/Golive.jpg",
+                      },
+                    ].map((slide) => (
+                      <article
+                        key={slide.id}
+                        id={slide.id}
+                        className="relative h-[260px] sm:h-[320px] w-full shrink-0 snap-center overflow-hidden rounded-3xl bg-neutral-900 text-white"
+                      >
+                        {/* Background image */}
+                        <Image
+                          src={slide.image}
+                          alt={slide.title}
+                          fill
+                          className="object-cover opacity-70"
+                        />
+      
+                        {/* Overlay */}
+                        <div className="absolute inset-0 bg-black/40" />
+      
+                        {/* Content */}
+                        <div className="relative z-10 flex h-full flex-col justify-center px-8 sm:px-12">
+                          <span className="text-xs font-semibold tracking-[0.12em] uppercase text-neutral-200">
+                            {slide.step}
+                          </span>
+                          <h3 className="mt-1 text-2xl font-extrabold tracking-tight sm:text-3xl">
+                            {slide.title}
+                          </h3>
+                          <p className="mt-3 max-w-2xl text-sm leading-relaxed sm:text-base">
+                            {slide.desc}
+                          </p>
+      
+                          <ul className="mt-3 flex flex-wrap gap-2 text-xs sm:text-sm">
+                            {slide.bullets.map((b) => (
+                              <li
+                                key={b}
+                                className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 backdrop-blur-sm"
+                              >
+                                ✓&nbsp;{b}
+                              </li>
+                            ))}
+                          </ul>
+      
+                          <div className="mt-6">
+                            <Link
+                 href={"/EN/AboutUs"}
+                  className="rounded-lg border border-white/70 px-5 py-2 text-xs font-semibold tracking-wide uppercase transition hover:bg-white hover:text-neutral-900"
+                >
+                  + Info
+                </Link>
+                          </div>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+      
+                  {/* Navigation dots */}
+                  <div className="mt-4 flex justify-center gap-2">
+                    {["step-1", "step-2", "step-3", "step-4"].map((id, index) => (
+                      <a
+                        key={id}
+                        href={`#${id}`}
+                        aria-label={`Go to step ${index + 1}`}
+                        className="h-2 w-2 rounded-full bg-neutral-300 hover:bg-[var(--color-accent)] transition"
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
 
       {/* Benefits */}
       <section id="beneficios" className="border-t border-neutral-200 py-16">
