@@ -4,7 +4,7 @@
 import Link from "next/link";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import Image from "next/image";
-import { UploadCvSection } from "@/Component/UploadCvSection";
+import UploadCvSection from "@/Component/UploadCvSection";
 import {
   FiHeadphones,
   FiAlertTriangle,

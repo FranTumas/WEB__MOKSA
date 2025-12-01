@@ -8,7 +8,7 @@ export default function ContactoPage() {
   const WHATSAPP =
     "https://wa.me/5491160462131?text=Hola%20Moksa%20IT%2C%20me%20gustar%C3%ADa%20consultar%20sobre%20un%20proyecto%20SAP%20o%20VIM.";
   const EMAIL =
-    "mailto:srossi@moksait.com,gtejada@moksait.com?subject=Consulta%20Moksa%20IT";
+    "mailto:info@moksait.com?subject=Consulta%20Moksa%20IT";
 
   const [sending, setSending] = useState(false);
 
@@ -36,7 +36,7 @@ export default function ContactoPage() {
           </li>
           <li className="flex items-center justify-center gap-2">
             <span>📧</span>
-            <span>srossi@moksait.com · gtejada@moksait.com</span>
+            <span>info@moksait.com</span>
           </li>
           <li className="flex items-center justify-center gap-2">
             <span>📍</span>

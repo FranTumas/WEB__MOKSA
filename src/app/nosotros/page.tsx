@@ -1,5 +1,5 @@
 import { Card } from "@/Component/card";
-import { UploadCvSection } from "@/Component/UploadCvSection";
+import UploadCvSection from "@/Component/UploadCvSection";
 import { FiCheckCircle } from "react-icons/fi";
 
 
