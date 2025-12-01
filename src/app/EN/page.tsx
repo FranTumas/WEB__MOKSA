@@ -5,6 +5,15 @@ import Link from "next/link";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import Image from "next/image";
 import { UploadCvSection } from "@/Component/UploadCvSection";
+import {
+  FiHeadphones,
+  FiAlertTriangle,
+  FiRefreshCcw,
+  FiUsers
+, FiLayers, FiTrendingUp
+} from "react-icons/fi";
+
+
 
 type CaseItem = {
   tag: string;
@@ -508,143 +517,190 @@ export default function Home() {
       </section>
 
       {/* Support & SLA */}
-      <section id="sla" className="border-t border-neutral-200 py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <h2 className="text-3xl font-bold tracking-tight">
-              Support and Service Level Agreements (SLA)
-            </h2>
-            <p className="mt-2 text-neutral-600">
-              We define clear response times and support models for each type of request,
-              aligning expectations and making day-to-day management easier.
-            </p>
-          </div>
+<section id="sla" className="border-t border-neutral-200 bg-white py-20">
+  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    
+    {/* Header */}
+    <div className="max-w-2xl">
+      <span className="inline-flex items-center rounded-full bg-indigo-50 px-3 py-1 text-xs font-medium text-indigo-600">
+        Support &amp; SLA
+      </span>
+      <h2 className="mt-4 text-3xl font-bold tracking-tight">
+        Support and Service Level Agreements (SLA)
+      </h2>
+      <p className="mt-2 text-neutral-600 text-sm md:text-base">
+        We define clear response times and support models for each type of request,
+        aligning expectations and making day-to-day management easier.
+      </p>
+    </div>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <Card>
-              <h3 className="text-lg font-semibold">Support model</h3>
-              <p className="mt-2 text-sm text-neutral-600">
-                We combine functional and technical support with a scalable model that
-                covers questions, incidents and evolutionary enhancements.
-              </p>
-              <ul className="mt-4 space-y-1 text-sm text-neutral-600">
-                <li>• Defined contact channels</li>
-                <li>• Prioritization based on impact</li>
-                <li>• Follow-up until closure</li>
-              </ul>
-            </Card>
+    {/* Cards */}
+    <div className="mt-10 grid gap-6 md:grid-cols-3">
+      {[
+        {
+          icon: FiHeadphones,
+          title: "Support model",
+          desc: "We combine functional and technical support with a scalable model that covers questions, incidents and evolutionary improvements.",
+          bullets: [
+            "Defined contact channels",
+            "Prioritization based on impact",
+            "Follow-up until closure",
+          ],
+        },
+        {
+          icon: FiAlertTriangle,
+          title: "Priority levels",
+          desc: "We classify incidents by criticality to ensure a response aligned with their impact on operations.",
+          bullets: [
+            "Critical: immediate attention and full focus",
+            "High: relevant impact, resolution in controlled windows",
+            "Medium & Low: planned and controlled follow-up",
+          ],
+        },
+        {
+          icon: FiRefreshCcw,
+          title: "Support lifecycle",
+          desc: "Each ticket follows a defined workflow from reception to closure, ensuring traceability and clear agreements.",
+          bullets: [
+            "Logging and categorization",
+            "Assignment and analysis",
+            "Solution proposal and validation",
+            "Documented closure and lessons learned",
+          ],
+        },
+      ].map((item) => {
+        const Icon = item.icon;
+        return (
+          <article
+            key={item.title}
+            className="group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-[var(--color-accent)]/30 hover:shadow-lg"
+          >
+            {/* Glow effect */}
+            <div className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full bg-gradient-to-br from-[var(--color-accent)]/15 via-indigo-400/10 to-transparent blur-2xl transition-transform duration-300 group-hover:scale-110" />
 
-            <Card>
-              <h3 className="text-lg font-semibold">Priority levels</h3>
-              <p className="mt-2 text-sm text-neutral-600">
-                We classify incidents by criticality to ensure a response aligned with
-                their impact on operations.
-              </p>
-              <ul className="mt-4 space-y-1 text-sm text-neutral-600">
-                <li>• Critical: immediate attention and full focus</li>
-                <li>• High: relevant impact, resolution in tight windows</li>
-                <li>• Medium and Low: planned and controlled follow-up</li>
-              </ul>
-            </Card>
-
-            <Card>
-              <h3 className="text-lg font-semibold">Support lifecycle</h3>
-              <p className="mt-2 text-sm text-neutral-600">
-                From reception to closure, every ticket follows a defined workflow that
-                leaves traceability and clear agreements.
-              </p>
-              <ul className="mt-4 space-y-1 text-sm text-neutral-600">
-                <li>• Logging and categorization</li>
-                <li>• Assignment and analysis</li>
-                <li>• Solution proposal and validation</li>
-                <li>• Documented closure and lessons learned</li>
-              </ul>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Case studies */}
-      <section id="casos" className="border-t border-neutral-200 py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <h2 className="text-3xl font-bold tracking-tight">
-              Success stories and results
-            </h2>
-            <p className="mt-2 text-neutral-600">
-              Measurable impact on time, quality and costs. A few recent examples:
-            </p>
-          </div>
-
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            {cases.map((c) => (
-              <Card key={c.title}>
-                <div className="text-xs font-medium text-neutral-500">
-                  {c.tag}
+            {/* Content */}
+            <div className="relative z-10 flex h-full flex-col">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
+                  <Icon className="text-lg" />
                 </div>
-                <h3 className="mt-1 text-lg font-semibold transition-colors group-hover:text-[var(--color-accent)]">
-                  {c.title}
+                <h3 className="text-base font-semibold text-neutral-900">
+                  {item.title}
                 </h3>
-                <p className="mt-2 text-sm text-neutral-600">{c.desc}</p>
-                <ul className="mt-4 grid gap-2">
-                  {c.kpis.map((k) => (
-                    <li key={k.label} className="flex items-start gap-2">
-                      <span className="inline-flex shrink-0 items-center rounded-lg border border-neutral-200 px-2 py-1 text-xs font-semibold">
-                        {k.label}
-                      </span>
-                      <span className="text-xs text-neutral-500">
-                        {k.note}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+              </div>
 
-      {/* Client experience */}
-      <section id="clientes" className="border-t border-neutral-200 py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <h2 className="text-3xl font-bold tracking-tight">
-              Client experience
-            </h2>
-            <p className="mt-2 text-neutral-600">
-              We&apos;ve participated in projects of different sizes, from initial
-              implementations to optimization of productive solutions, across multiple
-              industries.
-            </p>
-          </div>
+              <p className="mt-3 text-sm leading-relaxed text-neutral-600">
+                {item.desc}
+              </p>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <Card>
-              <h3 className="text-lg font-semibold">
-                Implementations and improvements
-              </h3>
-              <p className="mt-2 text-sm text-neutral-600">
-                Implementation, evolution and stabilization projects for SAP and OpenText
-                solutions, with a strong focus on adoption and measurable results.
+              <ul className="mt-4 space-y-1.5 text-sm text-neutral-600">
+                {item.bullets.map((b) => (
+                  <li key={b} className="flex items-start gap-2">
+                    <span className="mt-[3px] inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </div>
+</section>
+ {/* Client Experience */}
+<section id="clientes" className="border-t border-neutral-200 bg-white py-20">
+  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    {/* Header */}
+    <div className="max-w-2xl">
+      <span className="inline-flex items-center rounded-full bg-indigo-50 px-3 py-1 text-xs font-medium text-indigo-600">
+        Experience
+      </span>
+      <h2 className="mt-4 text-3xl font-bold tracking-tight">
+        Client experience
+      </h2>
+      <p className="mt-2 text-neutral-600 text-sm md:text-base">
+        We participate in projects of different scales—from initial implementations
+        to optimization of productive SAP and OpenText solutions—across multiple industries.
+      </p>
+    </div>
+
+    {/* Cards */}
+    <div className="mt-10 grid gap-6 md:grid-cols-3">
+      {[
+        {
+          icon: FiTrendingUp,
+          title: "Implementations and improvements",
+          desc: "Implementation, evolution and stabilization of SAP and OpenText solutions, with a strong focus on adoption and measurable results.",
+          bullets: [
+            "End-to-end implementations",
+            "Post-go-live improvements",
+            "Performance optimization",
+          ],
+        },
+        {
+          icon: FiUsers,
+          title: "Distributed teams",
+          desc: "Collaboration with local, regional and global teams, aligning requirements under shared working models.",
+          bullets: [
+            "Collaborative workflows",
+            "Cross-area alignment",
+            "Continuous communication",
+          ],
+        },
+        {
+          icon: FiLayers,
+          title: "Critical processes",
+          desc: "Experience in processes where traceability and information control are key for operations and decision-making.",
+          bullets: [
+            "Business-critical workflows",
+            "Data governance",
+            "Control & auditability",
+          ],
+        },
+      ].map((item) => {
+        const Icon = item.icon;
+        return (
+          <article
+            key={item.title}
+            className="group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-[var(--color-accent)]/30 hover:shadow-lg"
+          >
+            {/* Glow */}
+            <div className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full 
+              bg-gradient-to-br from-[var(--color-accent)]/15 via-indigo-400/10 to-transparent 
+              blur-2xl transition-transform duration-300 group-hover:scale-110" />
+
+            {/* Content */}
+            <div className="relative z-10 flex h-full flex-col">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
+                  <Icon className="text-lg" />
+                </div>
+                <h3 className="text-base font-semibold text-neutral-900">
+                  {item.title}
+                </h3>
+              </div>
+
+              <p className="mt-3 text-sm leading-relaxed text-neutral-600">
+                {item.desc}
               </p>
-            </Card>
-            <Card>
-              <h3 className="text-lg font-semibold">Distributed teams</h3>
-              <p className="mt-2 text-sm text-neutral-600">
-                Working with local and regional teams, aligning the needs of different
-                areas into shared ways of working.
-              </p>
-            </Card>
-            <Card>
-              <h3 className="text-lg font-semibold">Critical processes</h3>
-              <p className="mt-2 text-sm text-neutral-600">
-                Experience in processes where traceability and information control are key
-                for operations and decision-making.
-              </p>
-            </Card>
-          </div>
-        </div>
-      </section>
+
+              <ul className="mt-4 space-y-1.5 text-sm text-neutral-600">
+                {item.bullets.map((b) => (
+                  <li key={b} className="flex items-start gap-2">
+                    <span className="mt-[3px] inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </div>
+</section>
 
       {/* Contact form */}
       <section id="form" className="border-t border-neutral-200 py-20">

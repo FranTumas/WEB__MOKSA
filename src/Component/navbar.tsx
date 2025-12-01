@@ -30,13 +30,6 @@ const NAV_LINKS: NavLink[] = [
     enHref: "/EN/services",
   },
   {
-    key: "cases",
-    esLabel: "Casos",
-    enLabel: "Cases",
-    esHref: "/casos",
-    enHref: "/EN/cases",
-  },
-  {
     key: "about",
     esLabel: "Nosotros",
     enLabel: "About",
@@ -78,20 +71,21 @@ export function Navbar() {
       }
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <Link
-          href={homeHref}
-          className="flex items-center gap-2"
-          style={{ color: "var(--nav-text)" }}
-        >
-          <Image
-            src="/Moksa_vector_blanco.svg"
-            alt="Moksa IT"
-            width={64}
-            height={64}
-            className="h-16 w-16 object-contain"
-          />
-        </Link>
+       {/* Logo */}
+<Link
+  href={homeHref}
+  className="flex items-center gap-2 shrink-0"
+  style={{ color: "var(--nav-text)" }}
+>
+  <Image
+    src="/Moksa_vector_blanco-04.svg"
+    alt="Moksa IT"
+    width={220}
+    height={220}
+    className="h-20 w-auto object-contain md:h-24"
+  />
+</Link>
+
 
         {/* Navegación */}
         <nav

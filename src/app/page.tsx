@@ -5,6 +5,22 @@ import Link from "next/link";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import Image from "next/image";
 import { UploadCvSection } from "@/Component/UploadCvSection";
+import {
+  FiLayers,
+  FiCode,
+  FiFileText,
+  FiClock,
+  FiShield,
+  FiTrendingUp,
+} from "react-icons/fi";
+import {
+  FiHeadphones,
+  FiAlertTriangle,
+  FiRefreshCcw,
+  FiUsers
+} from "react-icons/fi";
+import { ClientsLogosSlider as ClientsSlider } from "@/Component/ClientsSlider";
+
 
 type CaseItem = {
   tag: string;
@@ -514,110 +530,198 @@ export default function Home() {
 
 
       {/* Soporte & SLA */}
-      <section id="sla" className="border-t border-neutral-200 py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <h2 className="text-3xl font-bold tracking-tight">
-              Soporte y acuerdos de servicio (SLA)
-            </h2>
-            <p className="mt-2 text-neutral-600">
-              Definimos tiempos y modalidades de atención claros para cada tipo
-              de requerimiento, alineando expectativas y facilitando la gestión
-              del día a día.
-            </p>
-          </div>
+<section id="sla" className="border-t border-neutral-200 bg-white py-20">
+  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    {/* Header */}
+    <div className="max-w-2xl">
+      <span className="inline-flex items-center rounded-full bg-indigo-50 px-3 py-1 text-xs font-medium text-indigo-600">
+        Soporte &amp; SLA
+      </span>
+      <h2 className="mt-4 text-3xl font-bold tracking-tight">
+        Soporte y acuerdos de servicio (SLA)
+      </h2>
+      <p className="mt-2 text-neutral-600 text-sm md:text-base">
+        Definimos tiempos y modalidades de atención claros para cada tipo de
+        requerimiento, alineando expectativas y facilitando la gestión del día a día.
+      </p>
+    </div>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <Card>
-              <h3 className="text-lg font-semibold">Modelo de soporte</h3>
-              <p className="mt-2 text-sm text-neutral-600">
-                Combinamos soporte funcional y técnico, con un modelo escalable
-                que permite atender consultas, incidencias y mejoras evolutivas.
-              </p>
-              <ul className="mt-4 space-y-1 text-sm text-neutral-600">
-                <li>• Canales de contacto definidos</li>
-                <li>• Priorización según impacto</li>
-                <li>• Seguimiento hasta el cierre</li>
-              </ul>
-            </Card>
+    {/* Tarjetas */}
+    <div className="mt-10 grid gap-6 md:grid-cols-3">
+      {[
+        {
+          icon: FiHeadphones,
+          title: "Modelo de soporte",
+          desc: "Combinamos soporte funcional y técnico en un modelo escalable que cubre consultas, incidentes y mejoras evolutivas.",
+          bullets: [
+            "Canales de contacto definidos",
+            "Priorización según impacto",
+            "Seguimiento hasta el cierre",
+          ],
+        },
+        {
+          icon: FiAlertTriangle,
+          title: "Niveles de prioridad",
+          desc: "Clasificamos los incidentes por criticidad para asegurar una respuesta alineada al impacto en la operación.",
+          bullets: [
+            "Crítico: atención inmediata y foco total",
+            "Alto: impacto relevante, resolución en ventanas acotadas",
+            "Medio y Bajo: seguimiento planificado y controlado",
+          ],
+        },
+        {
+          icon: FiRefreshCcw,
+          title: "Ciclo de atención",
+          desc: "Cada ticket sigue un flujo definido desde la recepción hasta el cierre, dejando trazabilidad y acuerdos claros.",
+          bullets: [
+            "Registro y categorización",
+            "Asignación y análisis",
+            "Propuesta de solución y validación",
+            "Cierre documentado y lecciones aprendidas",
+          ],
+        },
+      ].map((item) => {
+        const Icon = item.icon;
+        return (
+          <article
+            key={item.title}
+            className="group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-[var(--color-accent)]/30 hover:shadow-lg"
+          >
+            {/* Glow de fondo */}
+            <div className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full bg-gradient-to-br from-[var(--color-accent)]/15 via-indigo-400/10 to-transparent blur-2xl transition-transform duration-300 group-hover:scale-110" />
 
-            <Card>
-              <h3 className="text-lg font-semibold">Niveles de prioridad</h3>
-              <p className="mt-2 text-sm text-neutral-600">
-                Clasificamos los incidentes por criticidad para garantizar una
-                respuesta acorde al impacto en la operación.
-              </p>
-              <ul className="mt-4 space-y-1 text-sm text-neutral-600">
-                <li>• Crítico: atención inmediata y foco total</li>
-                <li>• Alto: impacto relevante, resolución en ventanas acotadas</li>
-                <li>• Medio y Bajo: seguimiento planificado y controlado</li>
-              </ul>
-            </Card>
+            {/* Contenido */}
+            <div className="relative z-10 flex h-full flex-col">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
+                  <Icon className="text-lg" />
+                </div>
+                <h3 className="text-base font-semibold text-neutral-900">
+                  {item.title}
+                </h3>
+              </div>
 
-            <Card>
-              <h3 className="text-lg font-semibold">Ciclo de atención</h3>
-              <p className="mt-2 text-sm text-neutral-600">
-                Desde la recepción hasta el cierre, cada ticket sigue un flujo
-                definido que deja trazabilidad y acuerdos claros.
+              <p className="mt-3 text-sm leading-relaxed text-neutral-600">
+                {item.desc}
               </p>
-              <ul className="mt-4 space-y-1 text-sm text-neutral-600">
-                <li>• Registro y categorización</li>
-                <li>• Asignación y análisis</li>
-                <li>• Propuesta de solución y validación</li>
-                <li>• Cierre documentado y lecciones aprendidas</li>
+
+              <ul className="mt-4 space-y-1.5 text-sm text-neutral-600">
+                {item.bullets.map((b) => (
+                  <li key={b} className="flex items-start gap-2">
+                    <span className="mt-[3px] inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
+                    <span>{b}</span>
+                  </li>
+                ))}
               </ul>
-            </Card>
-          </div>
-        </div>
-      </section>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
 
 
       {/* Experiencia en clientes */}
-      <section id="clientes" className="border-t border-neutral-200 py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <h2 className="text-3xl font-bold tracking-tight">
-              Experiencia en clientes
-            </h2>
-            <p className="mt-2 text-neutral-600">
-              Participamos en proyectos de distinta escala, desde implementaciones
-              iniciales hasta optimizaciones sobre soluciones ya productivas, en
-              organizaciones de diversos rubros.
-            </p>
-          </div>
+<section id="clientes" className="border-t border-neutral-200 bg-white py-20">
+  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <Card>
-              <h3 className="text-lg font-semibold">
-                Implementaciones y mejoras
-              </h3>
-              <p className="mt-2 text-sm text-neutral-600">
-                Proyectos de implantación, evolución y estabilización de
-                soluciones SAP y OpenText, con foco en adopción y resultados
-                medibles.
+    {/* Header */}
+    <div className="max-w-2xl">
+      <span className="inline-flex items-center rounded-full bg-indigo-50 px-3 py-1 text-xs font-medium text-indigo-600">
+        Experiencia
+      </span>
+      <h2 className="mt-4 text-3xl font-bold tracking-tight">
+        Experiencia en clientes
+      </h2>
+      <p className="mt-2 text-neutral-600 text-sm md:text-base">
+        Participamos en proyectos de distinta escala, desde implementaciones iniciales
+        hasta optimizaciones sobre soluciones productivas, en organizaciones de diversos rubros.
+      </p>
+    </div>
+
+    {/* Cards */}
+    <div className="mt-10 grid gap-6 md:grid-cols-3">
+      {[
+        {
+          icon: FiTrendingUp,
+          title: "Implementaciones y mejoras",
+          desc: "Proyectos de implantación, evolución y estabilización de soluciones SAP y OpenText, con foco en adopción y resultados medibles.",
+          bullets: [
+            "Implementaciones end-to-end",
+            "Mejoras post-go-live",
+            "Optimización de performance",
+          ],
+        },
+        {
+          icon: FiUsers,
+          title: "Equipos distribuidos",
+          desc: "Trabajo integrado con equipos locales, regionales y globales, bajo modelos coordinados de trabajo.",
+          bullets: [
+            "Modelos colaborativos",
+            "Alineación entre áreas",
+            "Comunicación continua",
+          ],
+        },
+        {
+          icon: FiLayers,
+          title: "Procesos críticos",
+          desc: "Experiencia en procesos donde la trazabilidad y el control de información son claves para la operación.",
+          bullets: [
+            "Flujos sensibles al negocio",
+            "Gobierno del dato",
+            "Control y auditoría",
+          ],
+        },
+      ].map((item) => {
+        const Icon = item.icon;
+        return (
+          <article
+            key={item.title}
+            className="group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-[var(--color-accent)]/30 hover:shadow-lg"
+          >
+            {/* Glow */}
+            <div
+              className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full 
+              bg-gradient-to-br from-[var(--color-accent)]/15 via-indigo-400/10 to-transparent 
+              blur-2xl transition-transform duration-300 group-hover:scale-110"
+            />
+
+            {/* Content */}
+            <div className="relative z-10 flex h-full flex-col">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
+                  <Icon className="text-lg" />
+                </div>
+                <h3 className="text-base font-semibold text-neutral-900">
+                  {item.title}
+                </h3>
+              </div>
+
+              <p className="mt-3 text-sm leading-relaxed text-neutral-600">
+                {item.desc}
               </p>
-            </Card>
-            <Card>
-              <h3 className="text-lg font-semibold">
-                Equipos distribuidos
-              </h3>
-              <p className="mt-2 text-sm text-neutral-600">
-                Trabajo con equipos locales y regionales, integrando
-                necesidades de diferentes áreas en modelos de trabajo comunes.
-              </p>
-            </Card>
-            <Card>
-              <h3 className="text-lg font-semibold">
-                Procesos críticos
-              </h3>
-              <p className="mt-2 text-sm text-neutral-600">
-                Experiencia en procesos donde la trazabilidad y el control de
-                información son clave para la operación y la toma de decisiones.
-              </p>
-            </Card>
-          </div>
-        </div>
-      </section>
+
+              <ul className="mt-4 space-y-1.5 text-sm text-neutral-600">
+                {item.bullets.map((b) => (
+                  <li key={b} className="flex items-start gap-2">
+                    <span className="mt-[3px] inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+
+    {/* Slider de clientes */}
+    <ClientsSlider />
+  </div>
+</section>
+
 
       {/* Formulario */}
       <section id="form" className="border-t border-neutral-200 py-20">

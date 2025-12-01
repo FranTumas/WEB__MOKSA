@@ -1,7 +1,10 @@
 {
   "/EN/AboutUs/page": "app/EN/AboutUs/page.js",
   "/EN/cases/page": "app/EN/cases/page.js",
+  "/EN/page": "app/EN/page.js",
   "/EN/services/page": "app/EN/services/page.js",
+  "/EN/sla/page": "app/EN/sla/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/api/uploadthing/route": "app/api/uploadthing/route.js",
   "/casos/page": "app/casos/page.js",
   "/contacto/page": "app/contacto/page.js",

@@ -93,3 +93,18 @@ p { text-wrap: pretty; max-width: 65ch; }
 
 /* Botones */
 .typ-cta { letter-spacing: 0.02em; }
+
+@keyframes slide-slow {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-slide-slow {
+  animation: slide-slow 60s linear infinite; /* más lento */
+}
+
+
