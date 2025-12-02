@@ -84,7 +84,7 @@ export default function ServicesPage() {
               {[
                 {
                   icon: FiTrendingUp,
-                  label: "15+ years in SAP & OpenText",
+                  label: "20+ years in SAP & OpenText",
                   desc: "Experience in implementations, upgrades and evolutionary work.",
                 },
                 {
