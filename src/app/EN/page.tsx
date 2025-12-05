@@ -446,7 +446,7 @@ export default function Home() {
                   title: "Go-live & support",
                   desc: "We support go-live and monitor results and improvements.",
                   bullets: ["Go-live plan", "Post-implementation support"],
-                  image: "/Golive.jpg",
+                  image: "/Go-Live.jpg",
                 },
               ].map((slide) => (
                 <article
