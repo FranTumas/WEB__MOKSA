@@ -457,7 +457,7 @@ export default function Home() {
             title: "Go-live & soporte",
             desc: "Acompañamos la salida productiva y monitoreamos resultados y mejoras.",
             bullets: ["Plan de go-live", "Soporte post-implementación"],
-            image: "/Golive.jpg",
+            image: "/Go-Live.jpg",
           },
         ].map((slide) => (
           <article
