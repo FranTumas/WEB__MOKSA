@@ -54,17 +54,12 @@ export default function ContactoPage() {
     <h2 className="text-center text-3xl font-bold tracking-tight">
       Contact us
     </h2>
-    
+
     {/* GOOGLE FORMS FORM */}
     <form
       action="https://docs.google.com/forms/d/e/1FAIpQLSf5PVcOArhitpSeqhH_lxKbygEZnRrSpCQgdxyKFalDgycoRA/formResponse"
       method="POST"
-      target="hidden_iframe"
-      onSubmit={() => {
-        setTimeout(() => {
-          window.location.href = "/EN/contact"; // o la ruta que quieras como "home" en EN
-        }, 500);
-      }}
+      target="_blank"  
       className="mx-auto mt-8 max-w-3xl rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"
     >
       {/* Fields */}
@@ -73,7 +68,7 @@ export default function ContactoPage() {
         <div>
           <label className="text-sm font-medium">Name</label>
           <input
-            name="entry.1994300530" // Full name
+            name="entry.1994300530" 
             required
             className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2 outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
           />
@@ -83,7 +78,7 @@ export default function ContactoPage() {
         <div>
           <label className="text-sm font-medium">Email</label>
           <input
-            name="entry.1021242799" // Email
+            name="entry.1021242799"
             type="email"
             required
             className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2 outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
@@ -96,7 +91,7 @@ export default function ContactoPage() {
         <div>
           <label className="text-sm font-medium">Phone</label>
           <input
-            name="entry.1785945974" // Phone
+            name="entry.1785945974"
             type="tel"
             className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2 outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
           />
@@ -104,7 +99,7 @@ export default function ContactoPage() {
         <div>
           <label className="text-sm font-medium">Company</label>
           <input
-            name="entry.1002964135" // Company
+            name="entry.1002964135"
             className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2 outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
           />
         </div>
@@ -114,7 +109,7 @@ export default function ContactoPage() {
       <div className="mt-4">
         <label className="text-sm font-medium">Message</label>
         <textarea
-          name="entry.149354678" // Message
+          name="entry.149354678"
           required
           rows={6}
           className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2 outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
@@ -140,10 +135,8 @@ export default function ContactoPage() {
         </button>
       </div>
     </form>
-
-    {/* Hidden iframe for redirect */}
-    <iframe name="hidden_iframe" title="Hidden form redirect" style={{ display: "none" }}></iframe>
   </div>
+
 </section>
 
     </main>
