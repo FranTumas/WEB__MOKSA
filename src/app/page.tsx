@@ -734,11 +734,6 @@ export default function Home() {
       action="https://docs.google.com/forms/d/e/1FAIpQLSf5PVcOArhitpSeqhH_lxKbygEZnRrSpCQgdxyKFalDgycoRA/formResponse"
       method="POST"
       target="hidden_iframe"
-      onSubmit={() => {
-        setTimeout(() => {
-          window.location.href = "/"; // redirige al Home
-        }, 500);
-      }}
       className="mx-auto mt-8 max-w-3xl rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"
     >
       {/* Campos */}
