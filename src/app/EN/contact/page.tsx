@@ -2,7 +2,7 @@
 
 import { PrimaryButton } from "@/Component/buttons/PrimaryButton";
 import { SecondaryButton } from "@/Component/buttons/SecondaryButton";
-import { ContactFormSectionEN } from "@/Component/ContactFormSectionEN";
+import { ContactFormEN } from "@/Component/ContactFormSectionEN";
 
 export default function ContactoPage() {
   const WHATSAPP =
@@ -50,7 +50,7 @@ export default function ContactoPage() {
       </section>
 
         {/* Formulario */}
-            <ContactFormSectionEN />
+            <ContactFormEN />
 
     </main>
   );
