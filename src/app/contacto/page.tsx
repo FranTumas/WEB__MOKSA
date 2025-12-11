@@ -64,7 +64,7 @@ export default function ContactoPage() {
      </ul>
 
           <form
-            action="https://formspree.io/f/xxxxxxxx" // Reemplazá por tu endpoint
+            action="https://formspree.io/f/mqargpwa" // Reemplazá por tu endpoint
             method="POST"
             onSubmit={() => setSending(true)}
             className="mt-8 grid gap-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"
