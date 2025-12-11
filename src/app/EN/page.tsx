@@ -713,7 +713,7 @@ export default function Home() {
           </p>
 
           <form
-            action="https://formspree.io/f/xxxxxxxx"
+            action="https://formspree.io/f/mqargpwa" // Reemplazá por tu endpoint
             method="POST"
             className="mx-auto mt-8 max-w-3xl rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"
           >
