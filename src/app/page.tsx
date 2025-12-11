@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 // src/app/page.tsx
-import { ContactFormSection } from "@/Component/ContactFormSection";
+import { ContactForm } from "@/Component/ContactFormSection";
 import Link from "next/link";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import Image from "next/image";
@@ -724,7 +724,7 @@ export default function Home() {
 
 
       {/* Formulario */}
-      <ContactFormSection />
+      <ContactForm />
 
 
       {/* CTA final */}

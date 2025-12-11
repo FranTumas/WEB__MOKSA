@@ -12,7 +12,7 @@ import {
   FiUsers
 , FiLayers, FiTrendingUp
 } from "react-icons/fi";
-import { ContactFormSectionEN } from "@/Component/ContactFormSectionEN";
+import { ContactFormEN } from "@/Component/ContactFormSectionEN";
 
 
 
@@ -704,7 +704,7 @@ export default function Home() {
 </section>
 
       {/* Formulario */}
-            <ContactFormSectionEN />
+            <ContactFormEN />
 
 
       {/* Final CTA */}

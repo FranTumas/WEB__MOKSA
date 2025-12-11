@@ -1,33 +1,59 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-export function ContactFormSectionEN() {
-  const [showPopup, setShowPopup] = useState(false);
+export function ContactFormEN() {
+  const [sending, setSending] = useState(false);
+  const [ok, setOk] = useState(false);
+  const [error, setError] = useState("");
 
-  // Cerrar automáticamente después de unos segundos
-  useEffect(() => {
-    if (!showPopup) return;
-    const timer = setTimeout(() => setShowPopup(false), 4000);
-    return () => clearTimeout(timer);
-  }, [showPopup]);
+  const FORMS_URL =
+    "https://docs.google.com/forms/d/e/1FAIpQLSf5PVcOArhitpSeqhH_lxKbygEZnRrSpCQgdxyKFalDgycoRA/formResponse";
 
-  const handleSubmit = () => {
-    // No prevenimos el submit: dejamos que Google Forms reciba los datos
-    setShowPopup(true);
-  };
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setSending(true);
+    setOk(false);
+    setError("");
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      await fetch(FORMS_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body: data,
+      });
+
+      
+      form.reset();        
+      setOk(true);       
+
+      setTimeout(() => {
+        setOk(false);
+      }, 5000);
+    } catch (err) {
+      console.error(err);
+      setError(
+        "Hubo un problema al enviar el formulario. Si persiste, escribinos a info@moksait.com."
+      );
+    } finally {
+      setSending(false);
+    }
+  }
 
   return (
     <section id="form" className="border-t border-neutral-200 py-20">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-center text-3xl font-bold tracking-tight">
-          Write Us
+          Write to us
         </h2>
-        {/* FORMULARIO GOOGLE FORMS */}
+        <p className="mx-auto mt-2 max-w-prose text-center leading-relaxed tracking-[0.01em] text-neutral-600">
+          We will respond within the same business day.
+        </p>
+
         <form
-          action="https://docs.google.com/forms/d/e/1FAIpQLSf5PVcOArhitpSeqhH_lxKbygEZnRrSpCQgdxyKFalDgycoRA/formResponse"
-          method="POST"
-          target="hidden_iframe"
           onSubmit={handleSubmit}
           className="mx-auto mt-8 max-w-3xl rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"
         >
@@ -97,43 +123,25 @@ export function ContactFormSectionEN() {
             </label>
 
             <button
-  type="submit"
-  className="cursor-pointer self-end rounded-xl bg-[var(--color-accent)] px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:brightness-110 hover:shadow-md focus:outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30 active:translate-y-0 sm:self-auto"
->
-  Send
-</button>
-          </div>
-        </form>
-
-        {/* IFRAME OCULTO PARA QUE GOOGLE FORMS RECIBA LOS DATOS SIN NAVEGAR */}
-        <iframe
-          name="hidden_iframe"
-          title="Hidden form submission iframe"
-          style={{ display: "none" }}
-        ></iframe>
-      </div>
-
-      {/* POPUP DE AGRADECIMIENTO */}
-      {showPopup && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4">
-          <div className="w-full max-w-sm rounded-2xl bg-white p-6 text-center shadow-2xl">
-            <h3 className="text-lg font-semibold text-neutral-900">
-              Thank you for contacting us!
-            </h3>
-            <p className="mt-2 text-sm text-neutral-600">
-              We have received your message and will respond within the same business day.
-            </p>
-
-            <button
-              type="button"
-              onClick={() => setShowPopup(false)}
-              className="mt-4 rounded-xl bg-[var(--color-accent)] px-4 py-2 text-sm font-semibold text-white transition hover:brightness-110 focus:outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
+              type="submit"
+              disabled={sending}
+              className="cursor-pointer self-end rounded-xl bg-[var(--color-accent)] px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:brightness-110 hover:shadow-md focus:outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30 active:translate-y-0 disabled:opacity-60 sm:self-auto"
             >
-              Close
+              {sending ? "Sending..." : "Send"}
             </button>
           </div>
-        </div>
-      )}
+
+          {/* Status messages */}
+          <div className="mt-4 min-h-[1.25rem]">
+            {ok && (
+              <p className="text-sm text-green-600">
+                Thank you, we have received your message. We will respond shortly.
+              </p>
+            )}
+            {error && <p className="text-sm text-red-600">{error}</p>}
+          </div>
+        </form>
+      </div>
     </section>
   );
 }
