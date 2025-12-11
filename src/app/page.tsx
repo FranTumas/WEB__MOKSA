@@ -729,10 +729,20 @@ export default function Home() {
     <h2 className="text-center text-3xl font-bold tracking-tight">
       Escribinos
     </h2>
-    
+    <p className="mx-auto mt-2 max-w-prose text-center leading-relaxed tracking-[0.01em] text-neutral-600">
+      Te respondemos dentro del mismo día hábil.
+    </p>
+
+    {/* FORMULARIO GOOGLE FORMS */}
     <form
       action="https://docs.google.com/forms/d/e/1FAIpQLSf5PVcOArhitpSeqhH_lxKbygEZnRrSpCQgdxyKFalDgycoRA/formResponse"
       method="POST"
+      target="hidden_iframe"
+      onSubmit={() => {
+        setTimeout(() => {
+          window.location.href = "/"; // redirige al Home
+        }, 500);
+      }}
       className="mx-auto mt-8 max-w-3xl rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"
     >
       {/* Campos */}
@@ -741,7 +751,7 @@ export default function Home() {
         <div>
           <label className="text-sm font-medium">Nombre</label>
           <input
-            name="entry.1994300530" // Nombre completo
+            name="entry.1994300530"
             required
             className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2 outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
           />
@@ -751,7 +761,7 @@ export default function Home() {
         <div>
           <label className="text-sm font-medium">Email</label>
           <input
-            name="entry.1021242799" // Email
+            name="entry.1021242799"
             type="email"
             required
             className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2 outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
@@ -764,7 +774,7 @@ export default function Home() {
         <div>
           <label className="text-sm font-medium">Teléfono</label>
           <input
-            name="entry.1785945974" // Teléfono
+            name="entry.1785945974"
             type="tel"
             className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2 outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
           />
@@ -772,7 +782,7 @@ export default function Home() {
         <div>
           <label className="text-sm font-medium">Empresa</label>
           <input
-            name="entry.1002964135" // Empresa
+            name="entry.1002964135"
             className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2 outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
           />
         </div>
@@ -782,7 +792,7 @@ export default function Home() {
       <div className="mt-4">
         <label className="text-sm font-medium">Mensaje</label>
         <textarea
-          name="entry.149354678" // Mensaje
+          name="entry.149354678"
           required
           rows={6}
           className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2 outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
@@ -808,6 +818,9 @@ export default function Home() {
         </button>
       </div>
     </form>
+
+    {/* IFRAME OCULTO PARA REDIRECCIÓN */}
+    <iframe name="hidden_iframe" title="Hidden form submission iframe" style={{ display: "none" }}></iframe>
   </div>
 </section>
 

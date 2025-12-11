@@ -702,25 +702,35 @@ export default function Home() {
   </div>
 </section>
 
-      {/* Formulario */}
+      {/* Contact form */}
 <section id="form" className="border-t border-neutral-200 py-20">
   <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
     <h2 className="text-center text-3xl font-bold tracking-tight">
-      Write to us
+      Contact us
     </h2>
-    
+    <p className="mx-auto mt-2 max-w-prose text-center leading-relaxed tracking-[0.01em] text-neutral-600">
+      We usually reply within the same business day.
+    </p>
+
+    {/* GOOGLE FORMS FORM */}
     <form
       action="https://docs.google.com/forms/d/e/1FAIpQLSf5PVcOArhitpSeqhH_lxKbygEZnRrSpCQgdxyKFalDgycoRA/formResponse"
       method="POST"
+      target="hidden_iframe"
+      onSubmit={() => {
+        setTimeout(() => {
+          window.location.href = "/EN"; // o la ruta que quieras como "home" en EN
+        }, 500);
+      }}
       className="mx-auto mt-8 max-w-3xl rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"
     >
-      {/* Campos */}
+      {/* Fields */}
       <div className="grid gap-4 sm:grid-cols-2">
         {/* Name */}
         <div>
           <label className="text-sm font-medium">Name</label>
           <input
-            name="entry.1994300530" // Nombre completo
+            name="entry.1994300530" // Full name
             required
             className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2 outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
           />
@@ -743,7 +753,7 @@ export default function Home() {
         <div>
           <label className="text-sm font-medium">Phone</label>
           <input
-            name="entry.1785945974" // Teléfono
+            name="entry.1785945974" // Phone
             type="tel"
             className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2 outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
           />
@@ -751,7 +761,7 @@ export default function Home() {
         <div>
           <label className="text-sm font-medium">Company</label>
           <input
-            name="entry.1002964135" // Empresa
+            name="entry.1002964135" // Company
             className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2 outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
           />
         </div>
@@ -761,14 +771,14 @@ export default function Home() {
       <div className="mt-4">
         <label className="text-sm font-medium">Message</label>
         <textarea
-          name="entry.149354678" // Mensaje
+          name="entry.149354678" // Message
           required
           rows={6}
           className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2 outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
         />
       </div>
 
-      {/* Checkbox + botón */}
+      {/* Checkbox + button */}
       <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <label className="inline-flex items-center gap-2 text-xs text-neutral-600">
           <input
@@ -787,6 +797,9 @@ export default function Home() {
         </button>
       </div>
     </form>
+
+    {/* Hidden iframe for redirect */}
+    <iframe name="hidden_iframe" title="Hidden form submission frame" style={{ display: "none" }}></iframe>
   </div>
 </section>
 
