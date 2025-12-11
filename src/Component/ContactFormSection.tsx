@@ -23,14 +23,12 @@ export function ContactForm() {
         body: data,
       });
 
-      form.reset();                 // limpia formulario
-      setShowPopup(true);           // muestra popup
+      form.reset();
+      setShowPopup(true);
 
-      // autocierre del popup
       setTimeout(() => {
         setShowPopup(false);
       }, 4500);
-
     } catch (error) {
       console.error(error);
     } finally {
@@ -104,23 +102,25 @@ export function ContactForm() {
 
           <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <label className="inline-flex items-center gap-2 text-xs text-neutral-600">
-              <input type="checkbox" required className="rounded border-neutral-300" />
+              <input
+                type="checkbox"
+                required
+                className="rounded border-neutral-300"
+              />
               Acepto ser contactado para mi consulta.
             </label>
 
             <button
               type="submit"
               disabled={sending}
-              className="cursor-pointer rounded-xl bg-[var(--color-accent)] px-5 py-2.5 
-              text-sm font-semibold text-white transition-all hover:-translate-y-0.5 
-              hover:brightness-110 hover:shadow-md disabled:opacity-60"
+              className="cursor-pointer rounded-xl bg-[var(--color-accent)] px-5 py-2.5 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:brightness-110 hover:shadow-md disabled:opacity-60"
             >
               {sending ? "Enviando..." : "Enviar"}
             </button>
           </div>
         </form>
 
-        {/* =============== POPUP DE ÉXITO =============== */}
+        {/* POPUP ÉXITO */}
         {showPopup && (
           <div
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm"
@@ -139,14 +139,12 @@ export function ContactForm() {
 
               <button
                 onClick={() => setShowPopup(false)}
-                className="mt-6 rounded-xl bg-[var(--color-accent)] px-5 py-2.5 
-                text-sm font-semibold text-white hover:opacity-90"
+                className="mt-6 rounded-xl bg-[var(--color-accent)] px-5 py-2.5 text-sm font-semibold text-white hover:opacity-90"
               >
                 Cerrar
               </button>
             </div>
 
-            {/* Animación */}
             <style jsx>{`
               @keyframes fadeIn {
                 from {

@@ -23,14 +23,12 @@ export function ContactFormEN() {
         body: data,
       });
 
-      form.reset();                 // limpia formulario
-      setShowPopup(true);           // muestra popup
+      form.reset();
+      setShowPopup(true);
 
-      // autocierre del popup
       setTimeout(() => {
         setShowPopup(false);
       }, 4500);
-
     } catch (error) {
       console.error(error);
     } finally {
@@ -42,17 +40,17 @@ export function ContactFormEN() {
     <section id="form" className="border-t border-neutral-200 py-20">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-center text-3xl font-bold tracking-tight">
-          Write to us
+          Contact us
         </h2>
         <p className="mx-auto mt-2 max-w-prose text-center text-neutral-600">
-          We will respond within the same business day.
+          We usually reply within the same business day.
         </p>
 
         <form
           onSubmit={handleSubmit}
           className="mx-auto mt-8 max-w-3xl rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"
         >
-          {/* Campos */}
+          {/* Fields */}
           <div className="grid gap-4 sm:grid-cols-2">
             <div>
               <label className="text-sm font-medium">Name</label>
@@ -104,23 +102,25 @@ export function ContactFormEN() {
 
           <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <label className="inline-flex items-center gap-2 text-xs text-neutral-600">
-              <input type="checkbox" required className="rounded border-neutral-300" />
+              <input
+                type="checkbox"
+                required
+                className="rounded border-neutral-300"
+              />
               I agree to be contacted regarding my inquiry.
             </label>
 
             <button
               type="submit"
               disabled={sending}
-              className="cursor-pointer rounded-xl bg-[var(--color-accent)] px-5 py-2.5 
-              text-sm font-semibold text-white transition-all hover:-translate-y-0.5 
-              hover:brightness-110 hover:shadow-md disabled:opacity-60"
+              className="cursor-pointer rounded-xl bg-[var(--color-accent)] px-5 py-2.5 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:brightness-110 hover:shadow-md disabled:opacity-60"
             >
               {sending ? "Sending..." : "Send"}
             </button>
           </div>
         </form>
 
-        {/* =============== SUCCESS POPUP =============== */}
+        {/* SUCCESS POPUP */}
         {showPopup && (
           <div
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm"
@@ -139,14 +139,12 @@ export function ContactFormEN() {
 
               <button
                 onClick={() => setShowPopup(false)}
-                className="mt-6 rounded-xl bg-[var(--color-accent)] px-5 py-2.5 
-                text-sm font-semibold text-white hover:opacity-90"
+                className="mt-6 rounded-xl bg-[var(--color-accent)] px-5 py-2.5 text-sm font-semibold text-white hover:opacity-90"
               >
                 Close
               </button>
             </div>
 
-            {/* Animación */}
             <style jsx>{`
               @keyframes fadeIn {
                 from {
