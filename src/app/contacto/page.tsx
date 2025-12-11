@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { PrimaryButton } from "@/Component/buttons/PrimaryButton";
 import { SecondaryButton } from "@/Component/buttons/SecondaryButton";
 
@@ -10,7 +9,7 @@ export default function ContactoPage() {
   const EMAIL =
     "mailto:info@moksait.com?subject=Consulta%20Moksa%20IT";
 
-  const [sending, setSending] = useState(false);
+  
 
   return (
     <main className="bg-white text-neutral-900">
@@ -52,97 +51,93 @@ export default function ContactoPage() {
       </section>
 
       {/* Formulario */}
-      <section className="border-t border-neutral-200 py-16">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-center">
-            Contanos tu necesidad
-          </h2>
-          <ul className="mt-6 space-y-1 text-sm text-neutral-600 flex flex-col items-center">
-     <p className="mt-5 text-xs text-neutral-500 flex justify-center w-full">
-      Con 2–3 líneas alcanza para preparar una propuesta clara.
-     </p>
-     </ul>
-
-          <form
-            action="https://formspree.io/f/mqargpwa" // Reemplazá por tu endpoint
-            method="POST"
-            onSubmit={() => setSending(true)}
-            className="mt-8 grid gap-4 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"
-          >
-            {/* Honeypot simple */}
-            <input type="text" name="hp" className="hidden" tabIndex={-1} autoComplete="off" />
-
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label className="text-sm font-medium">Nombre*</label>
-                <input
-                  name="name"
-                  required
-                  className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2 outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
-                />
-              </div>
-              <div>
-                <label className="text-sm font-medium">Email*</label>
-                <input
-                  name="email"
-                  type="email"
-                  required
-                  className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2 outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
-                />
-              </div>
-            </div>
-
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label className="text-sm font-medium">Empresa</label>
-                <input
-                  name="company"
-                  className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2 outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
-                />
-              </div>
-              <div>
-                <label className="text-sm font-medium">Teléfono</label>
-                <input
-                  name="phone"
-                  className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2 outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className="text-sm font-medium">Mensaje*</label>
-              <textarea
-                name="message"
-                required
-                rows={6}
-                placeholder="Ej: Necesitamos automatizar VIM en SAP S/4HANA para reducir tiempos de ciclo..."
-                className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2 outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
-              />
-            </div>
-
-            <div className="flex items-center justify-between">
-              <label className="text-xs text-neutral-500 inline-flex items-center gap-2">
-                <input type="checkbox" required className="rounded border-neutral-300" />
-                Acepto ser contactado para mi consulta.
-              </label>
-
-              {/* Botón submit con estilo de PrimaryButton */}
-              <button
-                type="submit"
-                disabled={sending}
-                className="inline-flex items-center justify-center rounded-xl bg-[var(--color-accent)] px-5 py-2.5 text-sm font-semibold text-white hover:opacity-90 focus:outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30 disabled:opacity-70"
-              >
-                {sending ? "Enviando…" : "Enviar"}
-              </button>
-            </div>
-
-            <p className="mt-2 text-[11px] text-neutral-500">
-              Al enviar aceptás nuestro uso de tu información para responder tu consulta. No hacemos
-              spam ni compartimos datos con terceros.
-            </p>
-          </form>
+<section id="form" className="border-t border-neutral-200 py-20">
+  <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    <h2 className="text-center text-3xl font-bold tracking-tight">
+      Escribinos
+    </h2>
+    
+    <form
+      action="https://docs.google.com/forms/d/e/1FAIpQLSf5PVcOArhitpSeqhH_lxKbygEZnRrSpCQgdxyKFalDgycoRA/formResponse"
+      method="POST"
+      className="mx-auto mt-8 max-w-3xl rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"
+    >
+      {/* Campos */}
+      <div className="grid gap-4 sm:grid-cols-2">
+        {/* Nombre */}
+        <div>
+          <label className="text-sm font-medium">Nombre</label>
+          <input
+            name="entry.1994300530" // Nombre completo
+            required
+            className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2 outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
+          />
         </div>
-      </section>
+
+        {/* Email */}
+        <div>
+          <label className="text-sm font-medium">Email</label>
+          <input
+            name="entry.1021242799" // Email
+            type="email"
+            required
+            className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2 outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
+          />
+        </div>
+      </div>
+
+      {/* Teléfono + Empresa */}
+      <div className="mt-4 grid gap-4 sm:grid-cols-2">
+        <div>
+          <label className="text-sm font-medium">Teléfono</label>
+          <input
+            name="entry.1785945974" // Teléfono
+            type="tel"
+            className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2 outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
+          />
+        </div>
+        <div>
+          <label className="text-sm font-medium">Empresa</label>
+          <input
+            name="entry.1002964135" // Empresa
+            className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2 outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
+          />
+        </div>
+      </div>
+
+      {/* Mensaje */}
+      <div className="mt-4">
+        <label className="text-sm font-medium">Mensaje</label>
+        <textarea
+          name="entry.149354678" // Mensaje
+          required
+          rows={6}
+          className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2 outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30"
+        />
+      </div>
+
+      {/* Checkbox + botón */}
+      <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <label className="inline-flex items-center gap-2 text-xs text-neutral-600">
+          <input
+            type="checkbox"
+            required
+            className="rounded border-neutral-300"
+          />
+          Acepto ser contactado para mi consulta.
+        </label>
+
+        <button
+          type="submit"
+          className="self-end rounded-xl bg-[var(--color-accent)] px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:brightness-110 hover:shadow-md focus:outline-none focus:ring-4 focus:ring-[var(--color-accent)]/30 active:translate-y-0 sm:self-auto"
+        >
+          Enviar
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
     </main>
   );
 }
