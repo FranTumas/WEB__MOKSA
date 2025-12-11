@@ -54,10 +54,7 @@ export default function ContactoPage() {
     <h2 className="text-center text-3xl font-bold tracking-tight">
       Contact us
     </h2>
-    <p className="mx-auto mt-2 max-w-prose text-center leading-relaxed tracking-[0.01em] text-neutral-600">
-      We usually reply within the same business day.
-    </p>
-
+    
     {/* GOOGLE FORMS FORM */}
     <form
       action="https://docs.google.com/forms/d/e/1FAIpQLSf5PVcOArhitpSeqhH_lxKbygEZnRrSpCQgdxyKFalDgycoRA/formResponse"
@@ -65,7 +62,7 @@ export default function ContactoPage() {
       target="hidden_iframe"
       onSubmit={() => {
         setTimeout(() => {
-          window.location.href = "/EN"; // o la ruta que quieras como "home" en EN
+          window.location.href = "/EN/contact"; // o la ruta que quieras como "home" en EN
         }, 500);
       }}
       className="mx-auto mt-8 max-w-3xl rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"

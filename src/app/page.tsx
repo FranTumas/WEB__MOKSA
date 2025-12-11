@@ -729,10 +729,6 @@ export default function Home() {
     <h2 className="text-center text-3xl font-bold tracking-tight">
       Escribinos
     </h2>
-    <p className="mx-auto mt-2 max-w-prose text-center leading-relaxed tracking-[0.01em] text-neutral-600">
-      Te respondemos dentro del mismo día hábil.
-    </p>
-
     {/* FORMULARIO GOOGLE FORMS */}
     <form
       action="https://docs.google.com/forms/d/e/1FAIpQLSf5PVcOArhitpSeqhH_lxKbygEZnRrSpCQgdxyKFalDgycoRA/formResponse"

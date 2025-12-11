@@ -708,10 +708,7 @@ export default function Home() {
     <h2 className="text-center text-3xl font-bold tracking-tight">
       Contact us
     </h2>
-    <p className="mx-auto mt-2 max-w-prose text-center leading-relaxed tracking-[0.01em] text-neutral-600">
-      We usually reply within the same business day.
-    </p>
-
+   
     {/* GOOGLE FORMS FORM */}
     <form
       action="https://docs.google.com/forms/d/e/1FAIpQLSf5PVcOArhitpSeqhH_lxKbygEZnRrSpCQgdxyKFalDgycoRA/formResponse"

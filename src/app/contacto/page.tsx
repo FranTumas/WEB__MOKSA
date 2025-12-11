@@ -56,10 +56,7 @@ export default function ContactoPage() {
     <h2 className="text-center text-3xl font-bold tracking-tight">
       Escribinos
     </h2>
-    <p className="mx-auto mt-2 max-w-prose text-center leading-relaxed tracking-[0.01em] text-neutral-600">
-      Te respondemos dentro del mismo día hábil.
-    </p>
-
+  
     {/* FORMULARIO GOOGLE FORMS */}
     <form
       action="https://docs.google.com/forms/d/e/1FAIpQLSf5PVcOArhitpSeqhH_lxKbygEZnRrSpCQgdxyKFalDgycoRA/formResponse"
@@ -67,7 +64,7 @@ export default function ContactoPage() {
       target="hidden_iframe"
       onSubmit={() => {
         setTimeout(() => {
-          window.location.href = "/"; // redirige al Home
+          window.location.href = "/contacto"; // redirige al Home
         }, 500);
       }}
       className="mx-auto mt-8 max-w-3xl rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"
