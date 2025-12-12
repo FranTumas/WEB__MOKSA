@@ -220,11 +220,6 @@ export default function SupportProcessSliderEN() {
                   style={{ left: `calc(${progress}% - 10px)` }}
                 />
               </div>
-
-              {/* Optional label */}
-              <div className="mt-2 text-center text-xs text-neutral-500">
-                Slide the bar or scroll to navigate through the steps
-              </div>
             </div>
           </div>
         </div>
