@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+import Image from "next/image";
 import { Card } from "@/Component/card";
 
 export const metadata = {
@@ -238,69 +239,120 @@ export default function SLAPage() {
   </div>
 </section>
 
-{/* Attention Process */}
+{/* Support Process (IMAGE SLIDER) */}
 <section className="border-t border-neutral-200 bg-neutral-50/60 py-20">
   <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
+    {/* Header */}
     <h2 className="text-3xl font-bold tracking-tight">
-      Support process
+      Support Process
     </h2>
-    <p className="mt-2 text-neutral-600 leading-relaxed max-w-2xl">
-      Standard ticket flow from reception to closure, with control and traceability
-      at every stage.
+    <p className="mt-2 max-w-2xl leading-relaxed text-neutral-600">
+      Standard ticket workflow from intake to closure, with control and
+      traceability at every stage.
     </p>
 
-    {/* Workflow */}
-    <ol className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-      {[
+    {(() => {
+      const steps = [
         {
+          id: "proc-1",
           p: "01",
-          t: "Reception",
-          d: "Entry via email/portal with evidence, criticality and requester details.",
+          t: "Intake",
+          d: "Ticket submission via email or portal, including evidence, criticality, and requester information.",
+          image: "/Recepción.jpg",
         },
         {
+          id: "proc-2",
           p: "02",
           t: "Categorization",
-          d: "Functional/technical classification. Impact and priority are determined.",
+          d: "Functional and technical classification. Impact and priority are defined.",
+          image: "/Categorizacion.jpg",
         },
         {
+          id: "proc-3",
           p: "03",
           t: "Assignment",
-          d: "Assigned to N1/N2 with technical escalation when applicable.",
+          d: "Assignment to N1/N2 support and technical escalation when required.",
+          image: "/Asignacion.jpg",
         },
         {
+          id: "proc-4",
           p: "04",
           t: "Follow-up",
-          d: "Periodic updates, workaround if needed, and traceability.",
+          d: "Periodic updates, workaround implementation when applicable, and full traceability.",
+          image: "/Seguimiento.jpg",
         },
         {
+          id: "proc-5",
           p: "05",
           t: "Closure",
-          d: "User validation, documentation and metric registration.",
+          d: "User validation, documentation, and registration for reporting and metrics.",
+          image: "/Cierre.jpg",
         },
-      ].map((s) => (
-        <Card
-          key={s.p}
-          className="pt-6 pb-5 px-5 rounded-2xl border border-neutral-200 shadow-sm bg-white flex flex-col"
-        >
-          <div className="text-[11px] font-semibold text-indigo-600 tracking-widest uppercase">
-            Step {s.p}
+      ];
+
+      return (
+        <>
+          {/* Slider */}
+          <div className="mt-10">
+            <div className="flex snap-x snap-mandatory overflow-x-auto gap-6 pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              {steps.map((s, idx) => (
+                <article
+                  key={s.id}
+                  id={s.id}
+                  className="group relative shrink-0 snap-center overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+                  style={{ width: "min(420px, calc(100vw - 3rem))" }}
+                >
+                  {/* Image */}
+                  <div className="relative h-40 w-full">
+                    <Image
+                      src={s.image}
+                      alt={s.t}
+                      fill
+                      sizes="(max-width: 640px) 90vw, 420px"
+                      className="object-cover"
+                      priority={idx === 0}
+                    />
+                    <div className="absolute inset-0 bg-black/20" />
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-6">
+                    <div className="text-[11px] font-semibold tracking-widest uppercase text-indigo-600">
+                      Step {s.p}
+                    </div>
+
+                    <div className="mt-1 text-base font-semibold text-neutral-900">
+                      {s.t}
+                    </div>
+
+                    <p className="mt-2 text-sm leading-relaxed text-neutral-600">
+                      {s.d}
+                    </p>
+
+                    <div className="mt-4 h-1 w-6 rounded-full bg-[var(--color-accent)]/70" />
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            {/* Navigation dots */}
+            <div className="mt-4 flex justify-center gap-2">
+              {steps.map((s, i) => (
+                <a
+                  key={s.id}
+                  href={`#${s.id}`}
+                  aria-label={`Go to step ${i + 1}`}
+                  className="h-2 w-2 rounded-full bg-neutral-300 transition hover:bg-[var(--color-accent)]"
+                />
+              ))}
+            </div>
           </div>
-
-          <div className="mt-1 text-base font-semibold text-neutral-900">
-            {s.t}
-          </div>
-
-          <p className="mt-2 text-sm leading-relaxed text-neutral-600 flex-1">
-            {s.d}
-          </p>
-
-          <div className="mt-4 h-1 w-6 rounded-full bg-[var(--color-accent)]/70" />
-        </Card>
-      ))}
-    </ol>
+        </>
+      );
+    })()}
   </div>
 </section>
+
 
 {/* Scope */}
 <section className="border-t border-neutral-200 bg-neutral-50/70 py-20">

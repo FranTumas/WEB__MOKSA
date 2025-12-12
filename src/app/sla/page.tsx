@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Card } from "@/Component/card";
+import Image from "next/image";
 
 export const metadata = {
   title: "SLA — Moksa IT",
@@ -253,72 +254,115 @@ export default function SLAPage() {
   </div>
 </section>
 
-      {/* Proceso de atención */}
+      {/* Proceso de atención (SLIDER con imágenes) */}
 <section className="border-t border-neutral-200 bg-neutral-50/60 py-20">
   <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
     {/* Encabezado */}
-    <h2 className="text-3xl font-bold tracking-tight">
-      Proceso de atención
-    </h2>
-    <p className="mt-2 text-neutral-600 leading-relaxed max-w-2xl">
-      Flujo estándar de un ticket desde la recepción hasta el cierre, con control y trazabilidad
-      en cada etapa.
+    <h2 className="text-3xl font-bold tracking-tight">Proceso de atención</h2>
+    <p className="mt-2 max-w-2xl leading-relaxed text-neutral-600">
+      Flujo estándar de un ticket desde la recepción hasta el cierre, con control y
+      trazabilidad en cada etapa.
     </p>
 
-    {/* Workflow */}
-    <ol className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-      {[
+    {(() => {
+      const steps = [
         {
+          id: "proc-1",
           p: "01",
           t: "Recepción",
           d: "Ingreso vía email/portal con evidencia, criticidad y datos del solicitante.",
+          image: "/Recepción.jpg",
         },
         {
+          id: "proc-2",
           p: "02",
           t: "Categorización",
           d: "Clasificación funcional/técnica. Se determina impacto y prioridad.",
+          image: "/Categorizacion.jpg",
         },
         {
+          id: "proc-3",
           p: "03",
           t: "Asignación",
           d: "Derivación a N1/N2 y escalamiento técnico si corresponde.",
+          image: "/Asignacion.jpg",
         },
         {
+          id: "proc-4",
           p: "04",
           t: "Seguimiento",
           d: "Actualizaciones periódicas, workaround si aplica y trazabilidad.",
+          image: "/Seguimiento.jpg",
         },
         {
+          id: "proc-5",
           p: "05",
           t: "Cierre",
           d: "Validación con usuario, documentación y registro para métricas.",
+          image: "/Cierre.jpg",
         },
-      ].map((s) => (
-        <Card
-          key={s.p}
-          className="pt-6 pb-5 px-5 rounded-2xl border border-neutral-200 shadow-sm bg-white flex flex-col"
-        >
-          {/* Número del paso */}
-          <div className="text-[11px] font-semibold text-indigo-600 tracking-widest uppercase">
-            Paso {s.p}
+      ];
+
+      return (
+        <>
+          {/* Slider */}
+          <div className="mt-10">
+            <div className="flex snap-x snap-mandatory overflow-x-auto gap-6 pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              {steps.map((s, idx) => (
+                <article
+                  key={s.id}
+                  id={s.id}
+                  className="group relative shrink-0 snap-center overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+                  style={{ width: "min(420px, calc(100vw - 3rem))" }}
+                >
+                  {/* Imagen */}
+                  <div className="relative h-40 w-full">
+                    <Image
+                      src={s.image}
+                      alt={`${s.t}`}
+                      fill
+                      sizes="(max-width: 640px) 90vw, 420px"
+                      className="object-cover"
+                      priority={idx === 0}
+                    />
+                    <div className="absolute inset-0 bg-black/20" />
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-6">
+                    <div className="text-[11px] font-semibold tracking-widest uppercase text-indigo-600">
+                      Paso {s.p}
+                    </div>
+
+                    <div className="mt-1 text-base font-semibold text-neutral-900">
+                      {s.t}
+                    </div>
+
+                    <p className="mt-2 text-sm leading-relaxed text-neutral-600">
+                      {s.d}
+                    </p>
+
+                    <div className="mt-4 h-1 w-6 rounded-full bg-[var(--color-accent)]/70" />
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            {/* Dots */}
+            <div className="mt-4 flex justify-center gap-2">
+              {steps.map((s, i) => (
+                <a
+                  key={s.id}
+                  href={`#${s.id}`}
+                  aria-label={`Ir a paso ${i + 1}`}
+                  className="h-2 w-2 rounded-full bg-neutral-300 transition hover:bg-[var(--color-accent)]"
+                />
+              ))}
+            </div>
           </div>
-
-          {/* Título */}
-          <div className="mt-1 text-base font-semibold text-neutral-900">
-            {s.t}
-          </div>
-
-          {/* Descripción */}
-          <p className="mt-2 text-sm leading-relaxed text-neutral-600 flex-1">
-            {s.d}
-          </p>
-
-          {/* Línea decorativa al final */}
-          <div className="mt-4 h-1 w-6 rounded-full bg-[var(--color-accent)]/70" />
-        </Card>
-      ))}
-    </ol>
+        </>
+      );
+    })()}
   </div>
 </section>
 
