@@ -90,31 +90,31 @@ export default function NosotrosPage() {
       name: "Emanuel Fernández",
       role: "Consultor SAP",
       links: { linkedin: "https://www.linkedin.com/company/moksa-it/" },
-      image: "/Team/emanuel-fernandez.png",
+      
     },
     {
       name: "Facundo Simón Gastiarena Albarengue",
       role: "Consultor SAP",
       links: { linkedin: "https://www.linkedin.com/company/moksa-it/" },
-      image: "/Team/facundo-gastiarena.png",
+      
     },
     {
       name: "Martin Ochoa",
       role: "Consultor SAP",
       links: { linkedin: "https://www.linkedin.com/company/moksa-it/" },
-      image: "/Team/martin-ochoa.png",
+      
     },
     {
       name: "Jeronimo Juarez Tabares",
       role: "Consultor SAP",
       links: { linkedin: "https://www.linkedin.com/company/moksa-it/" },
-      image: "/Team/jeronimo-juarez.png",
+     
     },
     {
       name: "Martin Ignacio Rossi",
       role: "Consultor SAP",
       links: { linkedin: "https://www.linkedin.com/company/moksa-it/" },
-      image: "/Team/martin-rossi.png",
+     
     },
     {
       name: "Francisco Tumas",
@@ -223,15 +223,17 @@ export default function NosotrosPage() {
             {team.map((m) => (
               <Card key={m.name}>
                 <div className="flex items-start gap-4">
-                  <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl border border-neutral-200 bg-neutral-100">
-                    <Image
-                      src={m.image}
-                      alt={m.name}
-                      fill
-                      sizes="56px"
-                      className="object-cover"
-                    />
-                  </div>
+                  {m.image && (
+                    <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl border border-neutral-200 bg-neutral-100">
+                      <Image
+                        src={m.image}
+                        alt={m.name}
+                        fill
+                        sizes="56px"
+                        className="object-cover"
+                      />
+                    </div>
+                  )}
 
                   <div>
                     <div className="font-semibold">{m.name}</div>
