@@ -1,7 +1,9 @@
 import type { MetadataRoute } from "next";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const site = "https://tudominio.com"; // <-- CAMBIAR
+  const site = "https://moksait.com";
   const now = new Date().toISOString();
 
   const pages = ["", "/servicios", "/casos", "/nosotros", "/sla", "/contacto"];
