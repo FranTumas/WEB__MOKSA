@@ -84,7 +84,7 @@ export default function NosotrosPage() {
       name: "Gonzalo Daniel Tejada",
       role: "Co-fundador",
       links: { linkedin: "https://www.linkedin.com/company/moksa-it/" },
-      image: "/Team/gonzalo-tejada.png",
+      image: "/Team/gonzalo-tejada.jpeg",
     },
     {
       name: "Emanuel Fernández",
