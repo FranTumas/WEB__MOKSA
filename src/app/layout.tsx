@@ -17,7 +17,7 @@ export const metadata = {
   openGraph: {
     title: "Moksa IT — Consultoría IT y servicios SAP",
     description: "Implementaciones SAP, ABAP, VIM y soporte con foco en negocio.",
-    url: "/",
+    url: "https://moksait.com/",
     siteName: "Moksa IT",
     images: [{ url: "/og.png", width: 1200, height: 630 }],
     locale: "es_AR",

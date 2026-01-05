@@ -856,7 +856,7 @@ export default function Home() {
       <footer className="border-t border-neutral-200 py-10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 text-sm text-neutral-500 sm:flex-row sm:px-6 lg:px-8">
           <div>
-            © {new Date().getFullYear()} Moksa IT. Todos los derechos
+            © 2025 Moksa IT. Todos los derechos
             reservados.
           </div>
           <div className="flex items-center gap-5">
@@ -867,14 +867,6 @@ export default function Home() {
               className="flex items-center gap-2 transition hover:text-[var(--color-accent)]"
             >
               <FaLinkedin className="text-lg" /> LinkedIn
-            </a>
-            <a
-              href="https://github.com/moksa-it"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 transition hover:text-[var(--color-accent)]"
-            >
-              <FaGithub className="text-lg" /> GitHub
             </a>
           </div>
         </div>
