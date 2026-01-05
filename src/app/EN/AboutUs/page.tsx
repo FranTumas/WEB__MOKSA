@@ -130,8 +130,7 @@ export default function AboutPage() {
 
   return (
     <main className="bg-white text-neutral-900">
-
-      {/* INTRO + KPIs */}
+      {/* INTRO */}
       <section className="border-t border-neutral-200 bg-white pt-16 pb-10">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <span className="inline-flex items-center rounded-full bg-indigo-50 px-3 py-1 text-xs font-medium text-indigo-600">
@@ -176,12 +175,10 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold">{v.title}</h3>
-                    <p className="mt-1 text-xs text-indigo-500 uppercase tracking-wide">
+                    <p className="mt-1 text-xs uppercase tracking-wide text-indigo-500">
                       {v.tag}
                     </p>
-                    <p className="mt-3 text-sm text-neutral-600">
-                      {v.desc}
-                    </p>
+                    <p className="mt-3 text-sm text-neutral-600">{v.desc}</p>
                   </div>
                 </div>
               </Card>
@@ -190,20 +187,18 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* JOURNEY */}
-      <section className="border-t border-neutral-200 bg-neutral-50/70 py-16">
+      {/* TIMELINE */}
+      <section className="border-t border-neutral-200 bg-white py-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold tracking-tight">Our journey</h2>
+          <h2 className="text-3xl font-bold tracking-tight">Timeline</h2>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
+          <div className="mt-10 space-y-6">
             {timeline.map((t) => (
-              <Card key={t.h}>
-                <div className="text-xs font-semibold text-[var(--color-accent)]">
-                  {t.y}
-                </div>
-                <div className="mt-1 font-semibold">{t.h}</div>
+              <div key={t.y} className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
+                <div className="font-semibold text-indigo-600">{t.y}</div>
+                <h3 className="mt-2 text-lg font-bold">{t.h}</h3>
                 <p className="mt-2 text-sm text-neutral-600">{t.d}</p>
-              </Card>
+              </div>
             ))}
           </div>
         </div>
@@ -219,22 +214,20 @@ export default function AboutPage() {
               <Card key={m.name}>
                 <div className="flex items-start gap-4">
                   {m.image && (
-                    <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl border border-neutral-200 bg-neutral-100">
+                    <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl border border-neutral-200 bg-neutral-100 flex items-center justify-center">
                       <Image
                         src={m.image}
                         alt={m.name}
                         fill
                         sizes="56px"
-                        className="object-cover"
+                        className="object-cover object-center"
                       />
                     </div>
                   )}
 
                   <div>
                     <div className="font-semibold">{m.name}</div>
-                    <div className="mt-1 text-xs text-neutral-500">
-                      {m.role}
-                    </div>
+                    <div className="mt-1 text-xs text-neutral-500">{m.role}</div>
                     <a
                       href={m.links.linkedin}
                       target="_blank"
@@ -258,7 +251,6 @@ export default function AboutPage() {
             <h3 className="text-3xl font-extrabold">
               Want to work at Moksa IT?
             </h3>
-
             <UploadCvSection />
           </div>
         </div>

@@ -90,31 +90,26 @@ export default function NosotrosPage() {
       name: "Emanuel Fernández",
       role: "Consultor SAP",
       links: { linkedin: "https://www.linkedin.com/company/moksa-it/" },
-      
     },
     {
       name: "Facundo Simón Gastiarena Albarengue",
       role: "Consultor SAP",
       links: { linkedin: "https://www.linkedin.com/company/moksa-it/" },
-      
     },
     {
       name: "Martin Ochoa",
       role: "Consultor SAP",
       links: { linkedin: "https://www.linkedin.com/company/moksa-it/" },
-      
     },
     {
       name: "Jeronimo Juarez Tabares",
       role: "Consultor SAP",
       links: { linkedin: "https://www.linkedin.com/company/moksa-it/" },
-     
     },
     {
       name: "Martin Ignacio Rossi",
       role: "Consultor SAP",
       links: { linkedin: "https://www.linkedin.com/company/moksa-it/" },
-     
     },
     {
       name: "Francisco Tumas",
@@ -135,7 +130,6 @@ export default function NosotrosPage() {
 
   return (
     <main className="bg-white text-neutral-900">
-
       {/* INTRO + KPIs */}
       <section className="border-t border-neutral-200 bg-white pt-16 pb-10">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -181,12 +175,10 @@ export default function NosotrosPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold">{v.title}</h3>
-                    <p className="mt-1 text-xs text-indigo-500 uppercase tracking-wide">
+                    <p className="mt-1 text-xs uppercase tracking-wide text-indigo-500">
                       {v.tag}
                     </p>
-                    <p className="mt-3 text-sm text-neutral-600">
-                      {v.desc}
-                    </p>
+                    <p className="mt-3 text-sm text-neutral-600">{v.desc}</p>
                   </div>
                 </div>
               </Card>
@@ -195,20 +187,25 @@ export default function NosotrosPage() {
         </div>
       </section>
 
-      {/* TRAYECTORIA */}
-      <section className="border-t border-neutral-200 bg-neutral-50/70 py-16">
+      {/* TIMELINE */}
+      <section className="border-t border-neutral-200 bg-white py-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold tracking-tight">Trayectoria</h2>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {timeline.map((t) => (
-              <Card key={t.h}>
-                <div className="text-xs font-semibold text-[var(--color-accent)]">
-                  {t.y}
+          <div className="mt-10 space-y-8">
+            {timeline.map((item) => (
+              <div key={item.y} className="flex gap-4 sm:gap-6">
+                <div className="flex flex-col items-center">
+                  <div className="rounded-full bg-indigo-100 p-3 text-indigo-600 font-semibold text-sm">
+                    {item.y}
+                  </div>
+                  <div className="mt-4 h-12 w-1 bg-neutral-200" />
                 </div>
-                <div className="mt-1 font-semibold">{t.h}</div>
-                <p className="mt-2 text-sm text-neutral-600">{t.d}</p>
-              </Card>
+                <div className="pb-8">
+                  <h3 className="font-semibold text-lg">{item.h}</h3>
+                  <p className="mt-2 text-sm text-neutral-600">{item.d}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -224,13 +221,13 @@ export default function NosotrosPage() {
               <Card key={m.name}>
                 <div className="flex items-start gap-4">
                   {m.image && (
-                    <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl border border-neutral-200 bg-neutral-100">
+                    <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl border border-neutral-200 bg-neutral-100 flex items-center justify-center">
                       <Image
                         src={m.image}
                         alt={m.name}
                         fill
                         sizes="56px"
-                        className="object-cover"
+                        className="object-cover object-center"
                       />
                     </div>
                   )}
@@ -263,7 +260,6 @@ export default function NosotrosPage() {
             <h3 className="text-3xl font-extrabold">
               ¿Querés trabajar en Moksa IT?
             </h3>
-
             <UploadCvSection />
           </div>
         </div>
