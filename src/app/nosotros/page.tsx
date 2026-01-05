@@ -77,50 +77,42 @@ export default function NosotrosPage() {
     {
       name: "Sebastian Ariel Rossi",
       role: "Co-fundador",
-      links: { linkedin: "https://www.linkedin.com/company/moksa-it/" },
       image: "/Team/seba-rossi.png",
     },
     {
       name: "Gonzalo Daniel Tejada",
       role: "Co-fundador",
-      links: { linkedin: "https://www.linkedin.com/company/moksa-it/" },
       image: "/Team/gonza-tejada.jpeg",
     },
     {
       name: "Emanuel Fernández",
-      role: "Consultor SAP",
-      links: { linkedin: "https://www.linkedin.com/company/moksa-it/" },
+      role: "Consultor SAP/OpenText",
     },
     {
       name: "Facundo Simón Gastiarena Albarengue",
-      role: "Consultor SAP",
-      links: { linkedin: "https://www.linkedin.com/company/moksa-it/" },
+      role: "Consultor SAP/OpenText",
     },
     {
       name: "Martin Ochoa",
-      role: "Consultor SAP",
-      links: { linkedin: "https://www.linkedin.com/company/moksa-it/" },
+      role: "Consultor SAP/OpenText",
     },
     {
       name: "Jeronimo Juarez Tabares",
-      role: "Consultor SAP",
-      links: { linkedin: "https://www.linkedin.com/company/moksa-it/" },
+      role: "Consultor SAP/OpenText",
     },
     {
       name: "Martin Ignacio Rossi",
-      role: "Consultor SAP",
-      links: { linkedin: "https://www.linkedin.com/company/moksa-it/" },
+      role: "Consultor SAP/OpenText",
+      image: "/Team/tincho-rossi.jpeg",
     },
     {
       name: "Francisco Tumas",
-      role: "Consultor SAP",
-      links: { linkedin: "https://www.linkedin.com/company/moksa-it/" },
+      role: "Consultor SAP/OpenText",
       image: "/Team/francisco-tumas.jpeg",
     },
     {
       name: "Justo Vannoni",
-      role: "Consultor SAP",
-      links: { linkedin: "https://www.linkedin.com/company/moksa-it/" },
+      role: "Consultor SAP/OpenText",
       image: "/Team/justo-vannoni.jpeg",
     },
   ];
@@ -231,21 +223,6 @@ export default function NosotrosPage() {
                       />
                     </div>
                   )}
-
-                  <div>
-                    <div className="font-semibold">{m.name}</div>
-                    <div className="mt-1 text-xs text-neutral-500">
-                      {m.role}
-                    </div>
-                    <a
-                      href={m.links.linkedin}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="mt-3 inline-block text-sm font-medium text-[var(--color-accent)] underline underline-offset-4"
-                    >
-                      LinkedIn
-                    </a>
-                  </div>
                 </div>
               </Card>
             ))}

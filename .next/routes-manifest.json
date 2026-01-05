@@ -88,12 +88,6 @@
       "namedRegex": "^/EN/sla(?:/)?$"
     },
     {
-      "page": "/favicon.ico",
-      "regex": "^/favicon\\.ico(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/favicon\\.ico(?:/)?$"
-    },
-    {
       "page": "/nosotros",
       "regex": "^/nosotros(?:/)?$",
       "routeKeys": {},
