@@ -12,7 +12,7 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata = {
   title: "Moksa IT — Consultoría IT y servicios SAP orientados a resultados",
   description: "Implementaciones SAP, ABAP, VIM y soporte con foco en negocio.",
-  metadataBase: new URL("https://moksa-web.pages.dev"),
+  metadataBase: new URL("https://moksait.com"),
   icon: "/logo-moksa.png",
   openGraph: {
     title: "Moksa IT — Consultoría IT y servicios SAP",
