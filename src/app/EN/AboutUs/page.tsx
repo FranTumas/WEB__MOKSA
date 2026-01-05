@@ -17,7 +17,7 @@ export default function AboutPage() {
     { k: "9.1/10", t: "user satisfaction (NPS)" },
   ];
 
-  const valores = [
+  const values = [
     {
       title: "Results first",
       tag: "Business impact",
@@ -74,47 +74,15 @@ export default function AboutPage() {
   ];
 
   const team = [
-    {
-      name: "Sebastian Ariel Rossi",
-      role: "Co-founder",
-      image: "/Team/seba-rossi.png",
-    },
-    {
-      name: "Gonzalo Daniel Tejada",
-      role: "Co-founder",
-      image: "/Team/gonza-tejada.jpeg",
-    },
-    {
-      name: "Emanuel Fernández",
-      role: "SAP/OpenText Consultant",
-    },
-    {
-      name: "Facundo Simón Gastiarena Albarengue",
-      role: "SAP/OpenText Consultant",
-    },
-    {
-      name: "Martin Ochoa",
-      role: "SAP/OpenText Consultant",
-    },
-    {
-      name: "Jeronimo Juarez Tabares",
-      role: "SAP/OpenText Consultant",
-    },
-    {
-      name: "Martin Ignacio Rossi",
-      role: "SAP/OpenText Consultant",
-      image: "/Team/tincho-rossi.jpeg",
-    },
-    {
-      name: "Francisco Tumas",
-      role: "SAP/OpenText Consultant",
-      image: "/Team/francisco-tumas.jpeg",
-    },
-    {
-      name: "Justo Vannoni",
-      role: "SAP/OpenText Consultant",
-      image: "/Team/justo-vannoni.jpeg",
-    },
+    { name: "Sebastian Ariel Rossi", role: "Co-founder", image: "/Team/seba-rossi.png" },
+    { name: "Gonzalo Daniel Tejada", role: "Co-founder", image: "/Team/gonza-tejada.jpeg" },
+    { name: "Emanuel Fernández", role: "SAP / OpenText Consultant" },
+    { name: "Facundo Simón Gastiarena Albarengue", role: "SAP / OpenText Consultant" },
+    { name: "Martin Ochoa", role: "SAP / OpenText Consultant" },
+    { name: "Jeronimo Juarez Tabares", role: "SAP / OpenText Consultant" },
+    { name: "Martin Ignacio Rossi", role: "SAP / OpenText Consultant", image: "/Team/tincho-rossi.jpeg" },
+    { name: "Francisco Tumas", role: "SAP / OpenText Consultant", image: "/Team/francisco-tumas.jpeg" },
+    { name: "Justo Vannoni", role: "SAP / OpenText Consultant", image: "/Team/justo-vannoni.jpeg" },
   ];
 
   const WHATSAPP =
@@ -122,21 +90,18 @@ export default function AboutPage() {
 
   return (
     <main className="bg-white text-neutral-900">
-      {/* INTRO */}
-      <section className="border-t border-neutral-200 bg-white pt-16 pb-10">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <span className="inline-flex items-center rounded-full bg-indigo-50 px-3 py-1 text-xs font-medium text-indigo-600">
-            About us
-          </span>
 
-          <h1 className="mt-4 text-4xl font-extrabold tracking-tight">
+      {/* INTRO + KPIs */}
+      <section className="border-t border-neutral-200 pt-16 pb-10">
+        <div className="mx-auto max-w-6xl px-4">
+          <h1 className="text-4xl font-extrabold tracking-tight">
             Who we are
           </h1>
 
           <p className="mt-4 max-w-3xl text-neutral-600">
-            We are a team with over 15 years of experience in SAP OpenText
-            consulting, focused on automating Accounts Payable and improving
-            supplier relationships through clear, measurable processes.
+            We are a team with over 15 years of experience in SAP OpenText consulting,
+            focused on automating Accounts Payable and improving supplier relationships
+            through clear, measurable processes.
           </p>
 
           <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
@@ -154,84 +119,76 @@ export default function AboutPage() {
       </section>
 
       {/* VALUES */}
-      <section className="border-t border-neutral-200 bg-white py-16">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold tracking-tight">Values</h2>
-
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {valores.map((v) => (
-              <Card key={v.title}>
-                <div className="flex items-start gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
-                    <FiCheckCircle />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold">{v.title}</h3>
-                    <p className="mt-1 text-xs uppercase tracking-wide text-indigo-500">
-                      {v.tag}
-                    </p>
-                    <p className="mt-3 text-sm text-neutral-600">{v.desc}</p>
-                  </div>
+      <section className="border-t border-neutral-200 py-16">
+        <div className="mx-auto max-w-6xl px-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {values.map((v) => (
+            <Card key={v.title}>
+              <div className="flex items-start gap-3">
+                <FiCheckCircle className="mt-1 text-indigo-600" />
+                <div>
+                  <h3 className="font-semibold">{v.title}</h3>
+                  <p className="mt-1 text-xs uppercase tracking-wide text-indigo-500">
+                    {v.tag}
+                  </p>
+                  <p className="mt-3 text-sm text-neutral-600">{v.desc}</p>
                 </div>
-              </Card>
-            ))}
-          </div>
+              </div>
+            </Card>
+          ))}
         </div>
       </section>
 
       {/* TIMELINE */}
-      <section className="border-t border-neutral-200 bg-white py-16">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold tracking-tight">Timeline</h2>
-
-          <div className="mt-10 space-y-6">
-            {timeline.map((t) => (
-              <div key={t.y} className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
-                <div className="font-semibold text-indigo-600">{t.y}</div>
-                <h3 className="mt-2 text-lg font-bold">{t.h}</h3>
-                <p className="mt-2 text-sm text-neutral-600">{t.d}</p>
+      <section className="border-t border-neutral-200 py-16">
+        <div className="mx-auto max-w-6xl px-4 space-y-8">
+          {timeline.map((t) => (
+            <div key={t.y} className="flex gap-6">
+              <div className="shrink-0 rounded-full bg-indigo-100 px-3 py-1 text-sm font-semibold text-indigo-600">
+                {t.y}
               </div>
-            ))}
-          </div>
+              <div>
+                <h3 className="font-semibold">{t.h}</h3>
+                <p className="mt-1 text-sm text-neutral-600">{t.d}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* TEAM */}
-      <section className="border-t border-neutral-200 bg-white py-16">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold tracking-tight">Team</h2>
-
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {team.map((m) => (
-              <Card key={m.name}>
-                <div className="flex items-start gap-4">
-                  {m.image && (
-                    <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl border border-neutral-200 bg-neutral-100 flex items-center justify-center">
-                      <Image
-                        src={m.image}
-                        alt={m.name}
-                        fill
-                        sizes="56px"
-                        className="object-cover object-center"
-                      />
-                    </div>
-                  )}
+      <section className="border-t border-neutral-200 py-16">
+        <div className="mx-auto max-w-6xl px-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {team.map((m) => (
+            <Card key={m.name}>
+              <div className="flex items-center gap-4">
+                {m.image && (
+                  <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl border border-neutral-200 bg-neutral-100">
+                    <Image
+                      src={m.image}
+                      alt={m.name}
+                      fill
+                      sizes="56px"
+                      className="object-cover object-center"
+                    />
+                  </div>
+                )}
+                <div>
+                  <div className="font-semibold">{m.name}</div>
+                  <div className="mt-1 text-xs text-neutral-500">{m.role}</div>
                 </div>
-              </Card>
-            ))}
-          </div>
+              </div>
+            </Card>
+          ))}
         </div>
       </section>
 
       {/* CAREERS */}
-      <section className="border-t border-neutral-200 bg-neutral-50/70 py-20">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-2xl border border-neutral-200 bg-white p-10 text-center shadow-sm">
-            <h3 className="text-3xl font-extrabold">
-              Want to work at Moksa IT?
-            </h3>
-            <UploadCvSection />
-          </div>
+      <section className="border-t border-neutral-200 bg-neutral-50 py-20">
+        <div className="mx-auto max-w-5xl px-4 text-center">
+          <h3 className="text-3xl font-extrabold">
+            Want to work at Moksa IT?
+          </h3>
+          <UploadCvSection />
         </div>
       </section>
 
