@@ -96,7 +96,7 @@ export default function AboutPage() {
       <section className="border-t border-neutral-200 pt-16 pb-10">
         <div className="mx-auto max-w-6xl px-4">
           <h1 className="text-4xl font-extrabold tracking-tight">
-            Who we are
+            ¿Quiénes somos?
           </h1>
 
           <p className="mt-4 max-w-3xl text-neutral-600">
@@ -140,21 +140,39 @@ export default function AboutPage() {
       </section>
 
       {/* TIMELINE */}
-      <section className="border-t border-neutral-200 py-16">
-        <div className="mx-auto max-w-6xl px-4 space-y-8">
-          {timeline.map((t) => (
-            <div key={t.y} className="flex gap-6">
-              <div className="shrink-0 rounded-full bg-indigo-100 px-3 py-1 text-sm font-semibold text-indigo-600">
+<section className="border-t border-neutral-200 bg-white py-16">
+  <div className="mx-auto max-w-6xl px-4">
+    <h2 className="text-3xl font-bold tracking-tight mb-10">
+      Trayectoria
+    </h2>
+
+    <div className="grid gap-6">
+      {timeline.map((t) => (
+        <Card key={t.y}>
+          <div className="flex items-start gap-6">
+            {/* Año */}
+            <div className="shrink-0">
+              <span className="inline-flex items-center rounded-full bg-indigo-100 px-4 py-2 text-sm font-semibold text-indigo-600">
                 {t.y}
-              </div>
-              <div>
-                <h3 className="font-semibold">{t.h}</h3>
-                <p className="mt-1 text-sm text-neutral-600">{t.d}</p>
-              </div>
+              </span>
             </div>
-          ))}
-        </div>
-      </section>
+
+            {/* Contenido */}
+            <div>
+              <h3 className="text-base font-semibold text-neutral-900">
+                {t.h}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-neutral-600">
+                {t.d}
+              </p>
+            </div>
+          </div>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* TEAM */}
       <section className="border-t border-neutral-200 py-16">
