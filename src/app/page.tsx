@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 // src/app/page.tsx
+"use client";
 import { ContactForm } from "@/Component/ContactFormSection";
 import Link from "next/link";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
@@ -17,10 +18,10 @@ import {
   FiHeadphones,
   FiAlertTriangle,
   FiRefreshCcw,
-  FiUsers
+  FiUsers,
 } from "react-icons/fi";
 import { ClientsLogosSlider as ClientsSlider } from "@/Component/ClientsSlider";
-
+import { useEffect } from "react";
 
 type CaseItem = {
   tag: string;
@@ -76,13 +77,37 @@ export default function Home() {
     },
   ];
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const url = "https://api.chucknorris.io/jokes/random";
+      const options = {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+
+      try {
+        const response = await fetch(url, options);
+        const result = await response.text();
+        console.log(result);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchData();
+  }, []);
+
   const cases: CaseItem[] = [
     {
       tag: "VIM / OpenText",
       title: "Automatización de ciclo de facturas",
       desc: "Rediseño de flujos, reglas de validación y métricas. Integración con OCR y mejoras en workitems.",
       kpis: [
-        { label: "-35% tiempo de ciclo", note: "de recepción a contabilización" },
+        {
+          label: "-35% tiempo de ciclo",
+          note: "de recepción a contabilización",
+        },
         { label: "+18% touchless", note: "más facturas sin intervención" },
         { label: "98% precisión OCR", note: "en lotes estables" },
       ],
@@ -133,7 +158,8 @@ export default function Home() {
           </h1>
 
           <p className="mt-4 max-w-2xl text-sm text-neutral-100 sm:text-base md:text-lg">
-            Consultoría SAP con foco en eficiencia operativa y transformación digital.
+            Consultoría SAP con foco en eficiencia operativa y transformación
+            digital.
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -163,21 +189,24 @@ export default function Home() {
             {/* Columna de texto */}
             <div>
               <h2 className="text-4xl font-bold tracking-tight text-neutral-900">
-                Sobre <span className="text-[var(--color-accent)]">Moksa IT</span>
+                Sobre{" "}
+                <span className="text-[var(--color-accent)]">Moksa IT</span>
               </h2>
 
               <p className="mt-4 text-lg leading-relaxed text-neutral-700">
                 Somos un equipo joven con más de 15 años de experiencia en
                 consultoría de implantación para soluciones SAP y OpenText en
                 América y Europa, acompañando a distintas organizaciones en la
-                mejora de su gestión, control y trazabilidad de información clave.
+                mejora de su gestión, control y trazabilidad de información
+                clave.
               </p>
 
               <p className="mt-4 text-lg leading-relaxed text-neutral-600">
                 Nuestro compromiso es acompañar la evolución de los procesos
                 relacionados con pagos, documentos y aprobaciones, acercando
-                soluciones prácticas y dinámicas que faciliten la gestión diaria,
-                reduzcan riesgos y fortalezcan la relación con socios y proveedores.
+                soluciones prácticas y dinámicas que faciliten la gestión
+                diaria, reduzcan riesgos y fortalezcan la relación con socios y
+                proveedores.
               </p>
 
               {/* CTA tipo “¿Hablamos?” */}
@@ -207,12 +236,18 @@ export default function Home() {
         </div>
       </section>
       {/* Capacidades */}
-      <section id="capacidades" className="border-t border-neutral-200 py-20 bg-neutral-50/70">
+      <section
+        id="capacidades"
+        className="border-t border-neutral-200 py-20 bg-neutral-50/70"
+      >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
-            <h2 className="text-3xl font-bold tracking-tight">Nuestras capacidades</h2>
+            <h2 className="text-3xl font-bold tracking-tight">
+              Nuestras capacidades
+            </h2>
             <p className="mt-2 text-neutral-600">
-              Equipo ágil y dinámico, alineado a mejores prácticas y en mejora continua.
+              Equipo ágil y dinámico, alineado a mejores prácticas y en mejora
+              continua.
             </p>
           </div>
 
@@ -273,11 +308,11 @@ export default function Home() {
 
                     <div className="mt-6">
                       <Link
-                 href={"/nosotros"}
-                  className="rounded-lg border border-white/70 px-5 py-2 text-xs font-semibold tracking-wide uppercase transition hover:bg-white hover:text-neutral-900"
-                >
-                  + Info
-                </Link>
+                        href={"/nosotros"}
+                        className="rounded-lg border border-white/70 px-5 py-2 text-xs font-semibold tracking-wide uppercase transition hover:bg-white hover:text-neutral-900"
+                      >
+                        + Info
+                      </Link>
                     </div>
                   </div>
                 </article>
@@ -298,10 +333,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-
-
-      
 
       {/* Servicios */}
       <section id="servicios" className="border-t border-neutral-200 py-20">
@@ -346,7 +377,9 @@ export default function Home() {
                 flujo claro de documentos y aprobaciones.
               </p>
               <ul className="mt-4 space-y-1 text-sm">
-                <li>• Integración de áreas involucradas en el ciclo de facturas</li>
+                <li>
+                  • Integración de áreas involucradas en el ciclo de facturas
+                </li>
                 <li>• Reducción de tiempos y reprocesos</li>
                 <li>• Mejora de la trazabilidad de punta a punta</li>
               </ul>
@@ -381,8 +414,9 @@ export default function Home() {
               </h3>
               <p className="mt-2 text-sm text-neutral-600">
                 Desarrollos, extensiones e integraciones que complementan el
-                ecosistema SAP, mejoran la experiencia de los equipos y habilitan
-                nuevos escenarios de consulta, carga y seguimiento de información.
+                ecosistema SAP, mejoran la experiencia de los equipos y
+                habilitan nuevos escenarios de consulta, carga y seguimiento de
+                información.
               </p>
             </Card>
           </div>
@@ -402,330 +436,330 @@ export default function Home() {
       </section>
 
       {/* Cómo trabajamos (versión slider) */}
-<section
-  id="como"
-  className="border-t border-neutral-200 py-20 bg-neutral-50/70"
->
-  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div className="max-w-2xl">
-      <h2 className="text-3xl font-bold tracking-tight">
-        Cómo trabajamos
-      </h2>
-      <p className="mt-2 text-neutral-600">
-        Un proceso claro y medible para garantizar entregas seguras,
-        trazables y alineadas a los objetivos de la organización.
-      </p>
-    </div>
+      <section
+        id="como"
+        className="border-t border-neutral-200 py-20 bg-neutral-50/70"
+      >
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <h2 className="text-3xl font-bold tracking-tight">
+              Cómo trabajamos
+            </h2>
+            <p className="mt-2 text-neutral-600">
+              Un proceso claro y medible para garantizar entregas seguras,
+              trazables y alineadas a los objetivos de la organización.
+            </p>
+          </div>
 
-    {/* Slider-like banners */}
-    <div className="mt-10">
-      <div className="flex snap-x snap-mandatory overflow-x-auto gap-6 pb-4">
-        {[
-          {
-            id: "step-1",
-            step: "PASO 01",
-            title: "Relevamiento & objetivos",
-            desc: "Entrevistas, análisis de procesos actuales y definición de dolores y métricas clave.",
-            bullets: [
-              "Workshops con referentes del negocio",
-              "Mapa de procesos y prioridades",
-            ],
-            image: "/Relevamiento.jpg",
-          },
-          {
-            id: "step-2",
-            step: "PASO 02",
-            title: "Diseño de solución",
-            desc: "Definimos arquitectura, esfuerzos, riesgos y el roadmap de implementación.",
-            bullets: [
-              "Arquitectura funcional/técnica",
-              "Backlog y plan de releases",
-            ],
-            image: "/Diseño.jpg",
-          },
-          {
-            id: "step-3",
-            step: "PASO 03",
-            title: "Build & pruebas",
-            desc: "Desarrollamos, configuramos y testeamos junto a usuarios clave.",
-            bullets: ["Configuración & ABAP", "Pruebas con usuarios (UAT)"],
-            image: "/Build.jpg",
-          },
-          {
-            id: "step-4",
-            step: "PASO 04",
-            title: "Go-live & soporte",
-            desc: "Acompañamos la salida productiva y monitoreamos resultados y mejoras.",
-            bullets: ["Plan de go-live", "Soporte post-implementación"],
-            image: "/Go-Live.jpg",
-          },
-        ].map((slide) => (
-          <article
-            key={slide.id}
-            id={slide.id}
-            className="relative h-[260px] sm:h-[320px] w-full shrink-0 snap-center overflow-hidden rounded-3xl bg-neutral-900 text-white"
-          >
-            {/* Imagen de fondo */}
-            <Image
-              src={slide.image}
-              alt={slide.title}
-              fill
-              className="object-cover opacity-70"
-            />
-
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black/40" />
-
-            {/* Contenido */}
-            <div className="relative z-10 flex h-full flex-col justify-center px-8 sm:px-12">
-              <span className="text-xs font-semibold tracking-[0.12em] uppercase text-neutral-200">
-                {slide.step}
-              </span>
-              <h3 className="mt-1 text-2xl font-extrabold tracking-tight sm:text-3xl">
-                {slide.title}
-              </h3>
-              <p className="mt-3 max-w-2xl text-sm leading-relaxed sm:text-base">
-                {slide.desc}
-              </p>
-
-              <ul className="mt-3 flex flex-wrap gap-2 text-xs sm:text-sm">
-                {slide.bullets.map((b) => (
-                  <li
-                    key={b}
-                    className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 backdrop-blur-sm"
-                  >
-                    ✓&nbsp;{b}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-6">
-                <Link
-                 href={"/nosotros"}
-                  className="rounded-lg border border-white/70 px-5 py-2 text-xs font-semibold tracking-wide uppercase transition hover:bg-white hover:text-neutral-900"
+          {/* Slider-like banners */}
+          <div className="mt-10">
+            <div className="flex snap-x snap-mandatory overflow-x-auto gap-6 pb-4">
+              {[
+                {
+                  id: "step-1",
+                  step: "PASO 01",
+                  title: "Relevamiento & objetivos",
+                  desc: "Entrevistas, análisis de procesos actuales y definición de dolores y métricas clave.",
+                  bullets: [
+                    "Workshops con referentes del negocio",
+                    "Mapa de procesos y prioridades",
+                  ],
+                  image: "/Relevamiento.jpg",
+                },
+                {
+                  id: "step-2",
+                  step: "PASO 02",
+                  title: "Diseño de solución",
+                  desc: "Definimos arquitectura, esfuerzos, riesgos y el roadmap de implementación.",
+                  bullets: [
+                    "Arquitectura funcional/técnica",
+                    "Backlog y plan de releases",
+                  ],
+                  image: "/Diseño.jpg",
+                },
+                {
+                  id: "step-3",
+                  step: "PASO 03",
+                  title: "Build & pruebas",
+                  desc: "Desarrollamos, configuramos y testeamos junto a usuarios clave.",
+                  bullets: [
+                    "Configuración & ABAP",
+                    "Pruebas con usuarios (UAT)",
+                  ],
+                  image: "/Build.jpg",
+                },
+                {
+                  id: "step-4",
+                  step: "PASO 04",
+                  title: "Go-live & soporte",
+                  desc: "Acompañamos la salida productiva y monitoreamos resultados y mejoras.",
+                  bullets: ["Plan de go-live", "Soporte post-implementación"],
+                  image: "/Go-Live.jpg",
+                },
+              ].map((slide) => (
+                <article
+                  key={slide.id}
+                  id={slide.id}
+                  className="relative h-[260px] sm:h-[320px] w-full shrink-0 snap-center overflow-hidden rounded-3xl bg-neutral-900 text-white"
                 >
-                  + Info
-                </Link>
-              </div>
+                  {/* Imagen de fondo */}
+                  <Image
+                    src={slide.image}
+                    alt={slide.title}
+                    fill
+                    className="object-cover opacity-70"
+                  />
+
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-black/40" />
+
+                  {/* Contenido */}
+                  <div className="relative z-10 flex h-full flex-col justify-center px-8 sm:px-12">
+                    <span className="text-xs font-semibold tracking-[0.12em] uppercase text-neutral-200">
+                      {slide.step}
+                    </span>
+                    <h3 className="mt-1 text-2xl font-extrabold tracking-tight sm:text-3xl">
+                      {slide.title}
+                    </h3>
+                    <p className="mt-3 max-w-2xl text-sm leading-relaxed sm:text-base">
+                      {slide.desc}
+                    </p>
+
+                    <ul className="mt-3 flex flex-wrap gap-2 text-xs sm:text-sm">
+                      {slide.bullets.map((b) => (
+                        <li
+                          key={b}
+                          className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 backdrop-blur-sm"
+                        >
+                          ✓&nbsp;{b}
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="mt-6">
+                      <Link
+                        href={"/nosotros"}
+                        className="rounded-lg border border-white/70 px-5 py-2 text-xs font-semibold tracking-wide uppercase transition hover:bg-white hover:text-neutral-900"
+                      >
+                        + Info
+                      </Link>
+                    </div>
+                  </div>
+                </article>
+              ))}
             </div>
-          </article>
-        ))}
-      </div>
-      {/* Puntitos de navegación */}
-      <div className="mt-4 flex justify-center gap-2">
-        {["step-1", "step-2", "step-3", "step-4"].map((id, index) => (
-          <a
-            key={id}
-            href={`#${id}`}
-            aria-label={`Ir a paso ${index + 1}`}
-            className="h-2 w-2 rounded-full bg-neutral-300 hover:bg-[var(--color-accent)] transition"
-          />
-        ))}
-      </div>
-      </div>
-    </div>
-</section>
-
-            
-
+            {/* Puntitos de navegación */}
+            <div className="mt-4 flex justify-center gap-2">
+              {["step-1", "step-2", "step-3", "step-4"].map((id, index) => (
+                <a
+                  key={id}
+                  href={`#${id}`}
+                  aria-label={`Ir a paso ${index + 1}`}
+                  className="h-2 w-2 rounded-full bg-neutral-300 hover:bg-[var(--color-accent)] transition"
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Soporte & SLA */}
-<section id="sla" className="border-t border-neutral-200 bg-white py-20">
-  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    {/* Header */}
-    <div className="max-w-2xl">
-      <span className="inline-flex items-center rounded-full bg-indigo-50 px-3 py-1 text-xs font-medium text-indigo-600">
-        Soporte &amp; SLA
-      </span>
-      <h2 className="mt-4 text-3xl font-bold tracking-tight">
-        Soporte y acuerdos de servicio (SLA)
-      </h2>
-      <p className="mt-2 text-neutral-600 text-sm md:text-base">
-        Definimos tiempos y modalidades de atención claros para cada tipo de
-        requerimiento, alineando expectativas y facilitando la gestión del día a día.
-      </p>
-    </div>
+      <section id="sla" className="border-t border-neutral-200 bg-white py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <div className="max-w-2xl">
+            <span className="inline-flex items-center rounded-full bg-indigo-50 px-3 py-1 text-xs font-medium text-indigo-600">
+              Soporte &amp; SLA
+            </span>
+            <h2 className="mt-4 text-3xl font-bold tracking-tight">
+              Soporte y acuerdos de servicio (SLA)
+            </h2>
+            <p className="mt-2 text-neutral-600 text-sm md:text-base">
+              Definimos tiempos y modalidades de atención claros para cada tipo
+              de requerimiento, alineando expectativas y facilitando la gestión
+              del día a día.
+            </p>
+          </div>
 
-    {/* Tarjetas */}
-    <div className="mt-10 grid gap-6 md:grid-cols-3">
-      {[
-        {
-          icon: FiHeadphones,
-          title: "Modelo de soporte",
-          desc: "Combinamos soporte funcional y técnico en un modelo escalable que cubre consultas, incidentes y mejoras evolutivas.",
-          bullets: [
-            "Canales de contacto definidos",
-            "Priorización según impacto",
-            "Seguimiento hasta el cierre",
-          ],
-        },
-        {
-          icon: FiAlertTriangle,
-          title: "Niveles de prioridad",
-          desc: "Clasificamos los incidentes por criticidad para asegurar una respuesta alineada al impacto en la operación.",
-          bullets: [
-            "Crítico: atención inmediata y foco total",
-            "Alto: impacto relevante, resolución en ventanas acotadas",
-            "Medio y Bajo: seguimiento planificado y controlado",
-          ],
-        },
-        {
-          icon: FiRefreshCcw,
-          title: "Ciclo de atención",
-          desc: "Cada ticket sigue un flujo definido desde la recepción hasta el cierre, dejando trazabilidad y acuerdos claros.",
-          bullets: [
-            "Registro y categorización",
-            "Asignación y análisis",
-            "Propuesta de solución y validación",
-            "Cierre documentado y lecciones aprendidas",
-          ],
-        },
-      ].map((item) => {
-        const Icon = item.icon;
-        return (
-          <article
-            key={item.title}
-            className="group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-[var(--color-accent)]/30 hover:shadow-lg"
-          >
-            {/* Glow de fondo */}
-            <div className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full bg-gradient-to-br from-[var(--color-accent)]/15 via-indigo-400/10 to-transparent blur-2xl transition-transform duration-300 group-hover:scale-110" />
+          {/* Tarjetas */}
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                icon: FiHeadphones,
+                title: "Modelo de soporte",
+                desc: "Combinamos soporte funcional y técnico en un modelo escalable que cubre consultas, incidentes y mejoras evolutivas.",
+                bullets: [
+                  "Canales de contacto definidos",
+                  "Priorización según impacto",
+                  "Seguimiento hasta el cierre",
+                ],
+              },
+              {
+                icon: FiAlertTriangle,
+                title: "Niveles de prioridad",
+                desc: "Clasificamos los incidentes por criticidad para asegurar una respuesta alineada al impacto en la operación.",
+                bullets: [
+                  "Crítico: atención inmediata y foco total",
+                  "Alto: impacto relevante, resolución en ventanas acotadas",
+                  "Medio y Bajo: seguimiento planificado y controlado",
+                ],
+              },
+              {
+                icon: FiRefreshCcw,
+                title: "Ciclo de atención",
+                desc: "Cada ticket sigue un flujo definido desde la recepción hasta el cierre, dejando trazabilidad y acuerdos claros.",
+                bullets: [
+                  "Registro y categorización",
+                  "Asignación y análisis",
+                  "Propuesta de solución y validación",
+                  "Cierre documentado y lecciones aprendidas",
+                ],
+              },
+            ].map((item) => {
+              const Icon = item.icon;
+              return (
+                <article
+                  key={item.title}
+                  className="group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-[var(--color-accent)]/30 hover:shadow-lg"
+                >
+                  {/* Glow de fondo */}
+                  <div className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full bg-gradient-to-br from-[var(--color-accent)]/15 via-indigo-400/10 to-transparent blur-2xl transition-transform duration-300 group-hover:scale-110" />
 
-            {/* Contenido */}
-            <div className="relative z-10 flex h-full flex-col">
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
-                  <Icon className="text-lg" />
-                </div>
-                <h3 className="text-base font-semibold text-neutral-900">
-                  {item.title}
-                </h3>
-              </div>
+                  {/* Contenido */}
+                  <div className="relative z-10 flex h-full flex-col">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
+                        <Icon className="text-lg" />
+                      </div>
+                      <h3 className="text-base font-semibold text-neutral-900">
+                        {item.title}
+                      </h3>
+                    </div>
 
-              <p className="mt-3 text-sm leading-relaxed text-neutral-600">
-                {item.desc}
-              </p>
+                    <p className="mt-3 text-sm leading-relaxed text-neutral-600">
+                      {item.desc}
+                    </p>
 
-              <ul className="mt-4 space-y-1.5 text-sm text-neutral-600">
-                {item.bullets.map((b) => (
-                  <li key={b} className="flex items-start gap-2">
-                    <span className="mt-[3px] inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
-                    <span>{b}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </article>
-        );
-      })}
-    </div>
-  </div>
-</section>
-
-
+                    <ul className="mt-4 space-y-1.5 text-sm text-neutral-600">
+                      {item.bullets.map((b) => (
+                        <li key={b} className="flex items-start gap-2">
+                          <span className="mt-[3px] inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
       {/* Experiencia en clientes */}
-<section id="clientes" className="border-t border-neutral-200 bg-white py-20">
-  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section
+        id="clientes"
+        className="border-t border-neutral-200 bg-white py-20"
+      >
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <div className="max-w-2xl">
+            <span className="inline-flex items-center rounded-full bg-indigo-50 px-3 py-1 text-xs font-medium text-indigo-600">
+              Experiencia
+            </span>
+            <h2 className="mt-4 text-3xl font-bold tracking-tight">
+              Experiencia en clientes
+            </h2>
+            <p className="mt-2 text-neutral-600 text-sm md:text-base">
+              Participamos en proyectos de distinta escala, desde
+              implementaciones iniciales hasta optimizaciones sobre soluciones
+              productivas, en organizaciones de diversos rubros.
+            </p>
+          </div>
 
-    {/* Header */}
-    <div className="max-w-2xl">
-      <span className="inline-flex items-center rounded-full bg-indigo-50 px-3 py-1 text-xs font-medium text-indigo-600">
-        Experiencia
-      </span>
-      <h2 className="mt-4 text-3xl font-bold tracking-tight">
-        Experiencia en clientes
-      </h2>
-      <p className="mt-2 text-neutral-600 text-sm md:text-base">
-        Participamos en proyectos de distinta escala, desde implementaciones iniciales
-        hasta optimizaciones sobre soluciones productivas, en organizaciones de diversos rubros.
-      </p>
-    </div>
-
-    {/* Cards */}
-    <div className="mt-10 grid gap-6 md:grid-cols-3">
-      {[
-        {
-          icon: FiTrendingUp,
-          title: "Implementaciones y mejoras",
-          desc: "Proyectos de implantación, evolución y estabilización de soluciones SAP y OpenText, con foco en adopción y resultados medibles.",
-          bullets: [
-            "Implementaciones end-to-end",
-            "Mejoras post-go-live",
-            "Optimización de performance",
-          ],
-        },
-        {
-          icon: FiUsers,
-          title: "Equipos distribuidos",
-          desc: "Trabajo integrado con equipos locales, regionales y globales, bajo modelos coordinados de trabajo.",
-          bullets: [
-            "Modelos colaborativos",
-            "Alineación entre áreas",
-            "Comunicación continua",
-          ],
-        },
-        {
-          icon: FiLayers,
-          title: "Procesos críticos",
-          desc: "Experiencia en procesos donde la trazabilidad y el control de información son claves para la operación.",
-          bullets: [
-            "Flujos sensibles al negocio",
-            "Gobierno del dato",
-            "Control y auditoría",
-          ],
-        },
-      ].map((item) => {
-        const Icon = item.icon;
-        return (
-          <article
-            key={item.title}
-            className="group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-[var(--color-accent)]/30 hover:shadow-lg"
-          >
-            {/* Glow */}
-            <div
-              className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full 
+          {/* Cards */}
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                icon: FiTrendingUp,
+                title: "Implementaciones y mejoras",
+                desc: "Proyectos de implantación, evolución y estabilización de soluciones SAP y OpenText, con foco en adopción y resultados medibles.",
+                bullets: [
+                  "Implementaciones end-to-end",
+                  "Mejoras post-go-live",
+                  "Optimización de performance",
+                ],
+              },
+              {
+                icon: FiUsers,
+                title: "Equipos distribuidos",
+                desc: "Trabajo integrado con equipos locales, regionales y globales, bajo modelos coordinados de trabajo.",
+                bullets: [
+                  "Modelos colaborativos",
+                  "Alineación entre áreas",
+                  "Comunicación continua",
+                ],
+              },
+              {
+                icon: FiLayers,
+                title: "Procesos críticos",
+                desc: "Experiencia en procesos donde la trazabilidad y el control de información son claves para la operación.",
+                bullets: [
+                  "Flujos sensibles al negocio",
+                  "Gobierno del dato",
+                  "Control y auditoría",
+                ],
+              },
+            ].map((item) => {
+              const Icon = item.icon;
+              return (
+                <article
+                  key={item.title}
+                  className="group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-[var(--color-accent)]/30 hover:shadow-lg"
+                >
+                  {/* Glow */}
+                  <div
+                    className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full 
               bg-gradient-to-br from-[var(--color-accent)]/15 via-indigo-400/10 to-transparent 
               blur-2xl transition-transform duration-300 group-hover:scale-110"
-            />
+                  />
 
-            {/* Content */}
-            <div className="relative z-10 flex h-full flex-col">
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
-                  <Icon className="text-lg" />
-                </div>
-                <h3 className="text-base font-semibold text-neutral-900">
-                  {item.title}
-                </h3>
-              </div>
+                  {/* Content */}
+                  <div className="relative z-10 flex h-full flex-col">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
+                        <Icon className="text-lg" />
+                      </div>
+                      <h3 className="text-base font-semibold text-neutral-900">
+                        {item.title}
+                      </h3>
+                    </div>
 
-              <p className="mt-3 text-sm leading-relaxed text-neutral-600">
-                {item.desc}
-              </p>
+                    <p className="mt-3 text-sm leading-relaxed text-neutral-600">
+                      {item.desc}
+                    </p>
 
-              <ul className="mt-4 space-y-1.5 text-sm text-neutral-600">
-                {item.bullets.map((b) => (
-                  <li key={b} className="flex items-start gap-2">
-                    <span className="mt-[3px] inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
-                    <span>{b}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </article>
-        );
-      })}
-    </div>
+                    <ul className="mt-4 space-y-1.5 text-sm text-neutral-600">
+                      {item.bullets.map((b) => (
+                        <li key={b} className="flex items-start gap-2">
+                          <span className="mt-[3px] inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
 
-    {/* Slider de clientes */}
-    <ClientsSlider />
-  </div>
-</section>
-
+          {/* Slider de clientes */}
+          <ClientsSlider />
+        </div>
+      </section>
 
       {/* Formulario */}
       <ContactForm />
-
 
       {/* CTA final */}
       <section id="contacto" className="border-t border-neutral-200 py-20">
@@ -840,7 +874,10 @@ export default function Home() {
             </p>
 
             <ul className="mx-auto mt-8 max-w-md list-none text-left text-base leading-relaxed text-neutral-700">
-              <li>• Experiencia o interés en SAP (ABAP, VIM, Fiori, integraciones).</li>
+              <li>
+                • Experiencia o interés en SAP (ABAP, VIM, Fiori,
+                integraciones).
+              </li>
               <li>• Capacidad de análisis y resolución de problemas.</li>
               <li>• Buena comunicación y trabajo en equipo.</li>
               <li>• Inglés técnico (no excluyente).</li>
@@ -855,10 +892,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-neutral-200 py-10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 text-sm text-neutral-500 sm:flex-row sm:px-6 lg:px-8">
-          <div>
-            © 2025 Moksa IT. Todos los derechos
-            reservados.
-          </div>
+          <div>© 2025 Moksa IT. Todos los derechos reservados.</div>
           <div className="flex items-center gap-5">
             <a
               href="https://www.linkedin.com/company/moksa-it/"
